@@ -14,9 +14,6 @@
 	import SkillsView from './views/SkillsView.vue';
 	import ContactView from './views/ContactView.vue';
 	import Navbar from './components/Navbar.vue';
-	import { type ModelRef } from 'vue';
-
-	const isScrollAllowed = defineModel<boolean>();
 </script>
 
 <style>
