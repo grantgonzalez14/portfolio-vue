@@ -45,9 +45,7 @@
         }
 
         .card:hover .card-content,
-        .card:hover .card-button,
-        .card:active .card-content,
-        .card:active .card-button {
+        .card:active .card-content {
             transform: translateY(-375px);
         }
     }

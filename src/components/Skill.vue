@@ -30,7 +30,7 @@
     const skillBarWidth = ref(props.skillWidth);
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
     .container {
         position: relative;
         background: #282828;
@@ -73,6 +73,7 @@
         display: flex;
         flex-direction: column;
         padding: 10px 20px;
+        gap: 1rem;
     }
 
     @keyframes progress {

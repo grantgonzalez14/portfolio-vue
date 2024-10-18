@@ -1,22 +1,5 @@
 <template>
     <div ref="aboutContainer" class="about-container">
-        <!-- <div class='pictures'>
-            <div class='up'>
-                <img src='/assets/images/GatSeattleLake.jpeg' alt='Grant Ring Ceremony' loading='lazy' class='g-img'/>
-            </div>
-            <div class='down'>
-                <img src='/assets/images/GGGradBowman.jpeg' alt='Grant Ring Ceremony' loading='lazy' class='g-img'/>
-            </div>
-            <div class='up'>
-                <img src='/assets/images/GGGradSikes.jpeg' alt='Grant Ring Ceremony' loading='lazy' class='g-img'/>
-            </div>
-            <div class='down'>
-                <img src='/assets/images/GGGradBowmanRing.jpeg' alt='Grant Ring Ceremony' loading='lazy' class='g-img'/>
-            </div>
-            <div class='up'>
-                <img src='/assets/images/GatQ.jpeg' alt='Grant Ring Ceremony' loading='lazy' class='g-img'/>
-            </div>
-        </div> -->
         <div class='bio'>
             <h1 class='title'>Grant Gonzalez - Software Developer</h1>
             <h2 class='about-me'>
@@ -46,21 +29,6 @@
     
     onMounted(() => {
         aboutCtx = gsap.context((self: any) => {
-            const images = self.selector('.g-img');
-            images.forEach((img: any) => {
-                gsap.from('.g-img', {
-                        scrollTrigger: {
-                            trigger: img,
-                            start: 'top bottom',
-                            end: 'top 50%',
-                            scrub: true
-                        },
-                        scale: 0,
-                        opacity: 0,
-                    }
-                );
-            });
-
             gsap.from('.bio', {
                     scrollTrigger: {
                         trigger: '.bio',
@@ -68,8 +36,9 @@
                         end: 'top 50%',
                         scrub: true
                     },
-                    scale: 0,
-                    opacity: 0
+                    // scale: 0,
+                    opacity: 0,
+                    y: 300
                 }
             );
         }, aboutContainer.value);

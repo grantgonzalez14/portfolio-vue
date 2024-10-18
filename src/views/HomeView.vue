@@ -1,7 +1,6 @@
 <template>
     <div ref="homeContainer" class="home-container">
         <span class="grant-gonzalez"></span>
-        <!-- <img src="/public/assets/icons/down-arrows.png" class="arrow" /> -->
         <svg
             aria-hidden="true"
             focusable="false"
@@ -11,6 +10,7 @@
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
             class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x arrow"
+            @click="scrollToSection('about')"
         >
             <g class="fa-group">
                 <path
@@ -32,23 +32,48 @@
     import gsap from 'gsap';
     import { onMounted } from 'vue';
     import TextPlugin from 'gsap/TextPlugin';
+    import { useWindowSize } from '@vueuse/core';
 
-    const emit = defineEmits(['isScrollAllowed']);
+    const { width } = useWindowSize();
 
     gsap.registerPlugin(TextPlugin);
 
+    const scrollToSection = (section: string) => {
+        const targetElement = document.getElementById(section);
+		if (targetElement) {
+			targetElement.scrollIntoView({behavior: 'smooth'});            
+		}
+    }
+
     onMounted(() => {
+        let fontsizeNormal;
+        let fontsizeLarge;
+
+        if (width.value >= 1440) {
+            fontsizeNormal = 144;
+            fontsizeLarge = 196;
+        } else if (width.value > 600) {
+            fontsizeNormal = 72;
+            fontsizeLarge = 96;
+        } else if (width.value > 425) {
+            fontsizeNormal = 36;
+            fontsizeLarge = 48;
+        } else {
+            fontsizeNormal = 24;
+            fontsizeLarge = 36;
+        }
+
         let tl = gsap.timeline();
         let bounceTl = gsap.timeline({repeat: -1});
 
         tl.set('body', { overflow: "hidden" })
         .fromTo(".grant-gonzalez", 
             {
-                fontSize: 144
+                fontSize: fontsizeNormal
             }, 
             {
                 ease: "none",
-                fontSize: 144,
+                fontSize: fontsizeNormal,
                 text: {
                     value: "GRANT GONZALEZ",
                     speed: 1
@@ -58,25 +83,25 @@
         .fromTo(".grant-gonzalez", 
             {
                 opacity: 1,
-                fontSize: 144
+                fontSize: fontsizeNormal
             },
             {
                 ease: "none",
                 color: "#5CA8BF",
                 duration: 0.1,
-                fontSize: 196
+                fontSize: fontsizeLarge
             },
             ">+=0.5"
         )
         .fromTo(".grant-gonzalez", 
             {
                 opacity: 1,
-                fontSize: 196
+                fontSize: fontsizeLarge
             },
             {
                 ease: "none",
                 duration: 0.1,
-                fontSize: 144,
+                fontSize: fontsizeNormal,
                 onComplete: () => { 
                     gsap.to('.arrow', { opacity: 1 });
                     bounceTl.set('body', { overflow: "scroll" })
@@ -117,11 +142,55 @@
         transform: rotate(90deg);
     }
 
+    .arrow:hover {
+        cursor: pointer;
+    }
+
     .fa-primary {
         color: #407E8A;
     }
 
     .fa-secondary {
         color: #56A4B8;
+    }
+
+        /* Small screens */
+    @media only screen and (max-width: 600px) {
+        .arrow {
+            width: 2rem;
+            height: 4rem;
+            transform: rotate(90deg);
+        }
+
+        .grant-gonzalez {
+            margin-left: 0;
+        }
+    }
+
+    /* Large screens */
+    @media only screen and (min-width: 601px) {
+        .navbar {
+            top: 0;
+            width: 5rem;
+            height: 100vh;
+
+            &:hover { 
+                width: 16rem; 
+
+                .link-text { 
+                    opacity: 1;
+                }
+
+                .logo {
+                    svg { 
+                        margin-left: 11rem; 
+                    }
+                }
+
+                .logo-text { 
+                    left: 0px; 
+                }
+            }
+        }
     }
 </style>

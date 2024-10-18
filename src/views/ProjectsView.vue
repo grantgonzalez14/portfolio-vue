@@ -4,34 +4,35 @@
         <div class='projects-container'>
             <div class='project-card' data-aos='fade-up' data-aos-duration='1000'>
                 <div class='project-left'>
-                    <img src='/public/assets/images/Website.png' alt='Portfolio Website' loading='lazy' class='project-pic' />
+                    <img @click="scrollToSection('home')" src='/public/assets/images/Website.png' alt='Portfolio Website' loading='lazy' class='project-pic' />
                 </div>
                 <div class='project-right'>
                     <h3 class='project-title'><i>Portfolio Website</i></h3>
                     <p><strong>Made with:</strong>
-                        <img src='/public/assets/icons/icons8-react-30.png' alt='Vue JS' loading='lazy' class='project-icon' />
+                        <img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
+                        <img src='/public/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon' />
                         <img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
                         <img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
                         <img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
                     </p>
                     <h4>Description:<p>You're lookin' at it!</p></h4>
-                    <a href='/home'><strong>Check it out!</strong></a>
+                    <span @click="scrollToSection('home')"><strong><u>Check it out!</u></strong></span>
                     <a href='https://github.com/grantgonzalez14/portfolio-website' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
                 </div>
             </div>
 
             <div class='project-card' data-aos='fade-up' data-aos-duration='1000'>
                 <div class='project-left'>
-                    <img src='/public/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='project-pic' />
+                    <img @click="openLink('https://bug-zapper.netlify.app/')" src='/public/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='project-pic' />
                 </div>
                 <div class='project-right'>
                     <h3 class='project-title'><i>Bug Zapper</i></h3>
                     <p><strong>Made with:</strong>
                         <img src='/public/assets/icons/icons8-react-30.png' alt='React' loading='lazy' class='project-icon' />
+                        <img src='/public/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon' />
                         <img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
                         <img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
                         <img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon' />
                     </p>
                     <h4>Description:<p>
                         Say goodbye to those pesky bugs with Bug Zapper, the ultimate web application for tracking and 
@@ -47,12 +48,12 @@
 
             <div class='project-card' data-aos='fade-up' data-aos-duration='1000'>
                 <div class='project-left'>
-                    <img src='/public/assets/images/brennan_portfolio_home_page.png' alt='Brennan Schmidt Portfolio Home Page' loading='lazy' class='project-pic' />
+                    <img @click="openLink('https://brennanschmidt.com/')" src='/public/assets/images/brennan_portfolio_home_page.png' alt='Brennan Schmidt Portfolio Home Page' loading='lazy' class='project-pic' />
                 </div>
                 <div class='project-right'>
                     <h3 class='project-title'><i>Brennan Schmidt</i></h3>
                     <p><strong>Made with:</strong>
-                        <img src='/public/assets/icons/icons8-vue-js-48.png' alt='React' loading='lazy' class='project-icon' />
+                        <img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
                         <img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
                         <img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
                         <img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
@@ -74,26 +75,65 @@
     import gsap from 'gsap';
     import { onMounted, onUnmounted, ref } from 'vue';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import { scrollToSection } from '@/utility/utilityFunctions';
 
     gsap.registerPlugin(ScrollTrigger);
 
     const projectContainer = ref();
     let projectCtx: any;
 
+    const openLink = (url: string) => window.open(url, '_blank');
+
     onMounted(() => {
         projectCtx = gsap.context((self: any) => {
             const projects = self.selector('.project-card');
-            projects.forEach((project: any) => {
-                gsap.from(project, {
-                        scrollTrigger: {
-                            trigger: project,
-                            start: 'top bottom',
-                            end: () => `+=${project.offsetHeight * (1 / 1.5)}`,
-                            scrub: true
+            projects.forEach((project: any, index: number) => {
+                if (index % 2 == 0) {
+                    gsap.from(project, {
+                            scrollTrigger: {
+                                trigger: project,
+                                start: 'top bottom',
+                                end: "+=" + project.getBoundingClientRect().height,
+                                scrub: true
+                            },
+                            scale: 0,
+                            opacity: 0,
+                            x: 500
+                        }
+                    );
+                } else {
+                    gsap.from(project, {
+                            scrollTrigger: {
+                                trigger: project,
+                                start: 'top bottom',
+                                end: "+=" + project.getBoundingClientRect().height,
+                                scrub: true
+                            },
+                            scale: 0,
+                            opacity: 0,
+                            x: -500
+                        }
+                    );
+                }
+            });
+
+            const icons = self.selector('.project-icon');
+            icons.forEach((icon: any) => {
+                icon.addEventListener('click', () => {
+                    let tl = gsap.timeline()
+                    tl.fromTo(icon, {
+                            rotation: 0
                         },
-                        scale: 0
-                    }
-                );
+                        {
+                            rotation: 360,
+                            scale: 1.25
+                        }
+                    );
+
+                    tl.to(icon, {
+                        scale: 1
+                    }, ">")
+                });
             });
 
             gsap.from('.projects-header', {
@@ -106,6 +146,7 @@
                     scale: 0
                 }
             );
+
         }, projectContainer.value);
     });
 
@@ -179,6 +220,7 @@
         width: 50%;
         color: var(--text-secondary);
 
+        span,
         a {
             display: flex;
             justify-content: flex-start;
@@ -187,16 +229,21 @@
             color: var(--text-primary);
             width: fit-content;
 
-            &:hover { color: var(--text-color); }
+            &:hover { 
+                color: var(--text-color);
+                cursor: pointer; 
+            }
         }
 
         p {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            margin-bottom: 10px;
+            padding-bottom: 10px;
+            height: 48px;
             width: 100%;
             overflow-x: auto;
+            overflow-y: visible;
         }
 
         .project-icon {
@@ -210,7 +257,8 @@
             flex-direction: row;
 
             p {
-                margin: 0 0 0 1rem;
+                height: 100%;
+                padding: 0 0 0 1rem;
                 font-family: "Montserrat", "serif";
             }
         }

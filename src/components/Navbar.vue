@@ -326,7 +326,6 @@
 
     .navbar {
         position: fixed;
-        top: 0;
         background-color: var(--bg-primary);
         transition: width var(--transition-speed) ease;
         z-index: 999;
@@ -434,6 +433,10 @@
             height: 5rem;
         }
 
+        .link-text {
+            display: none;
+        }
+
         .logo {
             display: none;
         }
@@ -444,6 +447,7 @@
 
         .nav-link {
             justify-content: center;
+            align-items: center;
         }
 
         main {
@@ -452,7 +456,7 @@
     }
 
     /* Large screens */
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 601px) {
         .navbar {
             top: 0;
             width: 5rem;
