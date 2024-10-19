@@ -313,6 +313,8 @@
                             duration: 0
                         });
 
+                        // When an icon is clicked, expand the icon and move it to the top row
+                        // and the left side of the container box
                         tl.to(skill, {
                                 width: width,
                                 height: height,
@@ -497,7 +499,6 @@
         align-items: center;
         min-height: 100vh;
         max-width: 100vw;
-        background-color: black;
         margin-top: -5rem;
 
         .icon-card {
@@ -531,7 +532,6 @@
     .skill-header {
         display: flex;
         justify-content: center;
-        background-color: black;
         color: var(--text-secondary);
         grid-column: 1 / -1;
         grid-row: 1;

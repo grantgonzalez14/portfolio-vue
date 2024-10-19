@@ -1,5 +1,7 @@
 <template>
     <div ref="homeContainer" class="home-container">
+        <img class="sattelite sat-one" src="/public/assets/images/SatelliteImageOne.png" >
+        <img class="sattelite sat-two" src="/public/assets/images/SatelliteImageTwo.png" >
         <span class="grant-gonzalez"></span>
         <svg
             aria-hidden="true"
@@ -64,7 +66,8 @@
         }
 
         let tl = gsap.timeline();
-        let bounceTl = gsap.timeline({repeat: -1});
+        let arrowBounceTl = gsap.timeline({repeat: -1, yoyo: true});
+        let satteliteBounceTl = gsap.timeline({repeat: -1, ease: "none", yoyo: true});
 
         tl.set('body', { overflow: "hidden" })
         .fromTo(".grant-gonzalez", 
@@ -104,16 +107,42 @@
                 fontSize: fontsizeNormal,
                 onComplete: () => { 
                     gsap.to('.arrow', { opacity: 1 });
-                    bounceTl.set('body', { overflow: "scroll" })
-                    .to('.arrow', { y: 10 })
-                    .to('.arrow', { y: 0 });
+                    gsap.to('.sattelite', { opacity: 1 });
+                    gsap.from('.sattelite', { y: window.innerHeight, ease: "power2.out", duration: 1 })
+                    arrowBounceTl.set('body', { overflow: "scroll" }).to('.arrow', { y: 10 });
                 }
             },
             ">+=0.25"
         );
         
-        
+        satteliteBounceTl.to('.sattelite', {
+            rotate: -5,
+            ease: "none",
+            duration: 1
+        });
 
+        let sattelites = document.querySelectorAll('.sattelite');
+        sattelites.forEach((sattelite: any, index: number) => {
+                sattelite.addEventListener('click', () => {
+                    if (index % 2 == 1) {
+                        gsap.to(sattelite, {
+                            x: window.innerWidth,
+                            y: -500,
+                            rotation: 360,
+                            ease: 'power1.in'
+                        });
+                    } else {
+                        gsap.to(sattelite, {
+                            x: -window.innerWidth,
+                            y: 1000,
+                            rotation: 360,
+                            ease: 'power1.in'
+                        });
+                    }
+                    
+                })  
+            }
+        )
     });
 </script>
 
@@ -125,7 +154,23 @@
         align-items: center;
         min-height: 100vh;
         min-width: 100vw;
-        background-color: black;
+    }
+
+    .sattelite {
+        opacity: 0;
+        position: absolute;
+    }
+
+    .sat-one {
+        right: 5rem;
+        top: -5%;
+        transform: rotate(5deg);
+    }
+
+    .sat-two {
+        left: -1rem;
+        top: 50%;
+        transform: scale(0.5) rotate(5deg);
     }
 
     .grant-gonzalez {

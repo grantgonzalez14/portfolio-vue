@@ -120,7 +120,7 @@
             const icons = self.selector('.project-icon');
             icons.forEach((icon: any) => {
                 icon.addEventListener('click', () => {
-                    let tl = gsap.timeline()
+                    let tl = gsap.timeline();
                     tl.fromTo(icon, {
                             rotation: 0
                         },
@@ -161,10 +161,7 @@
         flex-direction: column;
         min-height: 100vh;
         min-width: 100vw;
-        background-color: black;
         padding: 10px 0;
-        display: flex;
-        flex-direction: column;
         align-items: center;
     }
 

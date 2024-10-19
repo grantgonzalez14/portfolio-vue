@@ -14,6 +14,14 @@
                 practices in full-stack development, and I'm always looking for new opportunities to learn and grow.<br/><br/>
             </h2>
         </div>
+        <div class="about-img-container">
+            <img class="astronaut" src="/public/assets/images/AstronautCartoon3.png">
+            <div class="rocket-ship-container">
+                <img class="rocket-ship" src="/public/assets/images/RocketShipNoBooster.png">
+                <img class="rocket-ship-boosters" src="/public/assets/images/RocketShipBoosters.png">
+            </div>
+            
+        </div>
     </div>
 </template>
 
@@ -28,7 +36,7 @@
     let aboutCtx: any;
     
     onMounted(() => {
-        aboutCtx = gsap.context((self: any) => {
+        aboutCtx = gsap.context(() => {
             gsap.from('.bio', {
                     scrollTrigger: {
                         trigger: '.bio',
@@ -36,11 +44,43 @@
                         end: 'top 50%',
                         scrub: true
                     },
-                    // scale: 0,
                     opacity: 0,
                     y: 300
                 }
             );
+
+            gsap.from('.about-img-container', {
+                    scrollTrigger: {
+                        trigger: '.bio',
+                        start: '75% bottom',
+                        end: 'top 50%',
+                        scrub: true
+                    },
+                    opacity: 0,
+                    y: 300
+                }
+            );
+
+            let rocketShipAnimationTl = gsap.timeline();
+            document.querySelector('.about-img-container')?.addEventListener('click', () => {
+                rocketShipAnimationTl
+                .to('.astronaut', {
+                    x: 80,
+                    scale: 0,
+                    ease: 'power1.in',
+                    duration: 1
+                })
+                .to('.rocket-ship-boosters', {
+                    opacity: 1,
+                    duration: 0
+                })
+                .to('.about-img-container', {
+                    y: -window.innerHeight * 5,
+                    ease: "power4.in",
+                    duration: 2
+                });
+            });
+            
         }, aboutContainer.value);
     });
 
@@ -53,162 +93,62 @@
     .about-container {
         display: flex;
         flex-direction: column;
+        position: relative;
+        align-items: center;
+        justify-content: center;
         min-height: 100vh;
         min-width: 100vw;
-        background-color: black;
-    }
 
-    .bio {
-        display: block;
-        text-align: center;
-        margin-bottom: 4%;
-    }
-
-    .title,
-    .about-me,
-    .joke-container,
-    .fade-container {
-        color: var(--text-secondary);
-        font-family: "Montserrat", "serif";
-    }
-
-    .title { 
-        margin: 4rem 25% 0 25%; 
-    }
-
-    .about-me { 
-        margin: 1rem 25% 0 25%; 
-    }
-
-    .title,
-    .about-me,
-    .up,
-    .down {
-        z-index: 2;
-    }
-
-    .images {
-        background-color: transparent;
-        text-align: center;
-
-        .ps-img {
-            display: inline-block;
-            justify-content: center;
-            width: 160px;
-            height: 160px;
-            margin: 0 4% 10%;
-            
-        }
-    }
-
-    .pictures {
-        display: flex;
-        flex-direction: row;
-        background-color: transparent;
-        text-align: center;
-        align-items: center;
-        margin: 0 5% 0 5%;
-    }
-
-    .g-img {
-        display: inline-block;
-        justify-content: center;
-        width: 50%;
-        height: 12%;
-        margin: 2% 4% 0 4%;
-        border-radius: 10px;
-    }
-
-    .db-link {
-        color: white;
-
-        &:hover {
-            color: #56A4B8;
-            cursor: pointer;
-            transition: 250ms;
-        }
-    }
-
-    .up {
-        width: 100%;
-        margin-bottom: 3%;
-    }
-
-    .down {
-        width: 100%;
-        margin-top: 5%;
-    }
-
-    .double {
-        padding-bottom: 7%;
-    }
-
-    .joke-button {
-        display: none;
-        padding: 8px 20px;
-        border-radius: 2px;
-        outline: none;
-        border: none;
-        cursor: pointer;
-        background-color: transparent;
-        margin: 0 5px;
-        font-size: 20px;
-        color: white;
-        border: 1px solid white;
-
-        &:hover {
-            transition: all 0.2s ease-out;
-            color: #242424;
-            background: white;
-        }
-    }
-
-    @keyframes jokeAnimation {
-        from {opacity: 0;}
-        to {opacity: 1;}
-    }
-
-    .fade-container {
-        transition: opacity 1s ease-in-out;
-    }
-
-    .visible {
-        opacity: 1;
-    }
-    
-    .hidden {
-        opacity: 0;
-    }  
-
-    .joke-container {
-        animation-name: jokeAnimation;
-        animation-duration: 1s;
-        margin: 1rem 25%;
-    }
-
-    @media screen and (max-width: 425px) {
-        .pictures {
+        .bio {
             display: flex;
             flex-direction: column;
-            background-color: transparent;
+            gap: 1rem;
+            padding: 0 15%;
             text-align: center;
-            align-items: center;
+        }
 
-            .g-img {
-                display: inline-block;
-                justify-content: center;
-                width: 50%;
-                height: 50%;
-                margin: 2% 4% 3% 4%;
+        .title,
+        .about-me {
+            color: var(--text-secondary);
+            font-family: "Montserrat", "serif";
+            z-index: 2;
+
+            .db-link {
+                color: white;
+
+                &:hover {
+                    color: #56A4B8;
+                    cursor: pointer;
+                    transition: 250ms;
+                }
             }
         }
 
-        .left {
-            padding-right: 20%;
-        }
+        .about-img-container {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            padding-left: 5rem;
 
-        .right {
-            padding-left: 20%;
+            .astronaut {
+                position: absolute;
+                left: calc(158px + 5rem);
+                bottom: 106px;
+            }
+
+            .rocket-ship-container {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                left: calc(240px + 5rem);
+                bottom: 0;
+
+                .rocket-ship-boosters {
+                    opacity: 0;
+                }
+            }
         }
     }
+
+    
 </style>

@@ -1,10 +1,13 @@
 <template>
-	<Navbar id="navbar"></Navbar>
-	<HomeView id="home"></HomeView>
-	<AboutView id="about"></AboutView>
-	<ProjectsView id="projects"></ProjectsView>
-	<SkillsView id="skills"></SkillsView>
-	<ContactView id="contact"></ContactView>
+	<div class="app-container">
+		<Navbar id="navbar"></Navbar>
+		<HomeView id="home"></HomeView>
+		<AboutView id="about"></AboutView>
+		<ProjectsView id="projects"></ProjectsView>
+		<SkillsView id="skills"></SkillsView>
+		<ContactView id="contact"></ContactView>
+	</div>
+	
 </template>
 
 <script setup lang="ts">
@@ -19,5 +22,14 @@
 <style>
 	* {
 		margin: 0;
+	}
+
+	body {
+		background: linear-gradient(to bottom, #000000, #a3dcff);
+	}
+
+	.app-container {
+		background-image: url('public/assets/images/AnimatedStarryNight.png');
+		
 	}
 </style>
