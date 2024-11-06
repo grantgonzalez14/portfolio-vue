@@ -30,6 +30,6 @@
 
 	.app-container {
 		background-image: url('public/assets/images/AnimatedStarryNight.png');
-		
+		overflow-x: hidden
 	}
 </style>

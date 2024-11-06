@@ -271,73 +271,80 @@
     import Card from '@/components/Card.vue';
     import Skill from '@/components/Skill.vue';
     import gsap from 'gsap';
+    import { useWindowSize } from '@vueuse/core';
     import { onMounted, onUnmounted, ref } from 'vue';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import { Flip } from 'gsap/Flip';
     import { v4 as uuidv4 } from 'uuid';
 
     gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(Flip);
 
-    interface SkillInfo {
+	interface SkillInfo {
         skillID: string;
         scrollTriggerID: string;
     }
 
+    const { width } = useWindowSize();
     const skillList = ref<Array<SkillInfo>>([]);
     const isSkillExpanded = ref(false);
     const currentlyExpandedSkill = ref();
     const cardWidth = ref();
+	const cardHeight = ref();
     const skillsContainer = ref();
     let skillsCtx: any;
 
     const animateSkill = (targetID: string) => {
         if (!isSkillExpanded.value) {
+            
             skillsCtx = gsap.context((self: any) => {
                 const skills = self.selector('.icon-card');
                 
-                let width = document.querySelector(".project-card")?.getBoundingClientRect().width! * 0.98;
+                let currentCardWidth = document.querySelector(".project-card")?.getBoundingClientRect().width! * 0.98;
                 let calculatedHeight = skills[8].getBoundingClientRect().bottom - skills[0].getBoundingClientRect().top;
+                let windowWidth = width.value;
                 let windowHeight = window.innerHeight * 0.7;
-                let height = calculatedHeight > windowHeight ? calculatedHeight : windowHeight;
+                let height = calculatedHeight > windowHeight && windowWidth >= 800 ? calculatedHeight : windowHeight;
                 let topPosition = document.querySelector(".skill-header")!.getBoundingClientRect().bottom + 16;
-                let leftPosition = skills[0].getBoundingClientRect().left;
-                
 
-                skills.forEach((skill: any) => {
+                skills.forEach((skill: any, index: number) => {
                     if (skill.id == targetID) {
+						let currentLeft = skill.getBoundingClientRect().left;
+						let numColumns = window.getComputedStyle(document.querySelector(".skills-container")!).getPropertyValue("grid-template-columns").split(" ").length;
+						let currentRow = 1 + Math.floor(index / numColumns);
                         let tl = gsap.timeline();
                         currentlyExpandedSkill.value = document.getElementById(skill.id);
-                        currentlyExpandedSkill.value.classList.add("expanded");
-                        
-                        tl.to(".icon", {
-                            opacity: 0,
-                            duration: 0
-                        });
+                        currentlyExpandedSkill.value.classList.toggle("expanded");
 
-                        // When an icon is clicked, expand the icon and move it to the top row
-                        // and the left side of the container box
-                        tl.to(skill, {
-                                width: width,
-                                height: height,
-                                duration: 0.1,
-                                padding: 0,
-                                x: () => {
-                                    let currentWidthRadius = skill.getBoundingClientRect().width / 2;
-                                    let newWidthRadius = width! / 2;
-                                    let afterWidthChangeLeft = newWidthRadius - currentWidthRadius;
-                                    return `-=${skill.getBoundingClientRect().left - afterWidthChangeLeft - leftPosition}`
-                                },
-                                y: () => {
-                                    let currentHeightRadius = skill.getBoundingClientRect().height / 2;
-                                    let newHeightRadius = height / 2;
-                                    let afterHeightChangeTop = newHeightRadius - currentHeightRadius;
-                                    return `-=${skill.getBoundingClientRect().top - afterHeightChangeTop - topPosition}`
-                                }
-                            }
-                        );
+						tl.to(".icon", {
+							opacity: 0,
+							duration: 0
+						});
+						tl.fromTo(skill,
+							{
+								position: "absolute",
+								left: currentLeft - 80,
+								top: "+=" + (264 * currentRow)
+							},
+							{
+								position: "absolute",
+								transformOrigin: "-50% -50%",
+								left: windowWidth * 0.14,
+								top: topPosition > 0 ? 256 : 288 + (-1 * topPosition),
+								duration: 0.1
+							}
+						)
+						tl.to(skill, {
 
-                        tl.to(".card-content", {
-                            y: -height
-                        }, "<+=.05");
+							width:  windowWidth > 600 ? ( windowWidth - 80 ) * 0.7 : windowWidth * 0.7,
+							height: height,
+							duration: 0.1,
+							padding: 0,
+						});
+						tl.to(".card-content", {
+							y: -height
+						}, "<+=.05");
+
                     } else  {
                         gsap.set(skill, {
                                 scale: 0
@@ -345,16 +352,16 @@
                         );
                     }
                 });
-                cardWidth.value = width;
                 isSkillExpanded.value = true;
-            }, skillsContainer.value);
+				cardWidth.value = currentCardWidth;
+			}, skillsContainer.value);
         } else {
             gsap.to(".card-content", {
                 y: 500,
                 onComplete: () => {
                     skillsCtx.revert();
                     isSkillExpanded.value = false;
-                    currentlyExpandedSkill.value.classList.remove("expanded");
+                    currentlyExpandedSkill.value.classList.toggle("expanded");
                     currentlyExpandedSkill.value = null;
                 }
             });
@@ -363,7 +370,7 @@
         }
     };
 
-    const handleScrollanimation = () => {
+    const handleScrollAnimation = () => {
         if (isSkillExpanded.value) {
             skillList.value.forEach((skill: SkillInfo) => {
                 if (currentlyExpandedSkill.value.id != skill.skillID) {
@@ -399,77 +406,9 @@
                     skillID: skill.id,
                     scrollTriggerID: uuid
                 });
-                
-
-                // // Like this animation, but it relies on there being exactly 5 rows
-                // if (index % 5 == 0) {
-                //     gsap.from(skill, {
-                //             scrollTrigger: {
-                //                 trigger: skill,
-                //                 start: 'top bottom',
-                //                 end: '+=' + skill.getBoundingClientRect().height,
-                //                 scrub: true
-                //             },
-                //             scale: 0,
-                //             y: 200,
-                //             x: -200
-                //         }
-                //     );
-                // } else if (index % 5 == 1) {
-                //     gsap.from(skill, {
-                //             scrollTrigger: {
-                //                 trigger: skill,
-                //                 start: 'top bottom',
-                //                 end: '+=' + skill.getBoundingClientRect().height,
-                //                 scrub: true
-                //             },
-                //             scale: 0,
-                //             y: 200,
-                //             x: -100
-                //         }
-                //     );
-                // } else if (index % 5 == 2) {
-                //     gsap.from(skill, {
-                //             scrollTrigger: {
-                //                 trigger: skill,
-                //                 start: 'top bottom',
-                //                 end: '+=' + skill.getBoundingClientRect().height,
-                //                 scrub: true
-                //             },
-                //             scale: 0,
-                //             y: 200
-                //         }
-                //     );
-                // } else if (index % 5 == 3) {
-                //     gsap.from(skill, {
-                //             scrollTrigger: {
-                //                 trigger: skill,
-                //                 start: 'top bottom',
-                //                 end: '+=' + skill.getBoundingClientRect().height,
-                //                 scrub: true
-                //             },
-                //             scale: 0,
-                //             y: 200,
-                //             x: 100
-                //         }
-                //     );
-                // } else {
-                //     gsap.from(skill, {
-                //             scrollTrigger: {
-                //                 trigger: skill,
-                //                 start: 'top bottom',
-                //                 end: '+=' + skill.getBoundingClientRect().height,
-                //                 scrub: true
-                //             },
-                //             scale: 0,
-                //             y: 200,
-                //             x: 200
-                //         }
-                //     );
-                // }
             });
 
-            window.addEventListener("scroll", handleScrollanimation);
+            window.addEventListener("scroll", handleScrollAnimation);
             gsap.from('.skill-header', {
                     scrollTrigger: {
                         trigger: '.skill-header',
@@ -492,6 +431,7 @@
 
     .skills-container {
         display: grid;
+		position: relative;
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
         grid-auto-rows: 15rem;
         gap: 1rem;
@@ -500,6 +440,7 @@
         min-height: 100vh;
         max-width: 100vw;
         margin-top: -5rem;
+		margin-left: 5rem;
 
         .icon-card {
             background: linear-gradient(#212121, #212121) padding-box,
@@ -512,10 +453,10 @@
             grid-row: span 1;
             justify-self: center;
 
-            &:not(.expanded):hover {
-                transform: scale(1.1) !important;
-                transition-timing-function: ease;
-            }
+            //&:not(.expanded):hover {
+            //    transform: scale(1.1) !important;
+            //    transition-timing-function: ease;
+            //}
 
             &:hover {
                 cursor: pointer;
@@ -527,6 +468,13 @@
                 transition: calc(var(--transition-speed) / 3);
             }
         }
+
+		//.icon-card.expanded {
+		//	position: absolute;
+		//	left: 13%;
+		//	top: 25vh;
+		//	padding: 0 !important;
+		//}
     }
 
     .skill-header {
@@ -539,10 +487,9 @@
         padding-bottom: 1rem;
     }
 
-    @media screen and (max-width: 925px) {
-        .icon {
-            width: 9rem;
-            height: 9rem;
-        }
-    }
+     @media screen and (max-width: 600px) {
+         .skills-container {
+			 margin-left: 0;
+		 }
+     }
 </style>

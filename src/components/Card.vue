@@ -38,7 +38,7 @@
         transition: all 0.05s ease;
     }
 
-    @media only screen and (max-width: 425px) {
+    /* @media only screen and (max-width: 425px) {
         .card {
             height: 375px;
             width: 300px;
@@ -48,5 +48,5 @@
         .card:active .card-content {
             transform: translateY(-375px);
         }
-    }
+    } */
 </style>

@@ -21,19 +21,22 @@
 
         <!-- Background Images -->
         <div class="bg-img-container">
-            <img class="earth" src="/public/assets/images/Globe3.png">
+            <img class="earth" :style="{left: width > 600 ? 3 + 'rem' : 0}" src="/public/assets/images/Globe3.png">
             <img v-for="i in 20" class="cloud" src="/public/assets/images/CloudTwo.png">
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-    import gsap from 'gsap';
     import { onMounted, onUnmounted, ref } from 'vue';
+    import { useWindowSize } from '@vueuse/core';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import gsap from 'gsap';
     import "../../public/assets/main.css";
 
     gsap.registerPlugin(ScrollTrigger);
+
+    const { width } = useWindowSize();
 
     const contactContainer = ref();
     let contactCtx: any;
@@ -166,8 +169,9 @@
 
             .earth {
                 position: absolute;
-                top: 40%;
+                top: 40vh;
                 z-index: 2;
+                width: 100%;
             }
 
             .cloud {
@@ -195,12 +199,6 @@
             box-sizing: border-box;
             border-radius: 16px;
             z-index: 10;
-
-
-
-
-
-            // opacity: 0;
 
             .contact-form {
                 display: flex;
@@ -291,5 +289,11 @@
         }
     }
 
-    
+    @media only screen and (max-width: 600px) {
+        .contact-container {
+            .contact-form-container {
+                width: 80vw;
+            }
+        }
+    }
 </style>

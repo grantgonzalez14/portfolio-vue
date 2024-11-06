@@ -1,7 +1,7 @@
 <template>
     <div ref="homeContainer" class="home-container">
-        <img class="sattelite sat-one" src="/public/assets/images/SatelliteImageOne.png" >
-        <img class="sattelite sat-two" src="/public/assets/images/SatelliteImageTwo.png" >
+        <img class="sattelite sat-one" :style="{ width: satelliteWidthHeight.one, height: satelliteWidthHeight.one }" src="/public/assets/images/SatelliteImageOne.png" >
+        <img class="sattelite sat-two" :style="{ width: satelliteWidthHeight.two, height: satelliteWidthHeight.two }" src="/public/assets/images/SatelliteImageTwo.png" >
         <span class="grant-gonzalez"></span>
         <svg
             aria-hidden="true"
@@ -12,6 +12,7 @@
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
             class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x arrow"
+			:style="{width: arrowWidthHeight, height: arrowWidthHeight}"
             @click="scrollToSection('about')"
         >
             <g class="fa-group">
@@ -32,11 +33,20 @@
 
 <script setup lang="ts">
     import gsap from 'gsap';
-    import { onMounted } from 'vue';
+    import { onMounted, ref } from 'vue';
     import TextPlugin from 'gsap/TextPlugin';
     import { useWindowSize } from '@vueuse/core';
 
-    const { width } = useWindowSize();
+	const { width } = useWindowSize();
+	const arrowWidthHeight = ref<number>(width.value * 0.0555556);
+	const satelliteWidthHeight = ref<{
+		one: number;
+		two: number;
+	}>({
+		one: width.value * 0.1875,
+		two: width.value * 0.1302083
+	});
+
 
     gsap.registerPlugin(TextPlugin);
 
@@ -48,22 +58,8 @@
     }
 
     onMounted(() => {
-        let fontsizeNormal;
-        let fontsizeLarge;
-
-        if (width.value >= 1440) {
-            fontsizeNormal = 144;
-            fontsizeLarge = 196;
-        } else if (width.value > 600) {
-            fontsizeNormal = 72;
-            fontsizeLarge = 96;
-        } else if (width.value > 425) {
-            fontsizeNormal = 36;
-            fontsizeLarge = 48;
-        } else {
-            fontsizeNormal = 24;
-            fontsizeLarge = 36;
-        }
+        let fontsizeNormal = width.value * 0.0615385;
+        let fontsizeLarge = width.value * 0.0923077;
 
         let tl = gsap.timeline();
         let arrowBounceTl = gsap.timeline({repeat: -1, yoyo: true});
@@ -108,7 +104,13 @@
                 onComplete: () => { 
                     gsap.to('.arrow', { opacity: 1 });
                     gsap.to('.sattelite', { opacity: 1 });
-                    gsap.from('.sattelite', { y: window.innerHeight, ease: "power2.out", duration: 1 })
+                    gsap.from('.sattelite', {
+						y: window.innerHeight,
+						ease: "power2.out",
+						duration: 1
+					});
+					gsap.to('.sat-one', { width: satelliteWidthHeight.value.one, height: satelliteWidthHeight.value.one });
+					gsap.to('.sat-two', { width: satelliteWidthHeight.value.two, height: satelliteWidthHeight.value.two });
                     arrowBounceTl.set('body', { overflow: "scroll" }).to('.arrow', { y: 10 });
                 }
             },
@@ -129,6 +131,7 @@
                             x: window.innerWidth,
                             y: -500,
                             rotation: 360,
+                            display: 'none',
                             ease: 'power1.in'
                         });
                     } else {
@@ -136,6 +139,7 @@
                             x: -window.innerWidth,
                             y: 1000,
                             rotation: 360,
+                            display: 'none',
                             ease: 'power1.in'
                         });
                     }
@@ -154,23 +158,24 @@
         align-items: center;
         min-height: 100vh;
         min-width: 100vw;
-    }
+		position: relative;
 
-    .sattelite {
-        opacity: 0;
-        position: absolute;
-    }
+		.sattelite {
+			opacity: 0;
+			position: absolute;
+		}
 
-    .sat-one {
-        right: 5rem;
-        top: -5%;
-        transform: rotate(5deg);
-    }
+		.sat-one {
+			right: 5%;
+			top: 3%;
+			transform: rotate(5deg);
+		}
 
-    .sat-two {
-        left: -1rem;
-        top: 50%;
-        transform: scale(0.5) rotate(5deg);
+		.sat-two {
+			left: 12%;
+			bottom: 12%;
+			transform: rotate(5deg);
+		}
     }
 
     .grant-gonzalez {
@@ -182,8 +187,6 @@
 
     .arrow {
         opacity: 0;
-        width: 5rem;
-        height: 5rem;
         transform: rotate(90deg);
     }
 
@@ -202,8 +205,6 @@
         /* Small screens */
     @media only screen and (max-width: 600px) {
         .arrow {
-            width: 2rem;
-            height: 4rem;
             transform: rotate(90deg);
         }
 

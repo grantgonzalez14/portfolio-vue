@@ -2,19 +2,19 @@
     <div ref="aboutContainer" class="about-container">
         <div class='bio'>
             <h1 class='title'>Grant Gonzalez - Software Developer</h1>
-            <h2 class='about-me'>
+            <p class='about-me'>
                 Hi, I'm Grant! Welcome to my website! I'm an application developer and consultant at <a href='https://dbservices.com/about/people/grant-gonzalez' target='__blank' class='db-link'>DB Services</a> that 
                 specializes full-stack development! I'm a results-driven developer with a passion for creating engaging, 
                 interactive, and visually appealing applications. With a deep understanding of database management principles and experience with
-                technologies such as FileMaker, Claris Studio, Claris Connect, and Claris Server I specialize in bringing
+                technologies such as FileMaker, Vue.js, and Claris Server I specialize in bringing
                 complex ideas to life in a simple, intuitive, and effective way. <br/><br/>
                 I believe that great development requires more than just technical expertise. It also requires a
                 deep understanding of user experience, design principles, and the ability to work collaboratively with
                 clients and team members. That's why I'm committed to staying up-to-date with the latest trends and best
                 practices in full-stack development, and I'm always looking for new opportunities to learn and grow.<br/><br/>
-            </h2>
+            </p>
         </div>
-        <div class="about-img-container">
+        <div v-if="width > 925" class="about-img-container">
             <img class="astronaut" src="/public/assets/images/AstronautCartoon3.png">
             <div class="rocket-ship-container">
                 <img class="rocket-ship" src="/public/assets/images/RocketShipNoBooster.png">
@@ -29,9 +29,11 @@
     import gsap from 'gsap';
     import { onMounted, onUnmounted, ref } from 'vue';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import { useWindowSize } from '@vueuse/core';
 
     gsap.registerPlugin(ScrollTrigger);
 
+	const { width } = useWindowSize();
     const aboutContainer = ref();
     let aboutCtx: any;
     
@@ -97,7 +99,8 @@
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        min-width: 100vw;
+        width: 100vw;
+		margin-left: 2.5rem;
 
         .bio {
             display: flex;
@@ -112,17 +115,24 @@
             color: var(--text-secondary);
             font-family: "Montserrat", "serif";
             z-index: 2;
-
-            .db-link {
-                color: white;
-
-                &:hover {
-                    color: #56A4B8;
-                    cursor: pointer;
-                    transition: 250ms;
-                }
-            }
         }
+
+		.about-me {
+			font-size: 20px;
+			text-align: center;
+			width: 90%;
+			align-self: center;
+
+			.db-link {
+				color: white;
+
+				&:hover {
+					color: #56A4B8;
+					cursor: pointer;
+					transition: 250ms;
+				}
+			}
+		}
 
         .about-img-container {
             position: absolute;
@@ -150,5 +160,10 @@
         }
     }
 
-    
+    @media only screen and (max-width: 600px) {
+		.about-container {
+			margin-left: 0;
+		}
+
+	}
 </style>

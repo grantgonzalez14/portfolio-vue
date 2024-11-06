@@ -1,73 +1,104 @@
 <template>
     <div ref="projectContainer" class="projects-container">
-        <h1 class='projects-header' data-aos='fade-in' data-aos-duration='1000'>My Projects</h1>
-        <div class='projects-container'>
-            <div class='project-card' data-aos='fade-up' data-aos-duration='1000'>
+        <h1 class='projects-header'>My Projects</h1>
+
+            <div class='project-card'>
+				<h3 v-if="width <= 925" class='project-title'><i>Portfolio Website</i></h3>
                 <div class='project-left'>
                     <img @click="scrollToSection('home')" src='/public/assets/images/Website.png' alt='Portfolio Website' loading='lazy' class='project-pic' />
                 </div>
                 <div class='project-right'>
-                    <h3 class='project-title'><i>Portfolio Website</i></h3>
-                    <p><strong>Made with:</strong>
-                        <img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
-                    </p>
-                    <h4>Description:<p>You're lookin' at it!</p></h4>
-                    <span @click="scrollToSection('home')"><strong><u>Check it out!</u></strong></span>
-                    <a href='https://github.com/grantgonzalez14/portfolio-website' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
+					<h3 v-if="width > 925" class='project-title'><i>Portfolio Website</i></h3>
+
+					<div class="made-with-container">
+						<strong class="made-with-text">Made with:</strong>
+						<span class="made-with-images">
+							<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+						</span>
+					</div>
+
+					<div class="link-container">
+						<span @click="scrollToSection('home')"><strong><u>Check it out!</u></strong></span>
+						<a href='https://github.com/grantgonzalez14/portfolio-website' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
+					</div>
+
                 </div>
             </div>
 
-            <div class='project-card' data-aos='fade-up' data-aos-duration='1000'>
-                <div class='project-left'>
-                    <img @click="openLink('https://bug-zapper.netlify.app/')" src='/public/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='project-pic' />
-                </div>
-                <div class='project-right'>
-                    <h3 class='project-title'><i>Bug Zapper</i></h3>
-                    <p><strong>Made with:</strong>
-                        <img src='/public/assets/icons/icons8-react-30.png' alt='React' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
-                    </p>
-                    <h4>Description:<p>
-                        Say goodbye to those pesky bugs with Bug Zapper, the ultimate web application for tracking and 
-                        zapping all the nasty bugs in your code! With Bug Zapper, you can quickly and easily track and 
-                        resolve issues in your code, ensuring that your software is of the highest quality. Bug Zapper 
-                        is a user-friendly and intuitive web application that provides a centralized platform for you to
-                        resolve all of your bugs!
-                    </p></h4>
-                    <a href='https://bug-zapper.netlify.app/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
-                    <a href='https://github.com/grantgonzalez14/bug-zapper' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
-                </div>
-            </div>
+			<div class='project-card'>
+				<h3 v-if="width <= 925" class='project-title'><i>Bug Zapper</i></h3>
+				<div class='project-left'>
+					<img @click="openLink('https://bug-zapper.netlify.app/')" src='/public/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='project-pic' />
+				</div>
+				<div class='project-right'>
+					<h3 v-if="width > 925" class='project-title'><i>Bug Zapper</i></h3>
 
-            <div class='project-card' data-aos='fade-up' data-aos-duration='1000'>
-                <div class='project-left'>
+					<div class="made-with-container">
+						<strong class="made-with-text">Made with:</strong>
+						<span class="made-with-images">
+							<img src='/public/assets/icons/icons8-react-30.png' alt='React' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+						</span>
+					</div>
+
+					<div class="description-container">
+						<h4>Description:</h4>
+						<p class="description">
+							Say goodbye to those pesky bugs with Bug Zapper, the ultimate web application for tracking and
+							zapping all the nasty bugs in your code! With Bug Zapper, you can quickly and easily track and
+							resolve issues in your code, ensuring that your software is of the highest quality. Bug Zapper
+							is a user-friendly and intuitive web application that provides a centralized platform for you to
+							resolve all of your bugs!
+						</p>
+					</div>
+
+					<div class="link-container">
+						<a href='https://bug-zapper.netlify.app/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
+						<a href='https://github.com/grantgonzalez14/bug-zapper' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
+					</div>
+
+				</div>
+			</div>
+
+            <div class='project-card'>
+				<h3 v-if="width <= 925" class='project-title'><i>Brennan Schmidt</i></h3>
+				<div class='project-left'>
                     <img @click="openLink('https://brennanschmidt.com/')" src='/public/assets/images/brennan_portfolio_home_page.png' alt='Brennan Schmidt Portfolio Home Page' loading='lazy' class='project-pic' />
                 </div>
                 <div class='project-right'>
-                    <h3 class='project-title'><i>Brennan Schmidt</i></h3>
-                    <p><strong>Made with:</strong>
-                        <img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
-                        <img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
-                    </p>
-                    <h4>Description:<p>
-                        This portfolio website was custom-built for Brennan Schmidt, an actress based in New York City, 
-                        to showcase her professional work and achievements. Designed with a sleek and responsive interface, 
-                        the site allows users to explore Brennan's creative portfolio effortlessly across all devices.
-                    </p></h4>
-                    <a href='https://brennanschmidt.com/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
+                    <h3 v-if="width > 925" class='project-title'><i>Brennan Schmidt</i></h3>
+
+					<div class="made-with-container">
+						<strong class="made-with-text">Made with:</strong>
+						<span class="made-with-images">
+							<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
+							<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+						</span>
+					</div>
+					<div class="description-container">
+						<h4>Description:</h4>
+						<p class="description">
+							This portfolio website was custom-built for Brennan Schmidt, an actress based in New York City,
+							to showcase her professional work and achievements. Designed with a sleek and responsive interface,
+							the site allows users to explore Brennan's creative portfolio effortlessly across all devices.
+						</p>
+					</div>
+					<div class="link-container">
+						<a href='https://brennanschmidt.com/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
+					</div>
                 </div>
             </div>
 
-        </div>
+
     </div>
 </template>
 
@@ -76,10 +107,12 @@
     import { onMounted, onUnmounted, ref } from 'vue';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import { scrollToSection } from '@/utility/utilityFunctions';
+	import { useWindowSize } from "@vueuse/core";
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const projectContainer = ref();
+	const { width } = useWindowSize();
+	const projectContainer = ref();
     let projectCtx: any;
 
     const openLink = (url: string) => window.open(url, '_blank');
@@ -160,8 +193,9 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        min-width: 100vw;
-        padding: 10px 0;
+		max-width: 100vw;
+		margin-left: 5rem;
+		padding: 10px 2.5rem;
         align-items: center;
     }
 
@@ -186,6 +220,7 @@
     }
 
     .project-title {
+		color: var(--text-secondary);
         margin-bottom: 0.5rem;
     }
 
@@ -217,20 +252,62 @@
         width: 50%;
         color: var(--text-secondary);
 
-        span,
-        a {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            margin-top: 3%;
-            color: var(--text-primary);
-            width: fit-content;
+		.made-with-container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
 
-            &:hover { 
-                color: var(--text-color);
-                cursor: pointer; 
-            }
-        }
+			.made-with-text {
+				display: flex;
+				min-width: fit-content;
+			}
+
+			.made-with-images {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				height: 48px;
+				width: 100%;
+				overflow-x: auto;
+				overflow-y: visible;
+				gap: 10px;
+			}
+		}
+
+		.description-container {
+			display: flex;
+			flex-direction: row;
+
+			.description {
+				height: 100%;
+				padding: 0 0 0 1rem;
+				font-family: "Montserrat", "serif";
+			}
+		}
+
+
+		.link-container {
+			display: flex;
+			flex-direction: column;
+
+			span,
+			a {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				margin-top: 3%;
+				color: var(--text-primary);
+
+				&:hover {
+					color: var(--text-color);
+					cursor: pointer;
+				}
+			}
+		}
+
+
 
         p {
             display: flex;
@@ -246,36 +323,83 @@
         .project-icon {
             width: 32px;
             height: 32px;
-            margin-left: 10px;
         }
 
         h4 {
             display: flex;
             flex-direction: row;
 
-            p {
-                height: 100%;
-                padding: 0 0 0 1rem;
-                font-family: "Montserrat", "serif";
-            }
+			p {
+				height: 100%;
+				padding: 0 0 0 1rem;
+				font-family: "Montserrat", "serif";
+			}
         }
+
+
     }
 
     @media screen and (max-width: 925px) {
         .projects { margin-left: 5rem; }
 
-        .project-right {
-            width: 90%;
+	  	.project-card {
+			flex-direction: column;
 
-            a { width: 38%; }
+			.project-left {
+				width: 100%;
+			}
 
-            img {
-                .project-pic {
-                    height: 100%;
-                    width: 100%;
-                }
-            }
-        }
+			.project-right {
+				width: 100%;
+
+				.made-with-container {
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					padding: 1rem;
+					gap: 0;
+
+					.made-with-images {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+				}
+
+				.description-container {
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					padding: 1rem;
+
+					.description {
+						padding-top: 0.5rem;
+						text-align: center; // not sure if I like this or not
+					}
+				}
+
+				.link-container {
+					flex-direction: row;
+					width: 100%;
+					align-items: center;
+					justify-content: center;
+
+					span,a {
+						width: auto;
+						margin-right: 1rem;
+					}
+				}
+
+				img {
+					.project-pic {
+						height: 100%;
+						width: 100%;
+					}
+				}
+			}
+		}
+
+
 
         .pictures {
             text-align: center;
@@ -285,6 +409,13 @@
             text-align: center;
         }
     }
+
+	@media screen and (max-width: 600px) {
+		.projects-container {
+			margin-left: 0;
+			padding: 10px 0;
+		}
+	}
 
     @media screen and (max-width: 425px) {
         .projects { margin-left: 0; }
