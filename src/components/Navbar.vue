@@ -272,7 +272,9 @@
 
     const isElementInView = (sectionKey: string) => {
         return (
+            // @ts-ignore
             currentScrollPosition.value >= sectionHeights.value[sectionKey].top &&
+            // @ts-ignore
             currentScrollPosition.value <= sectionHeights.value[sectionKey].bottom
         );
     }
