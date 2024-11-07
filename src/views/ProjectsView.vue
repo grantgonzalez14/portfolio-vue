@@ -23,7 +23,7 @@
 
 					<div class="link-container">
 						<span @click="scrollToSection('home')"><strong><u>Check it out!</u></strong></span>
-						<a href='https://github.com/grantgonzalez14/portfolio-website' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
+						<a href='https://github.com/grantgonzalez14/portfolio-vue' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
 					</div>
 
                 </div>
