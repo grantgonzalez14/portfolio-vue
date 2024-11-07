@@ -21,8 +21,8 @@
 
         <!-- Background Images -->
         <div class="bg-img-container">
-            <img class="earth" :style="{left: width > 600 ? 3 + 'rem' : 0}" src="/public/assets/images/Globe3.png">
-            <img v-for="i in 20" class="cloud" src="/public/assets/images/CloudTwo.png">
+            <img src="/public/assets/images/Globe3.png" alt="Earth" class="earth" :style="{left: width > 600 ? 3 + 'rem' : 0}">
+            <img src="/public/assets/images/CloudTwo.png" alt="Cloud" v-for="i in 20" class="cloud">
         </div>
     </div>
 </template>

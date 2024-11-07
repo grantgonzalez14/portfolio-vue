@@ -10,7 +10,9 @@
                     :class="currentActiveSection == 'logo-link' ? 'active' : ''"
                     @click="scrollToSection('home')"
                 >
-                    <span class="link-text logo-text"><img src="/assets/images/GGLogo.png" alt="Grant Gonzalez Logo" class="logo-img"/></span>
+                    <span class="link-text logo-text">
+						<img src="/assets/images/GGLogo.png" alt="Grant Gonzalez Logo" class="logo-img"/>
+					</span>
                     <svg
                         aria-hidden="true"
                         focusable="false"

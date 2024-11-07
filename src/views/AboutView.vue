@@ -20,10 +20,10 @@
 			</p>
         </div>
         <div v-if="width > 925" class="about-img-container">
-            <img class="astronaut" src="/public/assets/images/AstronautCartoon3.png">
+            <img src="/public/assets/images/AstronautCartoon3.png" alt="Astronaut Image" class="astronaut">
             <div class="rocket-ship-container">
-                <img class="rocket-ship" src="/public/assets/images/RocketShipNoBooster.png">
-                <img class="rocket-ship-boosters" src="/public/assets/images/RocketShipBoosters.png">
+                <img src="/public/assets/images/RocketShipNoBooster.png" alt="Rocket Ship" class="rocket-ship">
+                <img src="/public/assets/images/RocketShipBoosters.png" alt="Rocket Ship Boosters" class="rocket-ship-boosters">
             </div>
             
         </div>
