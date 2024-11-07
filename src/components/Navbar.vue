@@ -431,7 +431,8 @@
             bottom: 0;
             width: 100vw;
             height: 5rem;
-        }
+			overflow-x: scroll;
+		}
 
         .link-text {
             display: none;
@@ -476,7 +477,7 @@
                 }
 
                 .logo-text { 
-                    left: 0px; 
+                    left: 0;
                 }
             }
         }

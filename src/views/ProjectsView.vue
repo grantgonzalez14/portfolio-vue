@@ -210,6 +210,14 @@
     .project-pic {
         width: 85%;
         height: 100%;
+		border-radius: 10px;
+		transition-duration: 0.3s;
+
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.015);
+			border-radius: 0;
+		}
     }
 
     .projects-title {
@@ -225,6 +233,8 @@
     }
 
     .projects-header {
+		font-family: "Mona Sans", sans-serif;
+		font-weight: 300;
         color: var(--text-secondary);
     }
 
@@ -273,6 +283,10 @@
 				overflow-x: auto;
 				overflow-y: visible;
 				gap: 10px;
+
+				.project-icon:hover {
+					cursor: pointer;
+				}
 			}
 		}
 
@@ -283,7 +297,6 @@
 			.description {
 				height: 100%;
 				padding: 0 0 0 1rem;
-				font-family: "Montserrat", "serif";
 			}
 		}
 
@@ -297,7 +310,8 @@
 				display: flex;
 				justify-content: flex-start;
 				align-items: center;
-				margin-top: 3%;
+				width: fit-content;
+				padding-top: 3%;
 				color: var(--text-primary);
 
 				&:hover {
@@ -332,7 +346,6 @@
 			p {
 				height: 100%;
 				padding: 0 0 0 1rem;
-				font-family: "Montserrat", "serif";
 			}
         }
 

@@ -3,16 +3,21 @@
         <div class='bio'>
             <h1 class='title'>Grant Gonzalez - Software Developer</h1>
             <p class='about-me'>
-                Hi, I'm Grant! Welcome to my website! I'm an application developer and consultant at <a href='https://dbservices.com/about/people/grant-gonzalez' target='__blank' class='db-link'>DB Services</a> that 
-                specializes full-stack development! I'm a results-driven developer with a passion for creating engaging, 
-                interactive, and visually appealing applications. With a deep understanding of database management principles and experience with
-                technologies such as FileMaker, Vue.js, and Claris Server I specialize in bringing
-                complex ideas to life in a simple, intuitive, and effective way. <br/><br/>
-                I believe that great development requires more than just technical expertise. It also requires a
-                deep understanding of user experience, design principles, and the ability to work collaboratively with
-                clients and team members. That's why I'm committed to staying up-to-date with the latest trends and best
-                practices in full-stack development, and I'm always looking for new opportunities to learn and grow.<br/><br/>
+				Hey there, I’m Grant! Thanks for stopping by my site. I’m a developer and consultant at
+				<a href='https://dbservices.com/about/people/grant-gonzalez' target='__blank' class='db-link'>DB Services</a>,
+				where I get to dive into full-stack development, working with tools like FileMaker, Vue.js, and Claris Server
+				to craft solutions that are as effective as they are easy to use.
             </p>
+			<p class="about-me">
+				For me, great development is all about the experience—it’s not just about making things work but making them feel
+				right. That means understanding the blend of design, user experience, business needs, and technical details, and
+				collaborating closely with clients and teammates to bring their ideas to life. I’m always exploring new trends and
+				sharpening my skills to keep things fresh and impactful. Let’s connect if anything here sparks an idea! Thanks
+				for visiting, I hope you enjoy!
+			</p>
+			<p class='about-me'>
+				(P.S. Click on the icons spread throughout and watch what they do!)
+			</p>
         </div>
         <div v-if="width > 925" class="about-img-container">
             <img class="astronaut" src="/public/assets/images/AstronautCartoon3.png">
@@ -105,23 +110,29 @@
         .bio {
             display: flex;
             flex-direction: column;
+			width: 70%;
             gap: 1rem;
-            padding: 0 15%;
+            padding: 20px 10px;
+			border-radius: 10px;
             text-align: center;
+			align-items: center;
+			background-color: rgba(0, 0, 0, 0.5);
         }
 
         .title,
         .about-me {
             color: var(--text-secondary);
-            font-family: "Montserrat", "serif";
             z-index: 2;
         }
 
+		.title {
+			font-weight: 400;
+			font-size: 30px;
+		}
+
 		.about-me {
 			font-size: 20px;
-			text-align: center;
-			width: 90%;
-			align-self: center;
+			width: 95%;
 
 			.db-link {
 				color: white;
@@ -163,6 +174,14 @@
     @media only screen and (max-width: 600px) {
 		.about-container {
 			margin-left: 0;
+
+			.title {
+				font-size: 24px;
+			}
+
+			.about-me {
+				font-size: 16px;
+			}
 		}
 
 	}

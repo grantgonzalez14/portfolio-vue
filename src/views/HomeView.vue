@@ -1,7 +1,7 @@
 <template>
     <div ref="homeContainer" class="home-container">
-        <img class="sattelite sat-one" :style="{ width: satelliteWidthHeight.one, height: satelliteWidthHeight.one }" src="/public/assets/images/SatelliteImageOne.png" >
-        <img class="sattelite sat-two" :style="{ width: satelliteWidthHeight.two, height: satelliteWidthHeight.two }" src="/public/assets/images/SatelliteImageTwo.png" >
+        <img id="satelliteOne" class="satellite sat-one" :style="{ width: satelliteWidthHeight.one, height: satelliteWidthHeight.one }" src="/public/assets/images/SatelliteImageOne.png" >
+        <img id="satelliteTwo" class="satellite sat-two" :style="{ width: satelliteWidthHeight.two, height: satelliteWidthHeight.two }" src="/public/assets/images/SatelliteImageTwo.png" >
         <span class="grant-gonzalez"></span>
         <svg
             aria-hidden="true"
@@ -28,6 +28,10 @@
                 ></path>
             </g>
         </svg>
+
+		<svg width="100%" height="100%" viewBox="-20 0 557 190" id="motionPathSVG1" class="svg-path">
+			<path id="path" d="M9,100c0,0,18.53-41.58,49.91-65.11c30-22.5,65.81-24.88,77.39-24.88c33.87,0,57.55,11.71,77.05,28.47c23.09,19.85,40.33,46.79,61.71,69.77c24.09,25.89,53.44,46.75,102.37,46.75c22.23,0,40.62-2.83,55.84-7.43c27.97-8.45,44.21-22.88,54.78-36.7c14.35-18.75,16.43-36.37,16.43-36.37"/>
+		</svg>
     </div>
 </template>
 
@@ -35,6 +39,7 @@
     import gsap from 'gsap';
     import { onMounted, ref } from 'vue';
     import TextPlugin from 'gsap/TextPlugin';
+	import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
     import { useWindowSize } from '@vueuse/core';
 
 	const { width } = useWindowSize();
@@ -49,6 +54,7 @@
 
 
     gsap.registerPlugin(TextPlugin);
+	gsap.registerPlugin(MotionPathPlugin);
 
     const scrollToSection = (section: string) => {
         const targetElement = document.getElementById(section);
@@ -63,7 +69,7 @@
 
         let tl = gsap.timeline();
         let arrowBounceTl = gsap.timeline({repeat: -1, yoyo: true});
-        let satteliteBounceTl = gsap.timeline({repeat: -1, ease: "none", yoyo: true});
+        let satelliteBounceTl = gsap.timeline({repeat: -1, ease: "none", yoyo: true});
 
         tl.set('body', { overflow: "hidden" })
         .fromTo(".grant-gonzalez", 
@@ -103,8 +109,8 @@
                 fontSize: fontsizeNormal,
                 onComplete: () => { 
                     gsap.to('.arrow', { opacity: 1 });
-                    gsap.to('.sattelite', { opacity: 1 });
-                    gsap.from('.sattelite', {
+                    gsap.to('.satellite', { opacity: 1 });
+                    gsap.from('.satellite', {
 						y: window.innerHeight,
 						ease: "power2.out",
 						duration: 1
@@ -117,40 +123,61 @@
             ">+=0.25"
         );
         
-        satteliteBounceTl.to('.sattelite', {
+        satelliteBounceTl.to('.satellite', {
             rotate: -5,
             ease: "none",
             duration: 1
         });
 
-        let sattelites = document.querySelectorAll('.sattelite');
-        sattelites.forEach((sattelite: any, index: number) => {
-                sattelite.addEventListener('click', () => {
-                    if (index % 2 == 1) {
-                        gsap.to(sattelite, {
-                            x: window.innerWidth,
-                            y: -500,
-                            rotation: 360,
-                            display: 'none',
-                            ease: 'power1.in'
-                        });
-                    } else {
-                        gsap.to(sattelite, {
-                            x: -window.innerWidth,
-                            y: 1000,
-                            rotation: 360,
-                            display: 'none',
-                            ease: 'power1.in'
-                        });
-                    }
-                    
-                })  
+        let satellites = document.querySelectorAll('.satellite');
+        satellites.forEach((satellite: any, index: number) => {
+                satellite.addEventListener('click', () => {
+					if (index === 0) {
+						gsap.to(satellite, {
+							duration: 1,
+							ease: "power1.inOut",
+							rotation: 720,
+							scale: 0,
+							motionPath:{
+								path: "#path",
+								align: "#satelliteOne",
+								alignOrigin: [0.5, 0.5],
+								start: 1,
+								end: 0,
+								offsetX: -495,
+								offsetY: 25
+							}
+						});
+					}
+					else {
+						gsap.to(satellite, {
+							duration: 1,
+							ease: "power1.inOut",
+							rotation: 720,
+							scale: 0,
+							motionPath:{
+								path: "#path",
+								align: "#satelliteTwo",
+								alignOrigin: [0.5, 0.5]
+							}
+						});
+					}
+                });
             }
-        )
+        );
     });
 </script>
 
 <style lang="scss" scoped>
+	.svg-path {
+		position: absolute;
+		overflow: visible;
+		height: 100%;
+		/* Fix Safari rendering bug */
+		transform: translateZ(0);
+		opacity: 0;
+	}
+
     .home-container {
         display: flex;
         flex-direction: column;
@@ -160,21 +187,20 @@
         min-width: 100vw;
 		position: relative;
 
-		.sattelite {
+		.satellite {
 			opacity: 0;
 			position: absolute;
+			z-index: 2;
 		}
 
 		.sat-one {
 			right: 5%;
 			top: 3%;
-			transform: rotate(5deg);
 		}
 
 		.sat-two {
 			left: 12%;
 			bottom: 12%;
-			transform: rotate(5deg);
 		}
     }
 
@@ -204,39 +230,16 @@
 
         /* Small screens */
     @media only screen and (max-width: 600px) {
-        .arrow {
-            transform: rotate(90deg);
-        }
-
         .grant-gonzalez {
             margin-left: 0;
         }
-    }
 
-    /* Large screens */
-    @media only screen and (min-width: 601px) {
-        .navbar {
-            top: 0;
-            width: 5rem;
-            height: 100vh;
+		.sat-one {
+			top: 12% !important;
+		}
 
-            &:hover { 
-                width: 16rem; 
-
-                .link-text { 
-                    opacity: 1;
-                }
-
-                .logo {
-                    svg { 
-                        margin-left: 11rem; 
-                    }
-                }
-
-                .logo-text { 
-                    left: 0px; 
-                }
-            }
-        }
+		.sat-two {
+			bottom: 20% !important;
+		}
     }
 </style>

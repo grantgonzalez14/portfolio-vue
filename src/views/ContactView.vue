@@ -182,6 +182,8 @@
         .contact-header {
             color: white;
             margin-bottom: 1rem;
+			font-family: "Mona Sans", sans-serif;
+			font-weight: 300;
         }
 
         .contact-form-container {
@@ -191,7 +193,6 @@
             border: 2px solid transparent;
             padding: 32px 24px;
             font-size: 14px;
-            font-family: inherit;
             color: white;
             display: flex;
             flex-direction: column;
@@ -224,7 +225,6 @@
                     padding: 12px 16px;
                     border-radius: 8px;
                     color: #fff;
-                    font-family: inherit;
                     background-color: transparent;
                     border: 1px solid #414141;
 
@@ -247,7 +247,6 @@
                     height: 96px;
                     border: 1px solid #414141;
                     background-color: transparent;
-                    font-family: inherit;
 
                     &:focus {
                         outline: none;
@@ -262,10 +261,9 @@
                 align-items: flex-start;
                 justify-content: center;
                 align-self: center;
-                font-family: inherit;
                 color: #717171;
                 font-weight: 600;
-                width: 40%;
+                width: 100%;
                 background: #313131;
                 border: 1px solid #414141;
                 padding: 12px 16px;
@@ -279,7 +277,7 @@
                 &:hover {
                     background-color: #56A4B8;
                     border-color: #56A4B8;
-                    color: black;
+                    color: #212121;
                 }
             }
 

@@ -22,6 +22,7 @@
 <style>
 	* {
 		margin: 0;
+		font-family: "Quicksand", serif;
 	}
 
 	body {

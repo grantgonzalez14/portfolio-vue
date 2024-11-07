@@ -14,10 +14,19 @@
             </div>
         </div>
     </div>
-    <div class="skill-description">
-        <h2>Description</h2>
-        <slot name="skillDescription"></slot>
-    </div>
+
+	<div class="text-container">
+		<div class="skill-description">
+			<h2>Description</h2>
+			<slot name="skillDescription"></slot>
+		</div>
+
+		<div class="skill-uses-container">
+			<h2>Use Cases</h2>
+			<slot name="skillUses"></slot>
+		</div>
+	</div>
+
 </template>
 
 <script setup lang="ts">
@@ -69,12 +78,20 @@
         animation-delay: 0.1s;
     }
 
-    .skill-description {
-        display: flex;
-        flex-direction: column;
-        padding: 10px 20px;
-        gap: 1rem;
-    }
+	.text-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		overflow-y: scroll;
+
+		.skill-uses-container,
+		.skill-description {
+			display: flex;
+			flex-direction: column;
+			padding: 10px 20px;
+			gap: 1rem;
+		}
+	}
 
     @keyframes progress {
         0% {
@@ -92,7 +109,6 @@
         right: -14px;
         top: -28px;
         font-size: 9px;
-        font-weight: 500;
         color: rgb(0, 0, 0);
         font-weight: bold;
         padding: 2px 6px;
