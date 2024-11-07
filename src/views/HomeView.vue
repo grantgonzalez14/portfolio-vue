@@ -176,6 +176,7 @@
 		/* Fix Safari rendering bug */
 		transform: translateZ(0);
 		opacity: 0;
+        z-index: -1;
 	}
 
     .home-container {
