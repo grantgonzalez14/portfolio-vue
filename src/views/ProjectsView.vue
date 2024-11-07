@@ -5,7 +5,7 @@
             <div class='project-card'>
 				<h3 v-if="width <= 925" class='project-title'><i>Portfolio Website</i></h3>
                 <div class='project-left'>
-                    <img @click="scrollToSection('home')" src='/public/assets/images/Website.png' alt='Portfolio Website' loading='lazy' class='project-pic' />
+                    <img @click="scrollToSection('home')" src='/public/assets/images/portfolio-website.png' alt='Portfolio Website' loading='lazy' class='project-pic' />
                 </div>
                 <div class='project-right'>
 					<h3 v-if="width > 925" class='project-title'><i>Portfolio Website</i></h3>
