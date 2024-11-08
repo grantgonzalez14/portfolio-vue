@@ -185,7 +185,7 @@
 
     @media only screen and (max-width: 600px) {
 		.about-container {
-			margin-left: 0;
+			padding-left: 0;
 
 			.title {
 				font-size: 24px;
