@@ -115,12 +115,12 @@
 	const projectContainer = ref();
     let projectCtx: any;
 
-    const openLink = (url: string) => window.open(url, '_blank');
+    const openLink = (url: string): Window | null => window.open(url, '_blank');
 
-    onMounted(() => {
-        projectCtx = gsap.context((self: any) => {
+    onMounted((): void => {
+        projectCtx = gsap.context((self: any): void => {
             const projects = self.selector('.project-card');
-            projects.forEach((project: any, index: number) => {
+            projects.forEach((project: any, index: number): void => {
                 if (index % 2 == 0) {
                     gsap.from(project, {
                             scrollTrigger: {
@@ -151,8 +151,8 @@
             });
 
             const icons = self.selector('.project-icon');
-            icons.forEach((icon: any) => {
-                icon.addEventListener('click', () => {
+            icons.forEach((icon: any): void => {
+                icon.addEventListener('click', (): void => {
                     let tl = gsap.timeline();
                     tl.fromTo(icon, {
                             rotation: 0
@@ -183,7 +183,7 @@
         }, projectContainer.value);
     });
 
-    onUnmounted(() => {
+    onUnmounted((): void => {
         projectCtx.revert();
     });
 </script>

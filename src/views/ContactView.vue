@@ -41,11 +41,11 @@
     const contactContainer = ref();
     let contactCtx: any;
     
-    onMounted(() => {
+    onMounted((): void => {
         let navbarWidth = document.getElementById('navbar')?.getBoundingClientRect().width;
         let earth = document.querySelector('.earth');
 
-        contactCtx = gsap.context((self: any) => {
+        contactCtx = gsap.context((self: any): void => {
             gsap.from('.contact-header', {
                     scrollTrigger: {
                         trigger: '.contact-header',
@@ -81,13 +81,13 @@
                 }
             );
 
-            earth?.addEventListener('click', () => {
+            earth?.addEventListener('click', (): void => {
                 let earthTl = gsap.timeline();
                 earthTl.fromTo(earth, {rotation: 0},{rotation: 360});
             });
 
             const clouds = self.selector('.cloud');
-            clouds.forEach((cloud: any) => {
+            clouds.forEach((cloud: any): void => {
                 // Cloud timeline
                 let cloudTl = gsap.timeline({
                     repeat: -1, 
@@ -121,7 +121,7 @@
                     ease: "none",
                     x: `-=${50}`,
                     duration: "random(1, 10, 1)",
-                    onUpdate: () => {
+                    onUpdate: (): void => {
                         if (cloud.getBoundingClientRect().x + cloud.getBoundingClientRect().width < navbarWidth!) {
                             gsap.to(cloud, {
                                 x: window.innerWidth,
@@ -131,7 +131,7 @@
                     }
                 });
 
-                cloud.addEventListener('click', () => {
+                cloud.addEventListener('click', (): void => {
                     gsap.to(cloud, {
                         opacity: 0,
                         scale: 2
@@ -141,7 +141,7 @@
         }, contactContainer.value);
     });
 
-    onUnmounted(() => {
+    onUnmounted((): void => {
         contactCtx.revert();
     });
 </script>
@@ -154,7 +154,7 @@
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        min-width: 100vw;
+        width: 100vw;
         overflow: hidden;
         padding-bottom: 5%;
 
@@ -163,7 +163,7 @@
             bottom: 0;
             overflow: hidden;
             height: 90vh;
-            width: 100vw;
+			width: 100%;
             z-index: 1;
             padding-left: 5rem;
 

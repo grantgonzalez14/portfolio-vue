@@ -1,7 +1,8 @@
 <template>
     <div ref="aboutContainer" class="about-container">
         <div class='bio'>
-            <h1 class='title'>Grant Gonzalez - Software Developer</h1>
+            <h1 class='title'>Grant Gonzalez</h1>
+			<h2 class="title">Software Developer</h2>
             <p class='about-me'>
 				Hey there, I’m Grant! Thanks for stopping by my site. I’m a developer and consultant at
 				<a href='https://dbservices.com/about/people/grant-gonzalez' target='__blank' class='db-link'>DB Services</a>,
@@ -42,8 +43,8 @@
     const aboutContainer = ref();
     let aboutCtx: any;
     
-    onMounted(() => {
-        aboutCtx = gsap.context(() => {
+    onMounted((): void => {
+        aboutCtx = gsap.context((): void => {
             gsap.from('.bio', {
                     scrollTrigger: {
                         trigger: '.bio',
@@ -69,7 +70,7 @@
             );
 
             let rocketShipAnimationTl = gsap.timeline();
-            document.querySelector('.about-img-container')?.addEventListener('click', () => {
+            document.querySelector('.about-img-container')?.addEventListener('click', (): void => {
                 rocketShipAnimationTl
                 .to('.astronaut', {
                     x: 80,
@@ -91,7 +92,7 @@
         }, aboutContainer.value);
     });
 
-    onUnmounted(() => {
+    onUnmounted((): void => {
         aboutCtx.revert();
     });
 </script>
@@ -105,7 +106,7 @@
         justify-content: center;
         min-height: 100vh;
         width: 100vw;
-		margin-left: 2.5rem;
+		padding-left: 2.5rem;
 
         .bio {
             display: flex;
@@ -116,7 +117,8 @@
 			border-radius: 10px;
             text-align: center;
 			align-items: center;
-			background-color: rgba(0, 0, 0, 0.5);
+			background: linear-gradient(#212121, #212121) padding-box,
+				linear-gradient(145deg, transparent 35%, #407E8A, #56A4B8) border-box;
         }
 
         .title,
@@ -125,9 +127,19 @@
             z-index: 2;
         }
 
-		.title {
+		title {
+			gap: 0.25rem;
+		}
+
+		h1.title {
+			font-weight: 600;
+			font-size: 36px;
+		}
+
+		h2.title {
 			font-weight: 400;
-			font-size: 30px;
+			font-size: 24px;
+			margin-top: -0.75rem;
 		}
 
 		.about-me {

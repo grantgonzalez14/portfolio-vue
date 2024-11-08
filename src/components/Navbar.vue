@@ -4,11 +4,9 @@
             <li class="logo">
                 <div
                     id="logo-link"
-                    activeClass="active"
-                    :to="{name: 'home'}"
                     class="nav-link"
                     :class="currentActiveSection == 'logo-link' ? 'active' : ''"
-                    @click="scrollToSection('home')"
+                    @click="scrollToSection('home', changeActiveLink)"
                 >
                     <span class="link-text logo-text">
 						<img src="/assets/images/GGLogo.png" alt="Grant Gonzalez Logo" class="logo-img"/>
@@ -42,11 +40,9 @@
             <li class="nav-item">
                 <div
                     id="home-link"
-                    activeClass="active"
-                    :to="{name: 'home'}"
                     class="nav-link"
                     :class="currentActiveSection == 'home-link' ? 'active' : ''"
-                    @click="scrollToSection('home')"
+                    @click="scrollToSection('home', changeActiveLink)"
                 >
                     <svg 
                         aria-hidden="true"
@@ -70,11 +66,9 @@
             <li class="nav-item">
                 <div
                     id="about-link"
-                    activeClass="active"
-                    :to="{name: 'about'}"
                     class="nav-link"
                     :class="currentActiveSection == 'about-link' ? 'active' : ''"
-                    @click="scrollToSection('about')"
+                    @click="scrollToSection('about', changeActiveLink)"
                 >
                     <svg 
                         aria-hidden="true"
@@ -98,11 +92,9 @@
             <li class="nav-item">
                 <div
                     id="projects-link"
-                    activeClass="active"
-                    :to="{name: 'projects'}"
                     class="nav-link"
                     :class="currentActiveSection == 'projects-link' ? 'active' : ''"
-                    @click="scrollToSection('projects')"
+                    @click="scrollToSection('projects', changeActiveLink)"
                 >
                     <svg 
                         aria-hidden="true"
@@ -126,11 +118,9 @@
             <li class="nav-item">
                 <div
                     id="skills-link"
-                    activeClass="active"
-                    :to="{name: 'skills'}"
                     class="nav-link"
                     :class="currentActiveSection == 'skills-link' ? 'active' : ''"
-                    @click="scrollToSection('skills')"
+                    @click="scrollToSection('skills', changeActiveLink)"
                 >
                     <svg 
                         aria-hidden="true"
@@ -154,11 +144,9 @@
             <li class="nav-item">
                 <div
                     id="contact-link"
-                    activeClass="active"
-                    :to="{name: 'contact'}"
                     class="nav-link"
                     :class="currentActiveSection == 'contact-link' ? 'active' : ''"
-                    @click="scrollToSection('contact')"
+                    @click="scrollToSection('contact', changeActiveLink)"
                 >
                     <svg 
                         aria-hidden="true"
@@ -226,10 +214,11 @@
 
 <script setup lang="ts">
     import { onMounted, ref } from "vue";
+	import { scrollToSection } from "@/utility/utilityFunctions";
     import "../../public/assets/main.css";
 
     // refs
-    const currentActiveSection = ref<string>();
+    const currentActiveSection = ref<string>("home-link");
     const currentScrollPosition = ref<number>();
     const sections = ref<string[]>([
         "home",
@@ -245,23 +234,14 @@
         skills: {}
     });
 
-    // functions
-    const scrollToSection = (section: string) => {
-        const targetElement = document.getElementById(section);
-		if (targetElement) {
-			targetElement.scrollIntoView({behavior: 'smooth'});            
-		}
-        changeActiveLink(section);
-    }
-
-    const changeActiveLink = (newActiveSection: string) => {
+    const changeActiveLink = (newActiveSection: string): void => {
         const targetLink = document.getElementById(newActiveSection + '-link');
         if (targetLink) {
             currentActiveSection.value = newActiveSection + "-link";
         }
     }
 
-    const updateScroll = () => {
+    const updateScroll = (): void => {
         currentScrollPosition.value = window.scrollY;
         for (let section of sections.value) {
             if (isElementInView(section)) {
@@ -270,7 +250,7 @@
         }
     }
 
-    const isElementInView = (sectionKey: string) => {
+    const isElementInView = (sectionKey: string): boolean => {
         return (
             // @ts-ignore
             currentScrollPosition.value >= sectionHeights.value[sectionKey].top &&
@@ -280,7 +260,7 @@
     }
 
     onMounted(() => {
-        currentActiveSection.value = "logo-link";
+        currentActiveSection.value = "home-link";
         currentScrollPosition.value = window.scrollY;
         window.addEventListener("scroll", updateScroll);
 

@@ -41,6 +41,7 @@
     import TextPlugin from 'gsap/TextPlugin';
 	import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
     import { useWindowSize } from '@vueuse/core';
+	import { scrollToSection } from "@/utility/utilityFunctions";
 
 	const { width } = useWindowSize();
 	const arrowWidthHeight = ref<number>(width.value * 0.0555556);
@@ -56,20 +57,13 @@
     gsap.registerPlugin(TextPlugin);
 	gsap.registerPlugin(MotionPathPlugin);
 
-    const scrollToSection = (section: string) => {
-        const targetElement = document.getElementById(section);
-		if (targetElement) {
-			targetElement.scrollIntoView({behavior: 'smooth'});            
-		}
-    }
-
-    onMounted(() => {
+    onMounted((): void => {
         let fontsizeNormal = width.value * 0.0615385 > 30 ? width.value * 0.0615385 : 30;
         let fontsizeLarge = width.value * 0.0923077 > 36 ? width.value * 0.0923077 : 36;
 
         let tl = gsap.timeline();
         let arrowBounceTl = gsap.timeline({repeat: -1, yoyo: true});
-        let satelliteBounceTl = gsap.timeline({repeat: -1, ease: "none", yoyo: true});
+        let satelliteRotateTl = gsap.timeline({repeat: -1, ease: "none", yoyo: true});
 
         tl.set('body', { overflow: "hidden" })
         .fromTo(".grant-gonzalez", 
@@ -107,7 +101,7 @@
                 ease: "none",
                 duration: 0.1,
                 fontSize: fontsizeNormal,
-                onComplete: () => { 
+                onComplete: (): void => {
                     gsap.to('.arrow', { opacity: 1 });
                     gsap.to('.satellite', { opacity: 1 });
                     gsap.from('.satellite', {
@@ -117,21 +111,21 @@
 					});
 					gsap.to('.sat-one', { width: satelliteWidthHeight.value.one, height: satelliteWidthHeight.value.one });
 					gsap.to('.sat-two', { width: satelliteWidthHeight.value.two, height: satelliteWidthHeight.value.two });
-                    arrowBounceTl.set('body', { overflow: "scroll" }).to('.arrow', { y: 10 });
+                    arrowBounceTl.set('body', { overflowY: "scroll" }).to('.arrow', { y: 10 });
                 }
             },
             ">+=0.25"
         );
         
-        satelliteBounceTl.to('.satellite', {
+        satelliteRotateTl.to('.satellite', {
             rotate: -5,
             ease: "none",
             duration: 1
         });
 
         let satellites = document.querySelectorAll('.satellite');
-        satellites.forEach((satellite: any, index: number) => {
-                satellite.addEventListener('click', () => {
+        satellites.forEach((satellite: any, index: number): void => {
+                satellite.addEventListener('click', (): void => {
 					if (index === 0) {
 						gsap.to(satellite, {
 							duration: 1,
@@ -206,7 +200,6 @@
     }
 
     .grant-gonzalez {
-        font-size: 144px;
         margin-left: 5rem;
         opacity: 1;
         color: white;
