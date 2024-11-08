@@ -1466,7 +1466,6 @@
                         let tl = gsap.timeline();
                         currentlyExpandedSkill.value = document.getElementById(skill.id);
                         currentlyExpandedSkill.value.classList.toggle("expanded");
-						console.log(currentRow);
 
 						tl.to(".icon", {
 							opacity: 0,
@@ -1541,8 +1540,13 @@
     onMounted(() => {
         skillsCtx = gsap.context((self: any) => {
             const skills = self.selector('.icon-card');
-            skills.forEach((skill: any) => {
+			let numColumns = window.getComputedStyle(document.querySelector(".skills-container")!).getPropertyValue("grid-template-columns").split(" ").length;
+			let halfwayPoint = numColumns % 2 === 1 ? Math.ceil(numColumns / 2) : numColumns / 2;
+
+            skills.forEach((skill: any, index: number) => {
                 let uuid = uuidv4();
+				let currentColumn = 1 + (index % numColumns);
+				let xOffset = (currentColumn - halfwayPoint) * 100;
 
                 // Generic animation from below card
                 gsap.from(skill, {
@@ -1554,6 +1558,7 @@
                             scrub: true
                         },
                         scale: 0,
+						x: xOffset,
                         y: 200
                     }
                 );

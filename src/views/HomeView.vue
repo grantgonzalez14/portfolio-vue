@@ -1,6 +1,6 @@
 <template>
     <div ref="homeContainer" class="home-container">
-        <img src="/public/assets/images/SatelliteImageOne.png" alt="Satellite Image Bottom Left" id="satelliteOne" class="satellite sat-one" :style="{ width: satelliteWidthHeight.one, height: satelliteWidthHeight.one }">
+		<img src="/public/assets/images/SatelliteImageOne.png" alt="Satellite Image Bottom Left" id="satelliteOne" class="satellite sat-one" :style="{ width: satelliteWidthHeight.one, height: satelliteWidthHeight.one }">
         <img src="/public/assets/images/SatelliteImageTwo.png" alt="Satellite Image Top Right" id="satelliteTwo" class="satellite sat-two" :style="{ width: satelliteWidthHeight.two, height: satelliteWidthHeight.two }">
         <span class="grant-gonzalez"></span>
         <svg
@@ -64,8 +64,8 @@
     }
 
     onMounted(() => {
-        let fontsizeNormal = width.value * 0.0615385;
-        let fontsizeLarge = width.value * 0.0923077;
+        let fontsizeNormal = width.value * 0.0615385 > 30 ? width.value * 0.0615385 : 30;
+        let fontsizeLarge = width.value * 0.0923077 > 36 ? width.value * 0.0923077 : 36;
 
         let tl = gsap.timeline();
         let arrowBounceTl = gsap.timeline({repeat: -1, yoyo: true});
