@@ -2,102 +2,136 @@
     <div ref="projectContainer" class="projects-container">
         <h1 class='projects-header'>My Projects</h1>
 
-            <div class='project-card'>
-				<h3 v-if="width <= 925" class='project-title'><i>Portfolio Website</i></h3>
-                <div class='project-left'>
-                    <img @click="scrollToSection('home')" src='/public/assets/images/portfolio-website.png' alt='Portfolio Website' loading='lazy' class='project-pic' />
-                </div>
-                <div class='project-right'>
-					<h3 v-if="width > 925" class='project-title'><i>Portfolio Website</i></h3>
+		<div class='project-card'>
+			<h3 v-if="width <= 925" class='project-title'><i>Portfolio Website</i></h3>
+			<div class='project-left'>
+				<img @click="scrollToSection('home')" src='/public/assets/images/portfolio-website.png' alt='Portfolio Website' loading='lazy' class='project-pic' />
+			</div>
+			<div class='project-right'>
+				<h3 v-if="width > 925" class='project-title'><i>Portfolio Website</i></h3>
 
-					<div class="made-with-container">
-						<strong class="made-with-text">Made with:</strong>
-						<span class="made-with-images">
-							<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
-						</span>
-					</div>
-
-					<div class="link-container">
-						<span @click="scrollToSection('home')"><strong><u>Check it out!</u></strong></span>
-						<a href='https://github.com/grantgonzalez14/portfolio-vue' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
-					</div>
-
-                </div>
-            </div>
-
-			<div class='project-card'>
-				<h3 v-if="width <= 925" class='project-title'><i>Bug Zapper</i></h3>
-				<div class='project-left'>
-					<img @click="openLink('https://bug-zapper.netlify.app/')" src='/public/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='project-pic' />
+				<div class="made-with-container">
+					<strong class="made-with-text">Made with:</strong>
+					<span class="made-with-images">
+						<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+					</span>
 				</div>
-				<div class='project-right'>
-					<h3 v-if="width > 925" class='project-title'><i>Bug Zapper</i></h3>
 
-					<div class="made-with-container">
-						<strong class="made-with-text">Made with:</strong>
-						<span class="made-with-images">
-							<img src='/public/assets/icons/icons8-react-30.png' alt='React' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
-						</span>
-					</div>
+				<div class="link-container">
+					<span @click="scrollToSection('home')"><strong><u>Check it out!</u></strong></span>
+					<a href='https://github.com/grantgonzalez14/portfolio-vue' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
+				</div>
 
-					<div class="description-container">
-						<h4>Description:</h4>
-						<p class="description">
-							Say goodbye to those pesky bugs with Bug Zapper, the ultimate web application for tracking and
-							zapping all the nasty bugs in your code! With Bug Zapper, you can quickly and easily track and
-							resolve issues in your code, ensuring that your software is of the highest quality. Bug Zapper
-							is a user-friendly and intuitive web application that provides a centralized platform for you to
-							resolve all of your bugs!
-						</p>
-					</div>
-
-					<div class="link-container">
-						<a href='https://bug-zapper.netlify.app/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
-						<a href='https://github.com/grantgonzalez14/bug-zapper' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
-					</div>
-
+			</div>
+		</div>
+		
+		<div class='project-card'>
+			<h3 v-if="width <= 925" class='project-title'><i>Asteroids Reimagined</i></h3>
+			<div class='project-left'>
+				<img @click="openLink('https://asteroids-reimagined.netlify.app/')" src='/public/assets/images/asteroids_reimagined_main_menu.png' alt='Asteroids Reimagined Main Menu' loading='lazy' class='project-pic' />
+			</div>
+			<div class='project-right'>
+				<h3 v-if="width > 925" class='project-title'><i>Asteroids Reimagined</i></h3>
+				
+				<div class="made-with-container">
+					<strong class="made-with-text">Made with:</strong>
+					<span class="made-with-images">
+						<img src='/public/assets/icons/icons8-nuxt-js-96.png' alt='Nuxt JS' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-supabase-48.png' alt='Supabase' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+					</span>
+				</div>
+				<div class="description-container">
+					<h4>Description:</h4>
+					<p class="description">
+						My latest and greatest project yet! This is my take on the classic game of Asteroids. I initially created
+						this rendition in my first ever computer science class using MIT's Scratch. Ever since, I have been looking
+						to remake the game so others can enjoy it and I finally got around to it... 7 years later. I created a full-stack
+						game using Nuxt for the UI/UX, Typescript for the game logic and rendering, and Supabase for statistic tracking and
+						high score management.
+					</p>
+				</div>
+				<div class="link-container">
+					<a href='https://asteroids-reimagined.netlify.app/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
 				</div>
 			</div>
+		</div>
+	
+		<div class='project-card'>
+			<h3 v-if="width <= 925" class='project-title'><i>Brennan Schmidt</i></h3>
+			<div class='project-left'>
+				<img @click="openLink('https://brennanschmidt.com/')" src='/public/assets/images/brennan_portfolio_home_page.png' alt='Brennan Schmidt Portfolio Home Page' loading='lazy' class='project-pic' />
+			</div>
+			<div class='project-right'>
+				<h3 v-if="width > 925" class='project-title'><i>Brennan Schmidt</i></h3>
+				
+				<div class="made-with-container">
+					<strong class="made-with-text">Made with:</strong>
+					<span class="made-with-images">
+						<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+					</span>
+				</div>
+				<div class="description-container">
+					<h4>Description:</h4>
+					<p class="description">
+						This portfolio website was custom-built for Brennan Schmidt, an actress based in New York City,
+						to showcase her professional work and achievements. Designed with a sleek and responsive interface,
+						the site allows users to explore Brennan's creative portfolio effortlessly across all devices.
+					</p>
+				</div>
+				<div class="link-container">
+					<a href='https://brennanschmidt.com/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
+				</div>
+			</div>
+		</div>
 
-            <div class='project-card'>
-				<h3 v-if="width <= 925" class='project-title'><i>Brennan Schmidt</i></h3>
-				<div class='project-left'>
-                    <img @click="openLink('https://brennanschmidt.com/')" src='/public/assets/images/brennan_portfolio_home_page.png' alt='Brennan Schmidt Portfolio Home Page' loading='lazy' class='project-pic' />
-                </div>
-                <div class='project-right'>
-                    <h3 v-if="width > 925" class='project-title'><i>Brennan Schmidt</i></h3>
+		<div class='project-card'>
+			<h3 v-if="width <= 925" class='project-title'><i>Bug Zapper</i></h3>
+			<div class='project-left'>
+				<img @click="openLink('https://bug-zapper.netlify.app/')" src='/public/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='project-pic' />
+			</div>
+			<div class='project-right'>
+				<h3 v-if="width > 925" class='project-title'><i>Bug Zapper</i></h3>
 
-					<div class="made-with-container">
-						<strong class="made-with-text">Made with:</strong>
-						<span class="made-with-images">
-							<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
-							<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
-						</span>
-					</div>
-					<div class="description-container">
-						<h4>Description:</h4>
-						<p class="description">
-							This portfolio website was custom-built for Brennan Schmidt, an actress based in New York City,
-							to showcase her professional work and achievements. Designed with a sleek and responsive interface,
-							the site allows users to explore Brennan's creative portfolio effortlessly across all devices.
-						</p>
-					</div>
-					<div class="link-container">
-						<a href='https://brennanschmidt.com/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
-					</div>
-                </div>
-            </div>
+				<div class="made-with-container">
+					<strong class="made-with-text">Made with:</strong>
+					<span class="made-with-images">
+						<img src='/public/assets/icons/icons8-react-30.png' alt='React' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+					</span>
+				</div>
 
+				<div class="description-container">
+					<h4>Description:</h4>
+					<p class="description">
+						Say goodbye to those pesky bugs with Bug Zapper, the ultimate web application for tracking and
+						zapping all the nasty bugs in your code! With Bug Zapper, you can quickly and easily track and
+						resolve issues in your code, ensuring that your software is of the highest quality. Bug Zapper
+						is a user-friendly and intuitive web application that provides a centralized platform for you to
+						resolve all of your bugs!
+					</p>
+				</div>
+
+				<div class="link-container">
+					<a href='https://bug-zapper.netlify.app/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
+					<a href='https://github.com/grantgonzalez14/bug-zapper' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
+				</div>
+
+			</div>
+		</div>
 
     </div>
 </template>
