@@ -15,7 +15,7 @@
 					<span class="made-with-images">
 						<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
 						<img src='/public/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon' />
 						<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
 						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
 					</span>
@@ -76,8 +76,9 @@
 					<strong class="made-with-text">Made with:</strong>
 					<span class="made-with-images">
 						<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-primevue.svg' alt='Primevue' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon' />
+						<img src='/public/assets/icons/icons8-tailwind-css.svg' alt='Tailwind CSS' loading='lazy' class='project-icon' />
 						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
 					</span>
 				</div>

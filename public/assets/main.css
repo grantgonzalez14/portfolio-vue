@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   	--linkedin-blue: #0072b1;
 	--text-primary: #b6b6b6;
