@@ -8,7 +8,7 @@
                     :class="currentActiveSection == 'logo-link' ? 'active' : ''"
                     @click="scrollToSection('home', changeActiveLink)"
                 >
-                    <span class="inline absolute left-2 transition duration-450 opacity-0 group-hover:opacity-100">
+                    <span class="inline absolute left-2 transition ease-in duration-300 opacity-0 group-hover:opacity-100">
 						<img src="/src/assets/images/GGLogo.png" alt="Grant Gonzalez Logo" class="h-20"/>
 					</span>
 					<span class="flex absolute right-3 transition duration-600 h-14 w-14 origin-right group-hover:scale-200 border-[#407E8A] border-[4px] justify-center items-center rounded-full overflow-hidden">

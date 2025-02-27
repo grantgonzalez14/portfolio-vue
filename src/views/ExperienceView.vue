@@ -109,7 +109,7 @@
 							Title Insurance Database and Management Software
 							<ul class="pl-4 italic list-disc">
 								<li>User Specific Dashboard(s)</li>
-								<li>Property Locator</li>
+								<li>Nearby Property Locator</li>
 								<li>Transaction Management</li>
 								<li>Document Builder</li>
 							</ul>

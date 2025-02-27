@@ -10,4 +10,6 @@
 	--transition-speed: 600ms;
 	
 	--font-mona-sans: "Mona Sans", sans-serif;
+	--max-about-img-container-height-lg: 0;
+	--max-about-img-container-height-sm: 0;
 }
