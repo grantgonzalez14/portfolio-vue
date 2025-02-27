@@ -1,9 +1,9 @@
 <template>
-    <div class="card">
+    <div class="card flex relative w-45 h-42.5 sm:w-47.5 sm:h-45 rounded-[11px] overflow-hidden z-100">
         <div class="card-image">
             <slot name="image"></slot>
         </div>
-        <div class="card-content">
+        <div class="card-content text-black flex flex-col absolute gap-2 bg-[#F5F5F5] h-full w-full top-full rounded-[11px] transition duration-50">
             <slot name="content"></slot>
         </div>
     </div>
@@ -15,38 +15,6 @@
 
 <style lang="css" scoped>
     .card {
-        display: flex;
-        width: 11.875rem;
-        height: 11.25rem;
-        position: relative;
         transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-        border-radius: 11px;
-        overflow: hidden;
-        z-index: 100;
     }
-
-    .card-content {
-        display: flex;
-        position: absolute;
-        gap: .5em;
-        flex-direction: column;
-        background-color: whitesmoke;
-        height: 100%;
-        width: 100%;
-        top: 100%;
-        border-radius: 11px;
-        transition: all 0.05s ease;
-    }
-
-    /* @media only screen and (max-width: 425px) {
-        .card {
-            height: 375px;
-            width: 300px;
-        }
-
-        .card:hover .card-content,
-        .card:active .card-content {
-            transform: translateY(-375px);
-        }
-    } */
 </style>

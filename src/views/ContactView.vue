@@ -1,28 +1,28 @@
 <template>
-    <div ref="contactContainer" class="contact-container">
-        <h1 class="contact-header">Get In Touch With Me</h1>
-        <div class="contact-form-container">
-            <form class="contact-form" action="https://formspree.io/f/xnqrjaoe" method="POST">
-                <div class="contact-form-group">
-                    <label for="Name">Name *</label>
-                    <input type="text" id="name" name="name" required="true">
+    <div ref="contactContainer" class="contact-container flex flex-col relative items-center justify-center min-h-dvh w-dvw overflow-hidden pb-[5%]">
+        <h1 class="contact-header mb-4 lg:text-[24px] md:ml-20">Get In Touch With Me</h1>
+        <div class="contact-form-container flex flex-col gap-[20px] w-[80dvw] lg:w-[55dvw] border-[2px] border-transparent py-[32px] px-[24px] md:ml-20 text-[14px] z-10 rounded-[16px]">
+            <form class="flex flex-col gap-[20px]" action="https://formspree.io/f/xnqrjaoe" method="POST">
+                <div class="contact-form-group flex flex-col gap-[2px]">
+                    <label class="block mb-[5px] text-[#717171] font-semibold text-[12px]" for="Name">Name *</label>
+                    <input class="w-full py-[12px] px-[16px] rounded-[8px] bg-transparent border-[1px] border-[#414141] focus:outline-none focus:border-[#56A4B8] placeholder:opacity-50" type="text" id="name" name="name" required="true">
                 </div>
-                <div class="contact-form-group">
-                    <label for="email">Email *</label>
-                    <input type="text" id="email" name="email" required="true">
+                <div class="contact-form-group flex flex-col gap-[2px]">
+                    <label class="block mb-[5px] text-[#717171] font-semibold text-[12px]" for="email">Email *</label>
+                    <input class="w-full py-[12px] px-[16px] rounded-[8px] bg-transparent border-[1px] border-[#414141] focus:outline-none focus:border-[#56A4B8] placeholder:opacity-50" type="text" id="email" name="email" required="true">
                 </div>
-                <div class="contact-form-group">
-                    <label for="textarea">Message *</label>
-                    <textarea name="textarea" id="textarea" rows="10" cols="50" required="true"></textarea>
+                <div class="contact-form-group flex flex-col gap-[2px]">
+                    <label class="block mb-[5px] text-[#717171] font-semibold text-[12px]" for="textarea">Message *</label>
+                    <textarea class="w-full py-[12px] px-[16px] rounded-[8px] h-[96px] bg-transparent border-[1px] border-[#414141] resize-none" name="textarea" id="textarea" rows="10" cols="50" required="true"></textarea>
                 </div>
-                <button class="contact-form-submit-btn" type="submit">Submit</button>
+                <button class="flex items-center justify-center self-center text-[#717171] font-semibold w-full bg-[#313131] border-[1px] border-[#414141] py-[12px] px-[16px] gap-2 mt-2 rounded-[6px] transition duration-(--transition-speed) hover:cursor-pointer hover:bg-[#56A4B8] hover:border-[#56A4B8] hover:text-[#212121] focus:!outline-none focus:!border-[#56A4B8] active:scale-[0.95]" type="submit">Submit</button>
             </form>
         </div>
 
         <!-- Background Images -->
-        <div class="bg-img-container">
-            <img src="/public/assets/images/Globe3.png" alt="Earth" class="earth" :style="{left: width > 600 ? 3 + 'rem' : 0}">
-            <img src="/public/assets/images/CloudTwo.png" alt="Cloud" v-for="i in 20" class="cloud">
+        <div class="absolute bottom-0 overflow-hidden h-[90dvh] w-full z-1 pl-20">
+            <img src="/src/assets/images/Globe3.png" alt="Earth" class="absolute top-[60dvh] lg:top-[40dvh] z-2 w-full" :style="{left: width > 600 ? 3 + 'rem' : 0}">
+            <img src="/src/assets/images/CloudTwo.png" alt="Cloud" v-for="i in 20" class="cloud">
         </div>
     </div>
 </template>
@@ -32,7 +32,7 @@
     import { useWindowSize } from '@vueuse/core';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import gsap from 'gsap';
-    import "../../public/assets/main.css";
+    import "@/assets/main.css";
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -148,150 +148,19 @@
 
 <style lang="scss" scoped>
     .contact-container {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        width: 100vw;
-        overflow: hidden;
-        padding-bottom: 5%;
-
-        .bg-img-container {
-            position: absolute;
-            bottom: 0;
-            overflow: hidden;
-            height: 90vh;
-			width: 100%;
-            z-index: 1;
-            padding-left: 5rem;
-
-            .earth {
-                position: absolute;
-                top: 40vh;
-                z-index: 2;
-                width: 100%;
-            }
-
-            .cloud {
-                position: absolute;
-            }
-        }
+		
+		.cloud {
+			position: absolute;
+		}
 
         .contact-header {
-            color: white;
-            margin-bottom: 1rem;
 			font-family: "Mona Sans", sans-serif;
-			font-weight: 300;
         }
 
         .contact-form-container {
-            width: 55vw;
             background: linear-gradient(#212121, #212121) padding-box,
                 linear-gradient(145deg, transparent 35%, #407E8A, #56A4B8) border-box;
-            border: 2px solid transparent;
-            padding: 32px 24px;
-            font-size: 14px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
             box-sizing: border-box;
-            border-radius: 16px;
-            z-index: 10;
-
-            .contact-form {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .contact-form-group {
-                display: flex;
-                flex-direction: column;
-                gap: 2px;
-
-                label {
-                    display: block;
-                    margin-bottom: 5px;
-                    color: #717171;
-                    font-weight: 600;
-                    font-size: 12px;
-                }
-
-                input {
-                    width: calc(100% - 40px);
-                    padding: 12px 16px;
-                    border-radius: 8px;
-                    color: #fff;
-                    background-color: transparent;
-                    border: 1px solid #414141;
-
-                    &::placeholder {
-                        opacity: 0.5;
-                    }
-
-                    &:focus {
-                        outline: none;
-                        border-color: #56A4B8;
-                    }
-                }
-
-                textarea {
-                    width: calc(100% - 40px);
-                    padding: 12px 16px;
-                    border-radius: 8px;
-                    resize: none;
-                    color: #fff;
-                    height: 96px;
-                    border: 1px solid #414141;
-                    background-color: transparent;
-
-                    &:focus {
-                        outline: none;
-                        border-color: #56A4B8;
-                    }
-                }
-
-            }
-
-            .contact-form-submit-btn {
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                align-self: center;
-                color: #717171;
-                font-weight: 600;
-                width: 100%;
-                background: #313131;
-                border: 1px solid #414141;
-                padding: 12px 16px;
-                font-size: inherit;
-                gap: 8px;
-                margin-top: 8px;
-                cursor: pointer;
-                border-radius: 6px;
-                transition: var(--transition-speed);
-
-                &:hover {
-                    background-color: #56A4B8;
-                    border-color: #56A4B8;
-                    color: #212121;
-                }
-            }
-
-            button:active {
-                scale: 0.95;
-            }
-        }
-    }
-
-    @media only screen and (max-width: 600px) {
-        .contact-container {
-            .contact-form-container {
-                width: 80vw;
-            }
         }
     }
 </style>

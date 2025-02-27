@@ -1,39 +1,19 @@
 <template>
     <nav class="navbar">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav group">
             <li class="logo">
                 <div
                     id="logo-link"
-                    class="nav-link"
+                    class="flex h-20 group-hover:h-32 transition-[height] duration-600 items-center text-(--text-primary) hover:cursor-pointer"
                     :class="currentActiveSection == 'logo-link' ? 'active' : ''"
                     @click="scrollToSection('home', changeActiveLink)"
                 >
-                    <span class="link-text logo-text">
-						<img src="/assets/images/GGLogo.png" alt="Grant Gonzalez Logo" class="logo-img"/>
+                    <span class="inline absolute left-2 transition duration-450 opacity-0 group-hover:opacity-100">
+						<img src="/src/assets/images/GGLogo.png" alt="Grant Gonzalez Logo" class="h-20"/>
 					</span>
-                    <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        data-prefix="fad"
-                        data-icon="angle-double-right"
-                        role="img"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512"
-                        class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
-                    >
-                        <g class="fa-group">
-                            <path
-                                fill="currentColor"
-                                d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
-                                class="fa-secondary"
-                            ></path>
-                            <path
-                                fill="currentColor"
-                                d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
-                                class="fa-primary"
-                            ></path>
-                        </g>
-                    </svg>
+					<span class="flex absolute right-3 transition duration-600 h-14 w-14 origin-right group-hover:scale-200 border-[#407E8A] border-[4px] justify-center items-center rounded-full overflow-hidden">
+						<img src="/src/assets/images/GDBHeadshot.jpg" alt="Grant Gonzalez Logo" class="!backdrop-grayscale"/>
+					</span>
                 </div>
             </li>
 
@@ -91,21 +71,59 @@
 
             <li class="nav-item">
                 <div
+                    id="experience-link"
+                    class="nav-link"
+                    :class="currentActiveSection == 'experience-link' ? 'active' : ''"
+                    @click="scrollToSection('experience', changeActiveLink)"
+                >
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 512 512" version="1.1">
+						<title>work-case-filled</title>
+						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="work-case" fill="currentColor" transform="translate(42.666667, 64.000000)">
+								<path
+									fill="currentColor"
+									d="M284.959,311.297l-50.575-23.285l-24.296-20.49l-38.858,38.652l16.755,112.015c0.059,0.39-0.04,0.788-0.272,1.105    l-17.725,24.259c-0.282,0.388-0.732,0.615-1.211,0.615s-0.929-0.229-1.211-0.615l-17.725-24.259    c-0.232-0.317-0.33-0.716-0.271-1.105l16.755-112.017l-38.858-38.649l-24.295,20.491l-50.575,23.283    c-7.484,3.07-14.754,7.694-18.578,15.85c0,0-54.972,130.881-25.156,130.881h319.831c29.816,0-25.155-130.881-25.155-130.881    C300.28,319.357,292.443,314.367,284.959,311.297z"
+									class="fa-primary"
+								/>
+								<path
+									fill="currentColor"
+									d="M168.777,266.783c51.724,0,90.324-48.193,91.204-129.012c0.562-56.081-26.147-89.645-91.204-89.645    c-65.058,0-91.771,33.563-91.203,89.645C78.452,218.59,117.051,266.783,168.777,266.783z"
+									class="fa-primary"
+								/>
+								<path
+									fill="currentColor"
+									d="M344.912,5.956c-38.256,0-72.351,18.14-94.149,46.264c2.255,1.847,4.412,3.796,6.457,5.861    c4.042,4.083,7.615,8.586,10.772,13.454c16.952-24.302,45.108-40.236,76.92-40.236c51.683,0,93.729,42.048,93.729,93.731    c0,51.682-42.047,93.729-93.729,93.729c-25.895,0-49.369-10.557-66.349-27.59c-2.261,9.307-5.128,18.104-8.587,26.321    c20.479,16.629,46.562,26.61,74.936,26.61c65.656,0,119.071-53.416,119.071-119.071C463.984,59.372,410.569,5.956,344.912,5.956z"
+									class="fa-primary"
+								/>
+								<path
+									fill="currentColor"
+									d="M344.912,49.128c-5.249,0-9.504,4.254-9.504,9.504v69.692c0,5.248,4.255,9.503,9.504,9.503h55.247    c5.249,0,9.504-4.255,9.504-9.503c0-5.249-4.255-9.504-9.504-9.504h-45.744V58.632C354.415,53.382,350.16,49.128,344.912,49.128z"
+									class="fa-primary"
+								/>
+							</g>
+						</g>
+					</svg>
+                    <span class="link-text">Experience</span>
+                </div>
+            </li>
+			
+			<li class="nav-item">
+                <div
                     id="projects-link"
                     class="nav-link"
                     :class="currentActiveSection == 'projects-link' ? 'active' : ''"
                     @click="scrollToSection('projects', changeActiveLink)"
                 >
-                    <svg 
+                    <svg
                         aria-hidden="true"
                         focusable="false"
                         data-prefix="fad"
                         data-icon="projects"
                         role="img"
-                        xmlns="http://www.w3.org/2000/svg" 
+                        xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 640 512"
                     >
-                        <path 
+                        <path
                             fill="currentColor"
                             d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
                             class="fa-primary"
@@ -215,7 +233,7 @@
 <script setup lang="ts">
     import { onMounted, ref } from "vue";
 	import { scrollToSection } from "@/utility/utilityFunctions";
-    import "../../public/assets/main.css";
+    import "@/assets/main.css";
 
     // refs
     const currentActiveSection = ref<string>("home-link");
@@ -223,6 +241,7 @@
     const sections = ref<string[]>([
         "home",
         "about",
+		"experience",
         "projects",
         "skills",
         "contact"
@@ -273,6 +292,10 @@
                 top: document.getElementById("about")?.getBoundingClientRect().top,
                 bottom: document.getElementById("about")?.getBoundingClientRect().bottom,
             },
+			experience: {
+				top: document.getElementById("experience")?.getBoundingClientRect().top,
+				bottom: document.getElementById("experience")?.getBoundingClientRect().bottom,
+			},
             projects: {
                 top: document.getElementById("projects")?.getBoundingClientRect().top,
                 bottom: document.getElementById("projects")?.getBoundingClientRect().bottom,
@@ -290,180 +313,180 @@
 </script>
 
 <style lang="scss" scoped>
-    body {
-        color: black;
-        background-color: white;
-        margin: 0;
-        padding: 0;
-
-        &::-webkit-scrollbar { width: 0.25rem; }
-
-        &::-webkit-scrollbar-track { background: #1e1e24; }
-
-        &::-webkit-scrollbar-thumb { background: #56A4B8; }
-    }
-
-    main {
-        margin-left: 5rem;
-        padding: 1rem;
-    }
-
-    .navbar {
-        position: fixed;
-        background-color: var(--bg-primary);
-        transition: width var(--transition-speed) ease;
-        z-index: 999;
-    }
-
-    .navbar-nav {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-    }
-
-    .nav-item {
-        width: 100%;
-    }
-
-    .active {
-        background: var(--bg-secondary);
-    }
-
-    .nav-link {
-        display: flex;
-        align-items: center;
-        height: 5rem;
-        color: var(--text-primary);
-        text-decoration: none;
-        filter: grayscale(100%) opacity(0.7);
-        transition: var(--transition-speed);
-
-        &:hover {
-            filter: grayscale(0%) opacity(1);
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            cursor: pointer;
-        }
-
-        svg {
-            width: 2rem;
-            min-width: 2rem;
-            margin: 0 1.5rem;
-        }
-    }
-
-    .link-text {
-        display: inline;
-        opacity: 0;
-        margin-left: 1rem;
-        transition: calc(var(--transition-speed) * ( 3 / 4 ));
-    }
-
-    .fa-primary {
-        color: #407E8A;
-    }
-
-    .fa-secondary {
-        color: #56A4B8;
-    }
-
-    .fa-primary,
-    .fa-secondary {
-        transition: var(--transition-speed);
-    }
-
-    .logo {
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        text-align: center;
-        color: var(--text-secondary);
-        background: var(--bg-secondary);
-        font-size: 1.5rem;
-        letter-spacing: 0.3ch;
-        width: 100%;
-
-        svg {
-            transform: rotate(0deg);
-            transition: var(--transition-speed);
-        }
-    }
-
-    .logo-text {
-        display: inline;
-        position: absolute;
-        left: -999px;
-        transition: var(--transition-speed);
-    }
-
-    .logo-img {
-        height: 40px;
-        width: auto;
-    }
-
-    .navbar:hover .logo svg {
-        transform: rotate(-180deg);
-    }
-
-    /* Small screens */
-    @media only screen and (max-width: 600px) {
-        .navbar {
-            bottom: 0;
-            width: 100vw;
-            height: 5rem;
+	body {
+		color: black;
+		background-color: white;
+		margin: 0;
+		padding: 0;
+		
+		&::-webkit-scrollbar { width: 0.25rem; }
+		
+		&::-webkit-scrollbar-track { background: #1e1e24; }
+		
+		&::-webkit-scrollbar-thumb { background: #56A4B8; }
+	}
+	
+	main {
+		margin-left: 5rem;
+		padding: 1rem;
+	}
+	
+	.navbar {
+		position: fixed;
+		background-color: var(--bg-primary);
+		transition: width var(--transition-speed) ease;
+		z-index: 999;
+	}
+	
+	.navbar-nav {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+	}
+	
+	.nav-item {
+		width: 100%;
+	}
+	
+	.active {
+		background: var(--bg-secondary);
+	}
+	
+	.nav-link {
+		display: flex;
+		align-items: center;
+		height: 5rem;
+		color: var(--text-primary);
+		text-decoration: none;
+		filter: grayscale(100%) opacity(0.7);
+		transition: var(--transition-speed);
+		
+		&:hover {
+			filter: grayscale(0%) opacity(1);
+			background: var(--bg-secondary);
+			color: var(--text-secondary);
+			cursor: pointer;
+		}
+		
+		svg {
+			width: 2rem;
+			min-width: 2rem;
+			margin: 0 1.5rem;
+		}
+	}
+	
+	.link-text {
+		display: inline;
+		opacity: 0;
+		margin-left: 1rem;
+		transition: calc(var(--transition-speed) * ( 3 / 4 ));
+	}
+	
+	.fa-primary {
+		color: #407E8A;
+	}
+	
+	.fa-secondary {
+		color: #56A4B8;
+	}
+	
+	.fa-primary,
+	.fa-secondary {
+		transition: var(--transition-speed);
+	}
+	
+	.logo {
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+		text-align: center;
+		color: var(--text-secondary);
+		background: var(--bg-secondary);
+		font-size: 1.5rem;
+		letter-spacing: 0.3ch;
+		width: 100%;
+		
+		svg {
+			transform: rotate(0deg);
+			transition: var(--transition-speed);
+		}
+	}
+	
+	.logo-text {
+		display: inline;
+		position: absolute;
+		left: -999px;
+		transition: var(--transition-speed);
+	}
+	
+	.logo-img {
+		height: 40px;
+		width: auto;
+	}
+	
+	.navbar:hover .logo svg {
+		transform: rotate(-180deg);
+	}
+	
+	/* Small screens */
+	@media only screen and (max-width: 600px) {
+		.navbar {
+			bottom: 0;
+			width: 100vw;
+			height: 5rem;
 			overflow-x: scroll;
 		}
-
-        .link-text {
-            display: none;
-        }
-
-        .logo {
-            display: none;
-        }
-
-        .navbar-nav {
-            flex-direction: row;
-        }
-
-        .nav-link {
-            justify-content: center;
-            align-items: center;
-        }
-
-        main {
-            margin: 0;
-        }
-    }
-
-    /* Large screens */
-    @media only screen and (min-width: 601px) {
-        .navbar {
-            top: 0;
-            width: 5rem;
-            height: 100vh;
-
-            &:hover { 
-                width: 16rem; 
-
-                .link-text { 
-                    opacity: 1;
-                }
-
-                .logo {
-                    svg { 
-                        margin-left: 11rem; 
-                    }
-                }
-
-                .logo-text { 
-                    left: 0;
-                }
-            }
-        }
-    }
+		
+		.link-text {
+			display: none;
+		}
+		
+		.logo {
+			display: none;
+		}
+		
+		.navbar-nav {
+			flex-direction: row;
+		}
+		
+		.nav-link {
+			justify-content: center;
+			align-items: center;
+		}
+		
+		main {
+			margin: 0;
+		}
+	}
+	
+	/* Large screens */
+	@media only screen and (min-width: 601px) {
+		.navbar {
+			top: 0;
+			width: 5rem;
+			height: 100vh;
+			
+			&:hover {
+				width: 16rem;
+				
+				.link-text {
+					opacity: 1;
+				}
+				
+				.logo {
+					svg {
+						margin-left: 11rem;
+					}
+				}
+				
+				.logo-text {
+					left: 0;
+				}
+			}
+		}
+	}
 </style>

@@ -1,56 +1,56 @@
 <template>
-    <div ref="projectContainer" class="projects-container">
-        <h1 class='projects-header'>My Projects</h1>
+    <div ref="projectContainer" class="flex flex-col min-h-dvh max-w-dvw md:ml-20 mt-20 py-[10px] px-10 items-center">
+        <h1 class='projects-header lg:text-[24px]'>My Projects</h1>
 
-		<div class='project-card'>
-			<h3 v-if="width <= 925" class='project-title'><i>Portfolio Website</i></h3>
-			<div class='project-left'>
-				<img @click="scrollToSection('home')" src='/public/assets/images/portfolio-website.png' alt='Portfolio Website' loading='lazy' class='project-pic' />
+		<div class='project-card flex flex-col lg:flex-row text-center w-full lg:w-[70%] border-[2px] border-transparent rounded-[11px] p-[20px] m-[10px] justify-center items-center'>
+			<h3 v-if="width <= 925" class='mb-2'><i>Portfolio Website</i></h3>
+			<div class='w-full lg:w-[50%] h-full'>
+				<img @click="scrollToSection('home')" src='/src/assets/images/portfolio-website.png' alt='Portfolio Website' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
 			</div>
-			<div class='project-right'>
-				<h3 v-if="width > 925" class='project-title'><i>Portfolio Website</i></h3>
+			<div class='text-left w-full lg:w-[50%]'>
+				<h3 v-if="width > 925" class='mb-2'><i>Portfolio Website</i></h3>
 
-				<div class="made-with-container">
-					<strong class="made-with-text">Made with:</strong>
-					<span class="made-with-images">
-						<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+				<div class="flex flex-col lg:flex-row items-center justify-center p-4 lg:p-0 lg:gap-4">
+					<strong class="flex min-w-fit justify-center items-center">Made with:</strong>
+					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
+						<img src='/src/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 					</span>
 				</div>
 
-				<div class="link-container">
-					<span @click="scrollToSection('home')"><strong><u>Check it out!</u></strong></span>
-					<a href='https://github.com/grantgonzalez14/portfolio-vue' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
+				<div class="flex flex-row w-full items-center justify-between lg:justify-center lg:items-start lg:flex-col lg:gap-0">
+					<span class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer" @click="scrollToSection('home')"><strong><u>Check it out!</u></strong></span>
+					<a href='https://github.com/grantgonzalez14/portfolio-vue' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Source Code</strong></a>
 				</div>
 
 			</div>
 		</div>
 		
-		<div class='project-card'>
-			<h3 v-if="width <= 925" class='project-title'><i>Asteroids Reimagined</i></h3>
-			<div class='project-left'>
-				<img @click="openLink('https://asteroids-reimagined.netlify.app/')" src='/public/assets/images/asteroids_reimagined_main_menu.png' alt='Asteroids Reimagined Main Menu' loading='lazy' class='project-pic' />
+		<div class='project-card flex-col lg:flex-row flex text-center w-full lg:w-[70%] border-[2px] border-transparent rounded-[11px] p-[20px] m-[10px] justify-center items-center'>
+			<h3 v-if="width <= 925" class='mb-2'><i>Asteroids Reimagined</i></h3>
+			<div class='w-full lg:w-[50%] h-full'>
+				<img @click="openLink('https://asteroids-reimagined.netlify.app/')" src='/src/assets/images/asteroids_reimagined_main_menu.png' alt='Asteroids Reimagined Main Menu' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
 			</div>
-			<div class='project-right'>
-				<h3 v-if="width > 925" class='project-title'><i>Asteroids Reimagined</i></h3>
+			<div class='text-left w-full lg:w-[50%]'>
+				<h3 v-if="width > 925" class='mb-2'><i>Asteroids Reimagined</i></h3>
 				
-				<div class="made-with-container">
-					<strong class="made-with-text">Made with:</strong>
-					<span class="made-with-images">
-						<img src='/public/assets/icons/icons8-nuxt-js-96.png' alt='Nuxt JS' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-supabase-48.png' alt='Supabase' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+				<div class="flex flex-col lg:flex-row items-center justify-center p-4 lg:p-[0px] lg:gap-4">
+					<strong class="flex min-w-fit">Made with:</strong>
+					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
+						<img src='/src/assets/icons/icons8-nuxt-js-96.png' alt='Nuxt JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-supabase-48.png' alt='Supabase' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 					</span>
 				</div>
-				<div class="description-container">
-					<h4>Description:</h4>
-					<p class="description">
+				<div class="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start">
+					<h4 class="flex flex-row">Description:</h4>
+					<p class="flex justify-start items-center pb-[10px] h-[48px] w-full overflow-x-auto overflow-y-visible h-full pl-4">
 						My latest and greatest project yet! This is my take on the classic game of Asteroids. I initially created
 						this rendition in my first ever computer science class using MIT's Scratch. Ever since, I have been looking
 						to remake the game so others can enjoy it and I finally got around to it... 7 years later. I created a full-stack
@@ -58,66 +58,66 @@
 						high score management.
 					</p>
 				</div>
-				<div class="link-container">
-					<a href='https://asteroids-reimagined.netlify.app/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
+				<div class="flex flex-row w-full items-center justify-center lg:items-start lg:flex-col">
+					<a href='https://asteroids-reimagined.netlify.app/' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Check it out!</strong></a>
 				</div>
 			</div>
 		</div>
 	
-		<div class='project-card'>
-			<h3 v-if="width <= 925" class='project-title'><i>Brennan Schmidt</i></h3>
-			<div class='project-left'>
-				<img @click="openLink('https://brennanschmidt.com/')" src='/public/assets/images/brennan_portfolio_home_page.png' alt='Brennan Schmidt Portfolio Home Page' loading='lazy' class='project-pic' />
+		<div class='project-card flex-col lg:flex-row flex text-center w-full lg:w-[70%] border-[2px] border-transparent rounded-[11px] p-[20px] m-[10px] justify-center items-center'>
+			<h3 v-if="width <= 925" class='mb-2'><i>Brennan Schmidt</i></h3>
+			<div class='w-full lg:w-[50%] h-full'>
+				<img @click="openLink('https://brennanschmidt.com/')" src='/src/assets/images/brennan_portfolio_home_page.png' alt='Brennan Schmidt Portfolio Home Page' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
 			</div>
-			<div class='project-right'>
-				<h3 v-if="width > 925" class='project-title'><i>Brennan Schmidt</i></h3>
+			<div class='text-left w-full lg:w-[50%]'>
+				<h3 v-if="width > 925" class='mb-2'><i>Brennan Schmidt</i></h3>
 				
-				<div class="made-with-container">
-					<strong class="made-with-text">Made with:</strong>
-					<span class="made-with-images">
-						<img src='/public/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-primevue.svg' alt='Primevue' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-tailwind-css.svg' alt='Tailwind CSS' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+				<div class="flex flex-col lg:flex-row items-center justify-center p-4 lg:p-0 lg:gap-4">
+					<strong class="flex min-w-fit">Made with:</strong>
+					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
+						<img src='/src/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-primevue.svg' alt='Primevue' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-tailwind-css.svg' alt='Tailwind CSS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 					</span>
 				</div>
-				<div class="description-container">
+				<div class="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start">
 					<h4>Description:</h4>
-					<p class="description">
+					<p class="flex justify-start items-center pb-[10px] h-[48px] w-full overflow-x-auto overflow-y-visible h-full pl-4">
 						This portfolio website was custom-built for Brennan Schmidt, an actress based in New York City,
 						to showcase her professional work and achievements. Designed with a sleek and responsive interface,
 						the site allows users to explore Brennan's creative portfolio effortlessly across all devices.
 					</p>
 				</div>
-				<div class="link-container">
-					<a href='https://brennanschmidt.com/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
+				<div class="flex flex-row w-full items-center justify-center lg:items-start lg:flex-col">
+					<a href='https://brennanschmidt.com/' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Check it out!</strong></a>
 				</div>
 			</div>
 		</div>
 
-		<div class='project-card'>
-			<h3 v-if="width <= 925" class='project-title'><i>Bug Zapper</i></h3>
-			<div class='project-left'>
-				<img @click="openLink('https://bug-zapper.netlify.app/')" src='/public/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='project-pic' />
+		<div class='project-card flex-col lg:flex-row flex text-center w-full lg:w-[70%] border-[2px] border-transparent rounded-[11px] p-[20px] m-[10px] justify-center items-center'>
+			<h3 v-if="width <= 925" class='mb-2'><i>Bug Zapper</i></h3>
+			<div class='w-full lg:w-[50%] h-full'>
+				<img @click="openLink('https://bug-zapper.netlify.app/')" src='/src/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
 			</div>
-			<div class='project-right'>
-				<h3 v-if="width > 925" class='project-title'><i>Bug Zapper</i></h3>
+			<div class='text-left w-full lg:w-[50%]'>
+				<h3 v-if="width > 925" class='mb-2'><i>Bug Zapper</i></h3>
 
-				<div class="made-with-container">
-					<strong class="made-with-text">Made with:</strong>
-					<span class="made-with-images">
-						<img src='/public/assets/icons/icons8-react-30.png' alt='React' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon' />
-						<img src='/public/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon' />
+				<div class="flex flex-col lg:flex-row items-center justify-center p-4 lg:p-0 lg:gap-4">
+					<strong class="flex min-w-fit">Made with:</strong>
+					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
+						<img src='/src/assets/icons/icons8-react-30.png' alt='React' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 					</span>
 				</div>
 
-				<div class="description-container">
+				<div class="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start">
 					<h4>Description:</h4>
-					<p class="description">
+					<p class="flex justify-start items-center pb-[10px] h-[48px] w-full overflow-x-auto overflow-y-visible h-full pl-4">
 						Say goodbye to those pesky bugs with Bug Zapper, the ultimate web application for tracking and
 						zapping all the nasty bugs in your code! With Bug Zapper, you can quickly and easily track and
 						resolve issues in your code, ensuring that your software is of the highest quality. Bug Zapper
@@ -126,9 +126,9 @@
 					</p>
 				</div>
 
-				<div class="link-container">
-					<a href='https://bug-zapper.netlify.app/' target='_blank' rel='noreferrer'><strong>Check it out!</strong></a>
-					<a href='https://github.com/grantgonzalez14/bug-zapper' target='_blank' rel='noreferrer'><strong>Source Code</strong></a>
+				<div class="flex flex-row w-full items-center justify-between lg:justify-center lg:items-start lg:flex-col">
+					<a href='https://bug-zapper.netlify.app/' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Check it out!</strong></a>
+					<a href='https://github.com/grantgonzalez14/bug-zapper' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Source Code</strong></a>
 				</div>
 
 			</div>
@@ -160,8 +160,8 @@
                     gsap.from(project, {
                             scrollTrigger: {
                                 trigger: project,
-                                start: 'top bottom',
-                                end: "+=" + project.getBoundingClientRect().height,
+								start: "top 100%",
+								end: "top 80%",
                                 scrub: true
                             },
                             scale: 0,
@@ -173,8 +173,8 @@
                     gsap.from(project, {
                             scrollTrigger: {
                                 trigger: project,
-                                start: 'top bottom',
-                                end: "+=" + project.getBoundingClientRect().height,
+								start: "top 100%",
+								end: "top 80%",
                                 scrub: true
                             },
                             scale: 0,
@@ -224,229 +224,16 @@
 </script>
 
 <style lang="scss" scoped>
-    .projects-container {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-		max-width: 100vw;
-		margin-left: 5rem;
-		padding: 10px 2.5rem;
-        align-items: center;
-    }
-
-    .projects {
-        background-color: transparent;
-        padding: 10px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-pic {
-        width: 85%;
-        height: 100%;
-		border-radius: 10px;
-		transition-duration: 0.3s;
-
-		&:hover {
-			cursor: pointer;
-			transform: scale(1.015);
-			border-radius: 0;
-		}
-    }
-
-    .projects-title {
-        text-align: center;
-        margin-bottom: 1rem;
-        color: var(--secondary-color);
-        width: 50%;
-    }
-
-    .project-title {
-		color: var(--text-secondary);
-        margin-bottom: 0.5rem;
-    }
-
     .projects-header {
 		font-family: "Mona Sans", sans-serif;
-		font-weight: 300;
-        color: var(--text-secondary);
     }
 
     .project-card {
-        display: flex;
-        text-align: center;
-        width: 70%;
         background: linear-gradient(#212121, #212121) padding-box,
             linear-gradient(145deg, transparent 35%, #407E8A, #56A4B8) border-box;
-        border: 2px solid transparent;
-        border-radius: 11px;
-        padding: 20px;
-        margin: 10px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .project-left {
-        width: 50%;
-        height: 100%;
-    }
-
-    .project-right {
-        text-align: left;
-        width: 50%;
-        color: var(--text-secondary);
-
-		.made-with-container {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: center;
-			gap: 1rem;
-
-			.made-with-text {
-				display: flex;
-				min-width: fit-content;
-			}
-
-			.made-with-images {
-				display: flex;
-				justify-content: flex-start;
-				align-items: center;
-				height: 48px;
-				width: 100%;
-				overflow-x: auto;
-				overflow-y: visible;
-				gap: 10px;
-
-				.project-icon:hover {
-					cursor: pointer;
-				}
-			}
-		}
-
-		.description-container {
-			display: flex;
-			flex-direction: row;
-
-			.description {
-				height: 100%;
-				padding: 0 0 0 1rem;
-			}
-		}
-
-
-		.link-container {
-			display: flex;
-			flex-direction: column;
-
-			span,
-			a {
-				display: flex;
-				justify-content: flex-start;
-				align-items: center;
-				width: fit-content;
-				padding-top: 3%;
-				color: var(--text-primary);
-
-				&:hover {
-					color: var(--text-color);
-					cursor: pointer;
-				}
-			}
-		}
-
-
-
-        p {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding-bottom: 10px;
-            height: 48px;
-            width: 100%;
-            overflow-x: auto;
-            overflow-y: visible;
-        }
-
-        .project-icon {
-            width: 32px;
-            height: 32px;
-        }
-
-        h4 {
-            display: flex;
-            flex-direction: row;
-
-			p {
-				height: 100%;
-				padding: 0 0 0 1rem;
-			}
-        }
-
-
     }
 
     @media screen and (max-width: 925px) {
-        .projects { margin-left: 5rem; }
-
-	  	.project-card {
-			flex-direction: column;
-
-			.project-left {
-				width: 100%;
-			}
-
-			.project-right {
-				width: 100%;
-
-				.made-with-container {
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-					padding: 1rem;
-					gap: 0;
-
-					.made-with-images {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-					}
-				}
-
-				.description-container {
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-					padding: 1rem;
-
-					.description {
-						padding-top: 0.5rem;
-						text-align: center; // not sure if I like this or not
-					}
-				}
-
-				.link-container {
-					flex-direction: row;
-					width: 100%;
-					align-items: center;
-					justify-content: center;
-
-					span,a {
-						width: auto;
-						margin-right: 1rem;
-					}
-				}
-
-				img {
-					.project-pic {
-						height: 100%;
-						width: 100%;
-					}
-				}
-			}
-		}
-
 
 
         .pictures {
@@ -464,8 +251,4 @@
 			padding: 10px 0;
 		}
 	}
-
-    @media screen and (max-width: 425px) {
-        .projects { margin-left: 0; }
-    }
 </style>

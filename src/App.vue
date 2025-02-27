@@ -3,6 +3,7 @@
 		<Navbar id="navbar"></Navbar>
 		<HomeView id="home"></HomeView>
 		<AboutView id="about"></AboutView>
+		<ExperienceView id="experience"></ExperienceView>
 		<ProjectsView id="projects"></ProjectsView>
 		<SkillsView id="skills"></SkillsView>
 		<ContactView id="contact"></ContactView>
@@ -17,11 +18,11 @@
 	import SkillsView from './views/SkillsView.vue';
 	import ContactView from './views/ContactView.vue';
 	import Navbar from './components/Navbar.vue';
+	import ExperienceView from "@/views/ExperienceView.vue";
 </script>
 
 <style>
 	* {
-		margin: 0;
 		font-family: "Quicksand", serif;
 	}
 
@@ -30,6 +31,6 @@
 	}
 
 	.app-container {
-		background-image: url('images/AnimatedStarryNight.png');
+		background-image: url('./assets/images/AnimatedStarryNight.png');
 	}
 </style>

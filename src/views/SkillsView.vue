@@ -1,13 +1,13 @@
 <template>
-    <div ref="skillsContainer" class="skills-container">
-        <h1 class='skill-header'>My Skills</h1>
-        <Card id='fmp' class="icon-card" @click="animateSkill($event.target.id)">
+    <div ref="skillsContainer" class="skills-container grid relative grid-cols-[repeat(auto-fit,_minmax(12rem,_1fr))] grid-rows-[2rem_repeat(auto-fit,_12rem)] gap-4 lg:px-[14%] items-center min-h-dvh max-w-dvw mt-20 md:ml-20">
+        <h1 class='skill-header flex justify-center text-2xl font-normal col-span-full row-[1]'>My Skills</h1>
+        <Card id='fmp' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/FileMakerProIcon.png'
+                    src='/src/assets/icons/FileMakerProIcon.png'
                     alt='FileMaker Pro'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='fmp'
                 />
             </template>
@@ -24,13 +24,14 @@
 							FileMaker Pro, a low-code platform for building relational databases and business applications. It abstracts a lot
 							of the complexity you'd typically deal with in traditional programming environments, allowing you to focus more on
 							logic and less on infrastructure. I use this every day to develop and maintain full-stack applications (Contact us
-							at <a href='https://dbservices.com/' target='__blank' class='db-link'>DB Services</a> if you have any FileMaker
+							at <a href='https://dbservices.com/' target='__blank' class='text-black underline z-5 hover:text-[#56A4B8] hover:cursor-pointer transition duration-250'>DB Services</a> if you have any FileMaker
 							needs &#128521;)!
 						</span>
                     </template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.fmp">
+								-
 								<span>
 									<strong>{{ useCase.title }}:</strong>
 									{{ useCase.description }}
@@ -42,13 +43,13 @@
             </template>
         </Card>
 
-        <Card id='vue' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='vue' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-vue-js-144.png'
+                    src='/src/assets/icons/icons8-vue-js-144.png'
                     alt='Vue JS'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='vue'
                 />
             </template>
@@ -71,7 +72,7 @@
 						experience across all devices.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.vue">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -84,13 +85,13 @@
             </template>
         </Card>
 
-        <Card id='typescript' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='typescript' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-typescript-144.png'
+                    src='/src/assets/icons/icons8-typescript-144.png'
                     alt='Typescript'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='typescript'
                 />
             </template>
@@ -111,7 +112,7 @@
 						a solid foundation for building high-quality, maintainable applications.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.typescript">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -124,13 +125,13 @@
             </template>
         </Card>
 
-        <Card id='javascript' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='javascript' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-javascript.svg'
+                    src='/src/assets/icons/icons8-javascript.svg'
                     alt='JavaScript'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='javascript'
                 />
             </template>
@@ -151,7 +152,7 @@
 						across browsers and platforms.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.javascript">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -164,13 +165,13 @@
             </template>
         </Card>
 
-        <Card id="html" class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id="html" class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-html-5.svg'
+                    src='/src/assets/icons/icons8-html-5.svg'
                     alt='HTML5'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id="html"
                 />
             </template>
@@ -188,7 +189,7 @@
 						as the building block for any web application, forming a base upon which CSS and JavaScript bring style and interactivity.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.html">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -201,13 +202,13 @@
             </template>
         </Card>
 
-        <Card id='css' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='css' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-css3.svg'
+                    src='/src/assets/icons/icons8-css3.svg'
                     alt='CSS3'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='css'
                 />
             </template>
@@ -225,7 +226,7 @@
 						possible to create visually compelling, responsive layouts that enhance user experience while maintaining performance.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.css">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -238,13 +239,13 @@
             </template>
         </Card>
 
-        <Card id='react' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='react' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-react-160.png'
+                    src='/src/assets/icons/icons8-react-160.png'
                     alt='React'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='react'
                 />
             </template>
@@ -262,7 +263,7 @@
 						application state with hooks, and leverage the ecosystem of tools like Redux and React Router. It’s widely used for creating interactive, scalable web applications.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.react">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -275,13 +276,13 @@
             </template>
         </Card>
 
-        <Card id='python' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='python' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-python.svg'
+                    src='/src/assets/icons/icons8-python.svg'
                     alt='Python'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='python'
                 />
             </template>
@@ -299,7 +300,7 @@
 						libraries, like Django and Flask for web development, and Pandas and NumPy for data analysis, make Python a popular choice for both beginners and seasoned developers.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.python">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -312,13 +313,13 @@
             </template>
         </Card>
 
-        <Card id='git' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='git' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-git.svg'
+                    src='/src/assets/icons/icons8-git.svg'
                     alt='Git'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='git'
                 />
             </template>
@@ -336,7 +337,7 @@
 						process, while platforms like GitHub and GitLab add further functionality for code reviews and project management.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.git">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -349,13 +350,13 @@
             </template>
         </Card>
 
-        <Card id='frontend' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='frontend' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-laptop-coding-96.png'
+                    src='/src/assets/icons/icons8-laptop-coding-96.png'
                     alt='Frontend Development'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='frontend'
                 />
             </template>
@@ -376,7 +377,7 @@
 						an application while ensuring that it is intuitive, fast, and accessible.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.frontend">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -389,13 +390,13 @@
             </template>
         </Card>
 
-        <Card id='backend' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='backend' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/icons8-backend-development-96.png'
+                    src='/src/assets/icons/icons8-backend-development-96.png'
                     alt='Backend Development'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='backend'
                 />
             </template>
@@ -415,7 +416,7 @@
 						secure data storage. Mastery of backend development requires both technical expertise and the ability to architect systems that are scalable, secure, and capable of delivering seamless user experiences.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.backend">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -428,13 +429,13 @@
             </template>
         </Card>
 
-        <Card id='api' class="icon-card" @click="animateSkill($event.target.id)">
+        <Card id='api' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/public/assets/icons/PostmanIcon.png'
+                    src='/src/assets/icons/PostmanIcon.png'
                     alt='API Integration'
                     loading='lazy'
-                    class='icon'
+                    class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
                     id='api'
                 />
             </template>
@@ -455,7 +456,7 @@
 						while ensuring smooth and secure interactions with external systems.
 					</template>
 					<template v-slot:skillUses>
-						<ul class="use-case-list">
+						<ul class="flex flex-col gap-2 -ml-[30px]">
 							<li v-for="useCase of skillUseCaseList.api">
 								<span>
 									<strong>{{ useCase.title }}:</strong>
@@ -606,7 +607,7 @@
                             id: uuid,
                             trigger: skill,
                             start: 'top bottom',
-                            end: '+=' + skill.getBoundingClientRect().height * 0.95,
+                            end: 'top 99%',
                             scrub: true
                         },
                         scale: 0,
@@ -641,76 +642,18 @@
 </script>
 
 <style lang="scss" scoped>
-    .skills-container {
-        display: grid;
-		position: relative;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-        grid-auto-rows: 15rem;
-        gap: 1rem;
-        padding: 0 14%;
-        align-items: center;
-        min-height: 100vh;
-        max-width: 100vw;
-        margin-top: -5rem;
-		margin-left: 5rem;
-
-        .icon-card {
-            background: linear-gradient(#212121, #212121) padding-box,
-                linear-gradient(145deg, transparent 35%, #407E8A, #56A4B8) border-box;
-            border: 2px solid transparent;
-            border-radius: 11px;
-            transition: calc(var(--transition-speed) / 3);
-            padding: 20px;
-            grid-column: span 1;
-            grid-row: span 1;
-            justify-self: center;
-
-            &:not(.expanded):hover {
-                transform: scale(1.1) !important;
-                transition-timing-function: ease;
-            }
-
-            &:hover {
-                cursor: pointer;
-            }
-
-            .icon {
-                width: 11.875rem;
-                height: 11.25rem;
-                transition: calc(var(--transition-speed) / 3);
-            }
-
-			.use-case-list {
-				display: flex;
-				flex-direction: column;
-				gap: 0.5rem;
-				list-style-type: "- ";
-				margin-left: -30px;
-			}
-
-			.db-link {
-				color: black;
-				z-index: 5;
-
-				&:hover {
-					color: #56A4B8;
-					cursor: pointer;
-					transition: 250ms;
-				}
-			}
-        }
-    }
+	.icon-card {
+		background: linear-gradient(#212121, #212121) padding-box,
+		linear-gradient(145deg, transparent 35%, #407E8A, #56A4B8) border-box;
+		
+		&:not(.expanded):hover {
+			transform: scale(1.1) !important;
+			transition-timing-function: ease;
+		}
+	}
 
     .skill-header {
-        display: flex;
-        justify-content: center;
 		font-family: "Mona Sans", sans-serif;
-		font-weight: 300;
-        color: var(--text-secondary);
-        grid-column: 1 / -1;
-        grid-row: 1;
-        align-self: flex-end;
-        padding-bottom: 1rem;
     }
 
      @media screen and (max-width: 600px) {
