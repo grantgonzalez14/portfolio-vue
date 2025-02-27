@@ -12,7 +12,7 @@
 						<img src="/src/assets/images/GGLogo.png" alt="Grant Gonzalez Logo" class="h-20"/>
 					</span>
 					<span class="flex absolute right-3 transition duration-600 h-14 w-14 origin-right group-hover:scale-200 border-[#407E8A] border-[4px] justify-center items-center rounded-full overflow-hidden">
-						<img src="/src/assets/images/GDBHeadshot.jpg" alt="Grant Gonzalez Logo" class="!backdrop-grayscale"/>
+						<img src="/src/assets/images/personal/G_Headshot_New.jpeg" alt="Grant Gonzalez Logo" class="object-cover"/>
 					</span>
                 </div>
             </li>

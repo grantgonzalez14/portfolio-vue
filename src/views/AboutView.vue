@@ -181,7 +181,18 @@
                     y: 300
                 }
             );
-            
+			
+			gsap.from('.hobbies', {
+					scrollTrigger: {
+						trigger: '.hobbies',
+						start: 'top 100%',
+						end: 'top 80%',
+						scrub: true
+					},
+					opacity: 0,
+					y: 300
+				}
+			);
         }, aboutContainer.value);
     });
 
@@ -190,7 +201,8 @@
     });
 	
 	watch(width, () => {
-		cssVar.value = `${((width.value * 0.7 * 0.3) - 12) * 0.74}px`;
+		cssVarLg.value = `${((width.value * 0.7 * 0.3) - 12) * 0.74}px`;
+		cssVarSm.value = `${((width.value * 0.7) - 6) * 0.74}px`;
 	});
 </script>
 

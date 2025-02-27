@@ -15,6 +15,7 @@
 					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
 						<img src='/src/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 						<img src='/src/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-tailwind-css.svg' alt='Tailwind CSS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 						<img src='/src/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 						<img src='/src/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
@@ -22,8 +23,8 @@
 				</div>
 
 				<div class="flex flex-row w-full items-center justify-between lg:justify-center lg:items-start lg:flex-col lg:gap-0">
-					<span class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer" @click="scrollToSection('home')"><strong><u>Check it out!</u></strong></span>
-					<a href='https://github.com/grantgonzalez14/portfolio-vue' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Source Code</strong></a>
+					<span class="flex justify-start items-center w-fit pt-[3%] text-(--text-color) hover:text-(--text-primary) hover:cursor-pointer hover:underline-offset-[0.2em] transition-all ease duration-300 underline underline-offset-[0.1em] font-semibold" @click="scrollToSection('home')">Check it out!</span>
+					<a href='https://github.com/grantgonzalez14/portfolio-vue' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-color) hover:text-(--text-primary) hover:cursor-pointer hover:underline-offset-[0.2em] transition-all ease duration-300 underline underline-offset-[0.1em] font-semibold">Source Code</a>
 				</div>
 
 			</div>
@@ -59,7 +60,7 @@
 					</p>
 				</div>
 				<div class="flex flex-row w-full items-center justify-center lg:items-start lg:flex-col">
-					<a href='https://asteroids-reimagined.netlify.app/' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Check it out!</strong></a>
+					<a href='https://asteroids-reimagined.netlify.app/' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-color) hover:text-(--text-primary) hover:cursor-pointer hover:underline-offset-[0.2em] transition-all ease duration-300 underline underline-offset-[0.1em] font-semibold">Check it out!</a>
 				</div>
 			</div>
 		</div>
@@ -77,8 +78,8 @@
 					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
 						<img src='/src/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 						<img src='/src/assets/icons/icons8-primevue.svg' alt='Primevue' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 						<img src='/src/assets/icons/icons8-tailwind-css.svg' alt='Tailwind CSS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/src/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 					</span>
 				</div>
@@ -91,7 +92,7 @@
 					</p>
 				</div>
 				<div class="flex flex-row w-full items-center justify-center lg:items-start lg:flex-col">
-					<a href='https://brennanschmidt.com/' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Check it out!</strong></a>
+					<a href='https://brennanschmidt.com/' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-color) hover:text-(--text-primary) hover:cursor-pointer hover:underline-offset-[0.2em] transition-all ease duration-300 underline underline-offset-[0.1em] font-semibold">Check it out!</a>
 				</div>
 			</div>
 		</div>
@@ -127,8 +128,8 @@
 				</div>
 
 				<div class="flex flex-row w-full items-center justify-between lg:justify-center lg:items-start lg:flex-col">
-					<a href='https://bug-zapper.netlify.app/' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Check it out!</strong></a>
-					<a href='https://github.com/grantgonzalez14/bug-zapper' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-primary) hover:text-(--text-color) hover:cursor-pointer"><strong>Source Code</strong></a>
+					<a href='https://bug-zapper.netlify.app/' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-color) hover:text-(--text-primary) hover:cursor-pointer hover:underline-offset-[0.2em] transition-all ease duration-300 underline underline-offset-[0.1em] font-semibold">Check it out!</a>
+					<a href='https://github.com/grantgonzalez14/bug-zapper' target='_blank' rel='noreferrer' class="flex justify-start items-center w-fit pt-[3%] text-(--text-color) hover:text-(--text-primary) hover:cursor-pointer hover:underline-offset-[0.2em] transition-all ease duration-300 underline underline-offset-[0.1em] font-semibold">Source Code</a>
 				</div>
 
 			</div>
