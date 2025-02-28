@@ -139,7 +139,7 @@
 		let isDev: boolean = window.location.href.includes("localhost");
 		cssVarLg.value = `${((width.value * 0.7 * 0.3) - 12) * 0.74}px`;
 		cssVarSm.value = `${((width.value * 0.7) - 6) * 0.74}px`;
-		let tempBaseballArray = Object.keys(baseballList);
+		let tempBaseballArray = Object.keys(baseballList).map(file => file.replace('/public/', !isDev ? '/' : '/public/'));
 		tempBaseballArray.forEach((imgSrc: string, index: number) => {
 			baseballImages.value.push({
 				imgSrc,
@@ -157,9 +157,9 @@
 				caption: ""
 			});
 		});
-		familyAndFriendsImagesArray.value = Object.keys(familyFriendsList).map(file => file.replace('/public/', !isDev ? '/' : '/public/'));
+		familyAndFriendsImagesArray.value = Object.keys(familyFriendsList);
 		
-		let tempExploringArray = Object.keys(exploringList);
+		let tempExploringArray = Object.keys(exploringList).map(file => file.replace('/public/', !isDev ? '/' : '/public/'));
 		tempExploringArray.forEach((imgSrc: string, index: number) => {
 			exploringImages.value.push({
 				imgSrc,
@@ -167,7 +167,7 @@
 				caption: ""
 			});
 		});
-		exploringImagesArray.value = Object.keys(exploringList).map(file => file.replace('/public/', !isDev ? '/' : '/public/'));
+		exploringImagesArray.value = Object.keys(exploringList);
 		
         aboutCtx = gsap.context((): void => {
             gsap.from('.bio', {
