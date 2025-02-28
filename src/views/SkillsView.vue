@@ -480,7 +480,7 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { Flip } from 'gsap/Flip';
     import { v4 as uuidv4 } from 'uuid';
-	import { skillListDescriptions } from "@/utility/utilityFunctions";
+	import { scrollToSection, skillListDescriptions } from "@/utility/utilityFunctions";
 
     gsap.registerPlugin(ScrollTrigger);
 	gsap.registerPlugin(Flip);
@@ -490,7 +490,7 @@
         scrollTriggerID: string;
     }
 
-    const { width } = useWindowSize();
+    const { width, height } = useWindowSize();
     const skillList = ref<Array<SkillInfo>>([]);
 	const skillUseCaseList = ref(skillListDescriptions);
     const isSkillExpanded = ref(false);
@@ -498,57 +498,54 @@
     const cardWidth = ref();
     const skillsContainer = ref();
     let skillsCtx: any;
+	let skillCardCtx: any;
 
     const animateSkill = (targetID: string): void => {
         if (!isSkillExpanded.value) {
-            skillsCtx = gsap.context((self: any): void => {
+			skillCardCtx = gsap.context((self: any): any => {
                 const skills = self.selector('.icon-card');
                 
                 let currentCardWidth = document.querySelector(".project-card")?.getBoundingClientRect().width! * 0.98;
                 let calculatedHeight = skills[8].getBoundingClientRect().bottom - skills[0].getBoundingClientRect().top;
                 let windowWidth = width.value;
-                let windowHeight = window.innerHeight * 0.7;
-                let height = calculatedHeight > windowHeight && windowWidth >= 800 ? calculatedHeight : windowHeight;
-                let topPosition = document.querySelector(".skill-header")!.getBoundingClientRect().bottom + 16;
-
+                let windowHeight = height.value * 0.7;
+                let sizeHeight = calculatedHeight > windowHeight && windowWidth >= 800 ? calculatedHeight : windowHeight;
+				let tl: any;
+				
                 skills.forEach((skill: any, index: number): void => {
+					
                     if (skill.id == targetID) {
 						let currentLeft = skill.getBoundingClientRect().left;
-						let numColumns = window.getComputedStyle(document.querySelector(".skills-container")!).getPropertyValue("grid-template-columns").split(" ").length;
-						let currentRow = 1 + Math.floor(index / numColumns);
-                        let tl = gsap.timeline();
+						let currentTop = skill.getBoundingClientRect().top;
+						let headerBottom = document.querySelector(".skill-header")!.getBoundingClientRect().bottom;
+						console.log(headerBottom);
+                        tl = gsap.timeline();
                         currentlyExpandedSkill.value = document.getElementById(skill.id);
                         currentlyExpandedSkill.value.classList.toggle("expanded");
 
 						tl.to(".icon", {
 							opacity: 0,
-							duration: 0.1
+							duration: 0
 						});
-						tl.fromTo(skill,
-							{
-								position: "absolute",
-								left: currentLeft - 69,
-								top: "+=" + ((262 * currentRow) - (currentRow > 1 ? currentRow * currentRow : -2)),
-								scale: 1.1
-							},
-							{
-								position: "absolute",
-								transformOrigin: "-50% -50%",
-								left: windowWidth * 0.14,
-								top: topPosition > 0 ? 256 : 288 + (-1 * topPosition),
-								duration: 0.1,
-								scale: 1
-							}
-						);
 						tl.to(skill, {
+							top: currentTop,
+							left: currentLeft,
+							duration: 0
+						})
+						tl.to(skill, {
+							position: "absolute",
+							transformOrigin: "-50% -50%",
 							width:  windowWidth > 600 ? ( windowWidth - 80 ) * 0.7 : windowWidth * 0.7,
-							height: height,
-							duration: 0.1,
+							height: sizeHeight,
+							top: headerBottom > 0 ? 48 : ( headerBottom * -1 ) + 48,
+							left: windowWidth * 0.14,
+							duration: 0,
+							scale: 1,
 							padding: 0
 						});
 						tl.to(".card-content", {
-							y: -height
-						}, "<+=.05");
+							y: -sizeHeight
+						}, "<+=.25");
 
                     } else  {
                         gsap.set(skill, {
@@ -567,10 +564,10 @@
                 y: 500,
 				duration: 0.5,
                 onComplete: (): void => {
-                    skillsCtx.revert();
-                    isSkillExpanded.value = false;
-                    currentlyExpandedSkill.value.classList.toggle("expanded");
-                    currentlyExpandedSkill.value = null;
+					skillCardCtx.revert();
+					isSkillExpanded.value = false;
+					currentlyExpandedSkill.value.classList.toggle("expanded");
+					currentlyExpandedSkill.value = null;
                 }
             });
             

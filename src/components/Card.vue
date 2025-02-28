@@ -1,5 +1,5 @@
 <template>
-    <div class="card flex relative w-45 h-42.5 sm:w-47.5 sm:h-45 rounded-[11px] overflow-hidden z-100">
+    <div class="card flex relative w-45 h-42.5 sm:min-w-47.5 sm:min-h-45 rounded-[11px] overflow-hidden z-100">
         <div class="card-image">
             <slot name="image"></slot>
         </div>
