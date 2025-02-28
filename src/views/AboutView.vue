@@ -137,7 +137,7 @@
 		cssVarLg.value = `${((width.value * 0.7 * 0.3) - 12) * 0.74}px`;
 		cssVarSm.value = `${((width.value * 0.7) - 6) * 0.74}px`;
 		const baseballList = import.meta.glob('../../src/assets/images/personal/baseball/*');
-		let tempBaseballArray = Object.keys(baseballList).map(file => file.replace('../../', '/src/'));
+		let tempBaseballArray = Object.keys(baseballList);
 		tempBaseballArray.forEach((imgSrc: string, index: number) => {
 			baseballImages.value.push({
 				imgSrc,
