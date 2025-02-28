@@ -25,82 +25,82 @@
 		<div ref="hobbiesContainer" class="hobbies flex flex-col w-full lg:w-[70%] p-4 rounded-[10px]">
 			<div class='grid grid-cols-[repeat(auto-fit,_minmax(100%,_1fr))] md:grid-cols-[repeat(auto-fit,_minmax(30%,_1fr))] text-start gap-4'>
 				<h1 class='row-[1] col-span-full font-semibold text-3xl md:text-4xl text-center'>Hobbies & Interests</h1>
-				<div class="flex flex-col gap-2 col-span-1 row-span-1">
+				<div class="flex flex-col relative gap-2 col-span-1 row-span-1">
 					<h1 class="font-semibold text-lg md:text-xl text-center">Baseball</h1>
-					<Galleria
-						:value="baseballImages"
-						:showIndicators="false"
-						:showThumbnails="false"
-						:numVisible="1"
-						circular
-						autoPlay
-						:transitionInterval="5000"
-						containerClass="!rounded-lg"
-					>
-						<template #item="slotProps">
-							<div class="flex flex-col items-center max-h-(--max-about-img-container-height-sm) md:max-h-(--max-about-img-container-height-lg)">
-								<img class="object-contain" :src="slotProps.item.imgSrc" />
-							</div>
-						</template>
-					</Galleria>
-					<div class="flex md:h-[calc(100%-var(--max-about-img-container-height-lg))] md:mt-auto">
-						<p class="text-md">
-							America's pastime! I have played baseball since I was 6 years old, but stopped after high school.
-							Recently I got the opportunity to join the Nassau Yankees men's team in NYC, allowing me to play
-							once again and keeping me active!
-						</p>
+					<div class="flex h-(--max-about-img-container-height-sm) md:h-(--max-about-img-container-height-lg)">
+						<Galleria
+							:value="baseballImages"
+							:showIndicators="false"
+							:showThumbnails="false"
+							:numVisible="1"
+							circular
+							autoPlay
+							:transitionInterval="5000"
+							containerClass="!rounded-lg"
+						>
+							<template #item="slotProps">
+								<div class="flex flex-col items-center max-h-(--max-about-img-container-height-sm) md:max-h-(--max-about-img-container-height-lg)">
+									<img class="object-contain" :src="slotProps.item.imgSrc" />
+								</div>
+							</template>
+						</Galleria>
 					</div>
+					<p class="text-md">
+						America's pastime! I have played baseball since I was 6 years old, but stopped after high school.
+						Recently I got the opportunity to join the Nassau Yankees men's team in NYC, allowing me to play
+						once again and keeping me active!
+					</p>
 				</div>
-				<div class="flex flex-col gap-2 col-span-1 row-span-1">
+				<div class="flex flex-col relative gap-2 col-span-1 row-span-1">
 					<h1 class="font-semibold text-lg md:text-xl text-center">Family & Friends</h1>
-					<Galleria
-						:value="familyAndFriendsImages"
-						:showIndicators="false"
-						:showThumbnails="false"
-						:numVisible="1"
-						circular
-						autoPlay
-						:transitionInterval="5000"
-						containerClass="!rounded-lg"
-					>
-						<template #item="slotProps">
-							<div class="flex flex-col items-center justify-center max-h-(--max-about-img-container-height-sm) md:max-h-(--max-about-img-container-height-lg)">
-								<img class="object-contain" :src="slotProps.item.imgSrc" />
-							</div>
-						</template>
-					</Galleria>
-					<div class="flex md:h-[calc(100%-var(--max-about-img-container-height-lg))] md:mt-auto">
-						<p class="text-md">
-							The people around me are central to who I am as a person. Simply hanging out and making memories
-							with the ones I love is my favorite thing to do!
-						</p>
+					<div class="flex h-(--max-about-img-container-height-sm) md:h-(--max-about-img-container-height-lg)">
+						<Galleria
+							:value="familyAndFriendsImages"
+							:showIndicators="false"
+							:showThumbnails="false"
+							:numVisible="1"
+							circular
+							autoPlay
+							:transitionInterval="5000"
+							containerClass="!rounded-lg"
+						>
+							<template #item="slotProps">
+								<div class="flex flex-col items-center justify-center max-h-(--max-about-img-container-height-sm) md:max-h-(--max-about-img-container-height-lg)">
+									<img :class="slotProps.item.imgSrc.includes('G_L.jpg') ? 'object-cover' : 'object-contain'" :src="slotProps.item.imgSrc" />
+								</div>
+							</template>
+						</Galleria>
 					</div>
+					<p class="text-md">
+						The people around me are central to who I am as a person. Simply hanging out and making memories
+						with the ones I love is my favorite thing to do!
+					</p>
 				</div>
-				<div class="flex flex-col gap-2 col-span-1 row-span-1">
+				<div class="flex flex-col relative gap-2 col-span-1 row-span-1">
 					<h1 class="font-semibold text-lg md:text-xl text-center">Exploring</h1>
-					<Galleria
-						:value="exploringImages"
-						:showIndicators="false"
-						:showThumbnails="false"
-						:numVisible="1"
-						circular
-						autoPlay
-						:transitionInterval="5000"
-						containerClass="!rounded-lg"
-					>
-						<template #item="slotProps">
-							<div class="flex flex-col items-center justify-center max-h-(--max-about-img-container-height-sm) md:max-h-(--max-about-img-container-height-lg)">
-								<img class="object-contain" :src="slotProps.item.imgSrc" />
-							</div>
-						</template>
-					</Galleria>
-					<div class="flex md:h-[calc(100%-var(--max-about-img-container-height-lg))] md:mt-auto">
-						<p class="text-md">
-							One of my favorite things to experience in life is traveling and exploring new places! I've been
-							to all corners of the United States, from the mountains in Washington and the deserts in Arizona,
-							to the beaches in Florida and the skyscrapers in NYC!
-						</p>
+					<div class="flex h-(--max-about-img-container-height-sm) md:h-(--max-about-img-container-height-lg)">
+						<Galleria
+							:value="exploringImages"
+							:showIndicators="false"
+							:showThumbnails="false"
+							:numVisible="1"
+							circular
+							autoPlay
+							:transitionInterval="5000"
+							containerClass="!rounded-lg"
+						>
+							<template #item="slotProps">
+								<div class="flex flex-col items-center justify-center max-h-(--max-about-img-container-height-sm) md:max-h-(--max-about-img-container-height-lg)">
+									<img class="object-contain" :src="slotProps.item.imgSrc" />
+								</div>
+							</template>
+						</Galleria>
 					</div>
+					<p class="text-md">
+						One of my favorite things to experience in life is traveling and exploring new places! I've been
+						to all corners of the United States, from the mountains in Washington and the deserts in Arizona,
+						to the beaches in Florida and the skyscrapers in NYC!
+					</p>
 				</div>
 			</div>
 		</div>

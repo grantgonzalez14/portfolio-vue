@@ -17,13 +17,14 @@
 
 	<div class="text-container">
 		<div class="skill-description">
-			<h2>Description</h2>
 			<slot name="skillDescription"></slot>
 		</div>
 
 		<div class="skill-uses-container">
-			<h2>Use Cases</h2>
-			<slot name="skillUses"></slot>
+			<div class="flex gap-2">
+				<h2 class="font-semibold">Experience Time:</h2>
+				<slot name="skillUses"></slot>
+			</div>
 		</div>
 	</div>
 
