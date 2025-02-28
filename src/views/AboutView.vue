@@ -136,7 +136,7 @@
     onMounted((): void => {
 		cssVarLg.value = `${((width.value * 0.7 * 0.3) - 12) * 0.74}px`;
 		cssVarSm.value = `${((width.value * 0.7) - 6) * 0.74}px`;
-		const baseballList = import.meta.glob('/src/assets/images/personal/baseball/*');
+		const baseballList = import.meta.glob('/assets/images/personal/baseball/*');
 		let tempBaseballArray = Object.keys(baseballList);
 		tempBaseballArray.forEach((imgSrc: string, index: number) => {
 			baseballImages.value.push({
@@ -147,7 +147,7 @@
 		});
 		baseballImagesArray.value = Object.keys(baseballList);
 		
-		const familyFriendsList = import.meta.glob('/src/assets/images/personal/familyFriends/*');
+		const familyFriendsList = import.meta.glob('/assets/images/personal/familyFriends/*');
 		let tempFamilyFriendsArray = Object.keys(familyFriendsList);
 		tempFamilyFriendsArray.forEach((imgSrc: string, index: number) => {
 			familyAndFriendsImages.value.push({
@@ -158,7 +158,7 @@
 		});
 		familyAndFriendsImagesArray.value = Object.keys(familyFriendsList);
 		
-		const exploringList = import.meta.glob('/src/assets/images/personal/exploring/*');
+		const exploringList = import.meta.glob('/assets/images/personal/exploring/*');
 		let tempExploringArray = Object.keys(exploringList);
 		tempExploringArray.forEach((imgSrc: string, index: number) => {
 			exploringImages.value.push({
