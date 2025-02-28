@@ -136,7 +136,7 @@
     onMounted((): void => {
 		cssVarLg.value = `${((width.value * 0.7 * 0.3) - 12) * 0.74}px`;
 		cssVarSm.value = `${((width.value * 0.7) - 6) * 0.74}px`;
-		const baseballList = import.meta.glob('../../public/assets/images/baseball/*');
+		const baseballList = import.meta.glob('../../public/imageAssets/images/baseball/*');
 		let tempBaseballArray = Object.keys(baseballList).map(file => file.replace('../../public', '/'));
 		tempBaseballArray.forEach((imgSrc: string, index: number) => {
 			baseballImages.value.push({
@@ -147,7 +147,7 @@
 		});
 		baseballImagesArray.value = Object.keys(baseballList);
 		
-		const familyFriendsList = import.meta.glob('../../public/assets/images/familyFriends/*');
+		const familyFriendsList = import.meta.glob('../../public/imageAssets/images/familyFriends/*');
 		let tempFamilyFriendsArray = Object.keys(familyFriendsList).map(file => file.replace('../../public', '/'));
 		tempFamilyFriendsArray.forEach((imgSrc: string, index: number) => {
 			familyAndFriendsImages.value.push({
@@ -158,7 +158,7 @@
 		});
 		familyAndFriendsImagesArray.value = Object.keys(familyFriendsList);
 		
-		const exploringList = import.meta.glob('../../public/assets/images/exploring/*');
+		const exploringList = import.meta.glob('../../public/imageAssets/images/exploring/*');
 		let tempExploringArray = Object.keys(exploringList).map(file => file.replace('../../public', '/'));
 		tempExploringArray.forEach((imgSrc: string, index: number) => {
 			exploringImages.value.push({

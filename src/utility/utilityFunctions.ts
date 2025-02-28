@@ -774,7 +774,7 @@ export const skillListDescriptions = {
         },
         {
             "title": "Content Delivery Network (CDN) Usage",
-            "description": "Leverage CDNs for static assets like images, scripts, and stylesheets to reduce load times and improve content delivery performance worldwide."
+            "description": "Leverage CDNs for static imageAssets like images, scripts, and stylesheets to reduce load times and improve content delivery performance worldwide."
         },
         {
             "title": "Error Handling and Notifications",
