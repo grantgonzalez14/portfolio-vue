@@ -439,6 +439,7 @@
 			width: 100vw;
 			height: 5rem;
 			overflow-x: scroll;
+			overflow-y: hidden;
 		}
 		
 		.link-text {
@@ -469,6 +470,8 @@
 			top: 0;
 			width: 5rem;
 			height: 100vh;
+			overflow-y: scroll;
+			overflow-x: hidden;
 			
 			&:hover {
 				width: 16rem;
