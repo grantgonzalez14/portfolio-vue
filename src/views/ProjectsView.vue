@@ -5,7 +5,7 @@
 		<div class='project-card flex flex-col lg:flex-row text-center w-full lg:w-[70%] border-[2px] border-transparent rounded-[11px] p-[20px] m-[10px] justify-center items-center'>
 			<h3 v-if="width <= 925" class='mb-2'><i>Portfolio Website</i></h3>
 			<div class='w-full lg:w-[50%] h-full'>
-				<img @click="scrollToSection('home')" src='/src/assets/images/portfolio-website.png' alt='Portfolio Website' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
+				<img @click="scrollToSection('home')" src='/assets/images/portfolio-website.png' alt='Portfolio Website' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
 			</div>
 			<div class='text-left w-full lg:w-[50%]'>
 				<h3 v-if="width > 925" class='mb-2'><i>Portfolio Website</i></h3>
@@ -13,12 +13,12 @@
 				<div class="flex flex-col lg:flex-row items-center justify-center p-4 lg:p-0 lg:gap-4">
 					<strong class="flex min-w-fit justify-center items-center">Made with:</strong>
 					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
-						<img src='/src/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-tailwind-css.svg' alt='Tailwind CSS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/gsap-greensock-logo.svg' alt='GSAP' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-tailwind-css.svg' alt='Tailwind CSS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 					</span>
 				</div>
 
@@ -33,7 +33,7 @@
 		<div class='project-card flex-col lg:flex-row flex text-center w-full lg:w-[70%] border-[2px] border-transparent rounded-[11px] p-[20px] m-[10px] justify-center items-center'>
 			<h3 v-if="width <= 925" class='mb-2'><i>Asteroids Reimagined</i></h3>
 			<div class='w-full lg:w-[50%] h-full'>
-				<img @click="openLink('https://asteroids-reimagined.netlify.app/')" src='/src/assets/images/asteroids_reimagined_main_menu.png' alt='Asteroids Reimagined Main Menu' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
+				<img @click="openLink('https://asteroids-reimagined.netlify.app/')" src='/assets/images/asteroids_reimagined_main_menu.png' alt='Asteroids Reimagined Main Menu' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
 			</div>
 			<div class='text-left w-full lg:w-[50%]'>
 				<h3 v-if="width > 925" class='mb-2'><i>Asteroids Reimagined</i></h3>
@@ -41,12 +41,12 @@
 				<div class="flex flex-col lg:flex-row items-center justify-center p-4 lg:p-[0px] lg:gap-4">
 					<strong class="flex min-w-fit">Made with:</strong>
 					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
-						<img src='/src/assets/icons/icons8-nuxt-js-96.png' alt='Nuxt JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-supabase-48.png' alt='Supabase' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-nuxt-js-96.png' alt='Nuxt JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-supabase-48.png' alt='Supabase' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 					</span>
 				</div>
 				<div class="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start">
@@ -68,7 +68,7 @@
 		<div class='project-card flex-col lg:flex-row flex text-center w-full lg:w-[70%] border-[2px] border-transparent rounded-[11px] p-[20px] m-[10px] justify-center items-center'>
 			<h3 v-if="width <= 925" class='mb-2'><i>Brennan Schmidt</i></h3>
 			<div class='w-full lg:w-[50%] h-full'>
-				<img @click="openLink('https://brennanschmidt.com/')" src='/src/assets/images/brennan_portfolio_home_page.png' alt='Brennan Schmidt Portfolio Home Page' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
+				<img @click="openLink('https://brennanschmidt.com/')" src='/assets/images/brennan_portfolio_home_page.png' alt='Brennan Schmidt Portfolio Home Page' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
 			</div>
 			<div class='text-left w-full lg:w-[50%]'>
 				<h3 v-if="width > 925" class='mb-2'><i>Brennan Schmidt</i></h3>
@@ -76,11 +76,11 @@
 				<div class="flex flex-col lg:flex-row items-center justify-center p-4 lg:p-0 lg:gap-4">
 					<strong class="flex min-w-fit">Made with:</strong>
 					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
-						<img src='/src/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-primevue.svg' alt='Primevue' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-tailwind-css.svg' alt='Tailwind CSS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-vue-js-48.png' alt='Vue JS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-primevue.svg' alt='Primevue' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-tailwind-css.svg' alt='Tailwind CSS' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-typescript-144.png' alt='Typescript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 					</span>
 				</div>
 				<div class="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start">
@@ -100,7 +100,7 @@
 		<div class='project-card flex-col lg:flex-row flex text-center w-full lg:w-[70%] border-[2px] border-transparent rounded-[11px] p-[20px] m-[10px] justify-center items-center'>
 			<h3 v-if="width <= 925" class='mb-2'><i>Bug Zapper</i></h3>
 			<div class='w-full lg:w-[50%] h-full'>
-				<img @click="openLink('https://bug-zapper.netlify.app/')" src='/src/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
+				<img @click="openLink('https://bug-zapper.netlify.app/')" src='/assets/images/Bug_Zapper_Home_Page.png' alt='Bug Zapper Home Page' loading='lazy' class='w-full lg:w-[85%] h-full rounded-[10px] transition duration-300 hover:cursor-pointer hover:scale-[1.015] hover:rounded-0' />
 			</div>
 			<div class='text-left w-full lg:w-[50%]'>
 				<h3 v-if="width > 925" class='mb-2'><i>Bug Zapper</i></h3>
@@ -108,11 +108,11 @@
 				<div class="flex flex-col lg:flex-row items-center justify-center p-4 lg:p-0 lg:gap-4">
 					<strong class="flex min-w-fit">Made with:</strong>
 					<span class="flex flex-wrap justify-center lg:justify-start items-center min-h-[48px] w-full overflow-x-auto overflow-y-visible gap-[10px]">
-						<img src='/src/assets/icons/icons8-react-30.png' alt='React' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
-						<img src='/src/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-react-30.png' alt='React' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-firebase-48.png' alt='Firebase' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-javascript.svg' alt='Javascript' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-css3.svg' alt='CSS3' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
+						<img src='/assets/icons/icons8-html-5.svg' alt='HTML5' loading='lazy' class='project-icon w-[32px] h-[32px] hover:cursor-pointer' />
 					</span>
 				</div>
 

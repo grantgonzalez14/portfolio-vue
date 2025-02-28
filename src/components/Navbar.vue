@@ -9,10 +9,10 @@
                     @click="scrollToSection('home', changeActiveLink)"
                 >
                     <span class="inline absolute left-2 transition ease-in duration-300 opacity-0 group-hover:opacity-100">
-						<img src="/src/assets/images/GGLogo.png" alt="Grant Gonzalez Logo" class="h-20"/>
+						<img src="/assets/images/GGLogo.png" alt="Grant Gonzalez Logo" class="h-20"/>
 					</span>
 					<span class="flex absolute right-3 transition duration-600 h-14 w-14 origin-right group-hover:scale-200 border-[#407E8A] border-[4px] justify-center items-center rounded-full overflow-hidden">
-						<img src="/src/assets/images/personal/G_Headshot_New.jpeg" alt="Grant Gonzalez Logo" class="object-cover"/>
+						<img src="/assets/images/personal/G_Headshot_New.jpeg" alt="Grant Gonzalez Logo" class="object-cover"/>
 					</span>
                 </div>
             </li>
@@ -233,7 +233,7 @@
 <script setup lang="ts">
     import { onMounted, ref } from "vue";
 	import { scrollToSection } from "@/utility/utilityFunctions";
-    import "@/assets/main.css";
+    import "../../public/assets/main.css";
 
     // refs
     const currentActiveSection = ref<string>("home-link");

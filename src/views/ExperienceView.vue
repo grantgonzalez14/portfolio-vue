@@ -3,7 +3,7 @@
 		<h1 class='lg:text-[24px] mb-4 section-header'>Education & Experience</h1>
 		<ExperienceCard class="xp-card">
 			<template v-slot:image>
-				<img src="/src/assets/images/clemson_logo.png" alt="Grant Gonzalez Logo" />
+				<img src="/assets/images/clemson_logo.png" alt="Grant Gonzalez Logo" />
 			</template>
 			<template v-slot:jobTitle>
 				Student
@@ -25,7 +25,7 @@
 		<span class="z-[-1] opacity-[0] xp-line flex w-[2px] h-20 bg-(--text-primary) ml-[50%] lg:ml-[calc(15%+4.5rem)] self-start"></span>
 		<ExperienceCard class="xp-card">
 			<template v-slot:image>
-				<img src="/src/assets/images/qualtrics_logo.jpeg" alt="Grant Gonzalez Logo" />
+				<img src="/assets/images/qualtrics_logo.jpeg" alt="Grant Gonzalez Logo" />
 			</template>
 			<template v-slot:jobTitle>
 				Software Test Engineer Intern
@@ -53,7 +53,7 @@
 		<span class="z-[-1] opacity-[0] xp-line flex w-[2px] h-20 bg-(--text-primary) ml-[50%] lg:ml-[calc(15%+4.5rem)] self-start"></span>
 		<ExperienceCard class="xp-card">
 			<template v-slot:image>
-				<img src="/src/assets/images/eleos_logo.png" alt="Grant Gonzalez Logo" />
+				<img src="/assets/images/eleos_logo.png" alt="Grant Gonzalez Logo" />
 			</template>
 			<template v-slot:jobTitle>
 				QA Analyst
@@ -80,7 +80,7 @@
 		<span class="z-[-1] opacity-[0] xp-line flex w-[2px] h-20 bg-(--text-primary) ml-[50%] lg:ml-[calc(15%+4.5rem)] self-start"></span>
 		<ExperienceCard class="xp-card">
 			<template v-slot:image>
-				<img src="/src/assets/images/db_services_logo.jpeg" alt="Grant Gonzalez Logo" />
+				<img src="/assets/images/db_services_logo.jpeg" alt="Grant Gonzalez Logo" />
 			</template>
 			<template v-slot:jobTitle>
 				Application Developer

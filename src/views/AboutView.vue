@@ -112,7 +112,7 @@
 	import { useWindowSize, useCssVar } from '@vueuse/core';
 	import { Galleria } from "primevue";
 	import { baseballList, familyFriendsList, exploringList } from "@/utility/images";
-	
+	console.log( { baseballList, familyFriendsList, exploringList })
 	
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -136,6 +136,7 @@
 	
     
     onMounted((): void => {
+		let isDev: boolean = window.location.href.includes("localhost");
 		cssVarLg.value = `${((width.value * 0.7 * 0.3) - 12) * 0.74}px`;
 		cssVarSm.value = `${((width.value * 0.7) - 6) * 0.74}px`;
 		let tempBaseballArray = Object.keys(baseballList);
@@ -148,7 +149,7 @@
 		});
 		baseballImagesArray.value = Object.keys(baseballList);
 		
-		let tempFamilyFriendsArray = Object.keys(familyFriendsList);
+		let tempFamilyFriendsArray = Object.keys(familyFriendsList).map(file => file.replace('/public/', !isDev ? '/' : '/public/'));
 		tempFamilyFriendsArray.forEach((imgSrc: string, index: number) => {
 			familyAndFriendsImages.value.push({
 				imgSrc,
@@ -156,7 +157,7 @@
 				caption: ""
 			});
 		});
-		familyAndFriendsImagesArray.value = Object.keys(familyFriendsList);
+		familyAndFriendsImagesArray.value = Object.keys(familyFriendsList).map(file => file.replace('/public/', !isDev ? '/' : '/public/'));
 		
 		let tempExploringArray = Object.keys(exploringList);
 		tempExploringArray.forEach((imgSrc: string, index: number) => {
@@ -166,7 +167,7 @@
 				caption: ""
 			});
 		});
-		exploringImagesArray.value = Object.keys(exploringList);
+		exploringImagesArray.value = Object.keys(exploringList).map(file => file.replace('/public/', !isDev ? '/' : '/public/'));
 		
         aboutCtx = gsap.context((): void => {
             gsap.from('.bio', {

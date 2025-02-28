@@ -31,6 +31,6 @@
 	}
 
 	.app-container {
-		background-image: url('./assets/images/AnimatedStarryNight.png');
+		background-image: url('/assets/images/AnimatedStarryNight.png');
 	}
 </style>

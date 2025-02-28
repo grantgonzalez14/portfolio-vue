@@ -1,7 +1,7 @@
 <template>
     <div ref="homeContainer" class="home-container">
-		<img src="/src/assets/images/SatelliteImageOne.png" alt="Satellite Image Bottom Left" id="satelliteOne" class="satellite sat-one" :style="{ width: satelliteWidthHeight.one, height: satelliteWidthHeight.one }">
-        <img src="/src/assets/images/SatelliteImageTwo.png" alt="Satellite Image Top Right" id="satelliteTwo" class="satellite sat-two" :style="{ width: satelliteWidthHeight.two, height: satelliteWidthHeight.two }">
+		<img src="/assets/images/SatelliteImageOne.png" alt="Satellite Image Bottom Left" id="satelliteOne" class="satellite sat-one" :style="{ width: satelliteWidthHeight.one, height: satelliteWidthHeight.one }">
+        <img src="/assets/images/SatelliteImageTwo.png" alt="Satellite Image Top Right" id="satelliteTwo" class="satellite sat-two" :style="{ width: satelliteWidthHeight.two, height: satelliteWidthHeight.two }">
         <span class="grant-gonzalez"></span>
         <svg
             aria-hidden="true"

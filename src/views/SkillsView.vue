@@ -4,7 +4,7 @@
         <Card id='fmp' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/FileMakerProIcon.png'
+                    src='/assets/icons/FileMakerProIcon.png'
                     alt='FileMaker Pro'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -46,7 +46,7 @@
         <Card id='vue' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-vue-js-144.png'
+                    src='/assets/icons/icons8-vue-js-144.png'
                     alt='Vue JS'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -88,7 +88,7 @@
         <Card id='typescript' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-typescript-144.png'
+                    src='/assets/icons/icons8-typescript-144.png'
                     alt='Typescript'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -128,7 +128,7 @@
         <Card id='javascript' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-javascript.svg'
+                    src='/assets/icons/icons8-javascript.svg'
                     alt='JavaScript'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -168,7 +168,7 @@
         <Card id="html" class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-html-5.svg'
+                    src='/assets/icons/icons8-html-5.svg'
                     alt='HTML5'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -205,7 +205,7 @@
         <Card id='css' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-css3.svg'
+                    src='/assets/icons/icons8-css3.svg'
                     alt='CSS3'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -242,7 +242,7 @@
         <Card id='react' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-react-160.png'
+                    src='/assets/icons/icons8-react-160.png'
                     alt='React'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -279,7 +279,7 @@
         <Card id='python' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-python.svg'
+                    src='/assets/icons/icons8-python.svg'
                     alt='Python'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -316,7 +316,7 @@
         <Card id='git' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-git.svg'
+                    src='/assets/icons/icons8-git.svg'
                     alt='Git'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -353,7 +353,7 @@
         <Card id='frontend' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-laptop-coding-96.png'
+                    src='/assets/icons/icons8-laptop-coding-96.png'
                     alt='Frontend Development'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -393,7 +393,7 @@
         <Card id='backend' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/icons8-backend-development-96.png'
+                    src='/assets/icons/icons8-backend-development-96.png'
                     alt='Backend Development'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
@@ -432,7 +432,7 @@
         <Card id='api' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id)">
             <template v-slot:image>
                 <img
-                    src='/src/assets/icons/PostmanIcon.png'
+                    src='/assets/icons/PostmanIcon.png'
                     alt='API Integration'
                     loading='lazy'
                     class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
