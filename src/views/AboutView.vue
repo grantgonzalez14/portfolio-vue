@@ -66,7 +66,7 @@
 						>
 							<template #item="slotProps">
 								<div class="flex flex-col items-center justify-center max-h-(--max-about-img-container-height-sm) md:max-h-(--max-about-img-container-height-lg)">
-									<img :class="slotProps.item.imgSrc.includes('G_L.jpg') ? 'object-cover' : 'object-contain'" :src="slotProps.item.imgSrc" />
+									<img class="object-contain" :src="slotProps.item.imgSrc" />
 								</div>
 							</template>
 						</Galleria>
