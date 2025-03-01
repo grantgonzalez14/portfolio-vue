@@ -233,7 +233,6 @@
 <script setup lang="ts">
     import { onMounted, ref } from "vue";
 	import { scrollToSection } from "@/utility/utilityFunctions";
-    import "../../public/assets/main.css";
 
     // refs
     const currentActiveSection = ref<string>("home-link");
