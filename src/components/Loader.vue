@@ -193,22 +193,10 @@
 	<div class="absolute top-[50%] left-[50%] border-[3px] border-(--color-primary) w-40 h-4 -ml-20 mt-28">
 		<span class="loader-bar flex relative size-full before:absolute before:h-full before:bg-(--color-primary))"></span>
 	</div>
-	
-	
-	<!--	<div class="">-->
-<!--		<span class="absolute top-[50%] left-[50%] border-[3px] border-transparent border-t-(&#45;&#45;color-primary) border-r-(&#45;&#45;color-primary) rounded-[50%] size-28 -ml-14 -mt-14 animate-(&#45;&#45;animation-spin-outer)"></span>-->
-<!--		<span class="absolute top-[50%] left-[50%] border-[3px] border-transparent border-t-(&#45;&#45;color-primary) border-r-(&#45;&#45;color-primary) rounded-[50%] size-[4.2rem] -ml-[2.1rem] -mt-[2.1rem] animate-(&#45;&#45;animation-spin-middle)"></span>-->
-<!--		<span class="absolute top-[50%] left-[50%] border-[3px] border-transparent border-t-(&#45;&#45;color-primary) border-r-(&#45;&#45;color-primary) rounded-[50%] size-[1.6rem] -ml-[0.8rem] -mt-[0.8rem] animate-(&#45;&#45;animation-spin-inner)"></span>-->
-<!--		<span class="absolute top-[50%] left-[50%] w-28 h-4 -ml-14 mt-14 text-center">{{ progressNumber }}%</span>-->
-<!--		<div class="absolute top-[50%] left-[50%] border-[3px] border-(&#45;&#45;color-primary) w-28 h-4 -ml-14 mt-20">-->
-<!--			<span class="loader-bar flex relative size-full before:absolute before:h-full before:bg-(&#45;&#45;color-primary))"></span>-->
-<!--		</div>-->
-<!--	</div>-->
 </template>
 
 <script setup lang="ts">
 	import { onMounted, ref } from "vue";
-	import "../../public/assets/main.css";
 	
 	const progressNumber = ref<number>(0);
 	onMounted(() => {
