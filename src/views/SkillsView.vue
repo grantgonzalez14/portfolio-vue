@@ -3,7 +3,11 @@
 		<div id="programming-skills-container" class="skills-container grid relative grid-cols-[repeat(auto-fit,_minmax(12rem,_1fr))] grid-rows-[2rem_repeat(auto-fit,_12rem)] gap-4 lg:px-[14%] items-center mt-20 md:ml-20">
 			<h1 class='programming-skill-header skill-header flex justify-center text-2xl font-normal col-span-full row-[1]'>My Skills</h1>
 			
-			<Card id='fmp' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id='fmp'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/FileMakerProIcon.png'
@@ -14,7 +18,10 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'85%'">
+					<Skill
+						:skillWidth="'85%'"
+						:skillHighlights="['Payroll Management System', 'Title Insurance Database and Management System', 'Printing Service Database and Management System', 'Field Service Scheduling Calendar and Map', 'Various API Integrations']"
+					>
 						<template v-slot:title>
 							FileMaker Pro
 						</template>
@@ -37,7 +44,11 @@
 				</template>
 			</Card>
 			
-			<Card id='vue' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id='vue'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/icons8-vue-js-144.png'
@@ -48,7 +59,10 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'75%'">
+					<Skill
+						:skillWidth="'75%'"
+						:skillHighlights="['Portfolio Website', 'Asteroids Remastered', 'Brennan Schmidt Portfolio', 'Work Order Management Module', 'Dynamic Reporting Module', 'Field Service Scheduling Calendar and Map', 'Nearby Property Locator']"
+					>
 						<template v-slot:title>
 							Vue JS
 						</template>
@@ -56,14 +70,9 @@
 							75%
 						</template>
 						<template v-slot:skillDescription>
-							A progressive JavaScript framework for building user interfaces and single-page applications. Known for its simplicity and
-							flexibility, Vue’s component-based architecture allows developers to create reusable, modular components that keep the codebase
-							organized and maintainable. Vue’s reactive data binding, Composition API, and support for TypeScript make it suitable for complex
-							applications, while its lightweight core and extensive ecosystem enable both small and large-scale projects. Vue is widely appreciated
-							for its developer-friendly approach and powerful features. Utilizing Vue 3’s Composition API, TypeScript integration,
-							and modular component design, I deliver front-end applications that seamlessly integrate with backend services. My approach
-							emphasizes performance, flexibility, and maintainability, ensuring that each application is optimized for a consistent user
-							experience across all devices.
+							A progressive JavaScript framework for building user interfaces and single-page applications. Vue JS is the first frontend
+							framework that I had the pleasure of learning. I've used it to build various applications and solutions professionally and
+							personally. It is simple and intuitive and it's my go-to whenever I use a framework!
 						</template>
 						<template v-slot:skillUses>
 							4 Years
@@ -72,7 +81,11 @@
 				</template>
 			</Card>
 			
-			<Card id='tailwind' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id='tailwind'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/icons8-tailwind-css.svg'
@@ -83,7 +96,10 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'60%'">
+					<Skill
+						:skillWidth="'60%'"
+						:skillHighlights="['Portfolio Website', 'Brennan Schmidt Portfolio', 'Work Order Management Module']"
+					>
 						<template v-slot:title>
 							Tailwind CSS
 						</template>
@@ -91,12 +107,9 @@
 							60%
 						</template>
 						<template v-slot:skillDescription>
-							Tailwind CSS is a utility-first CSS framework that enables developers to rapidly build modern, responsive, and highly customizable user interfaces. Unlike traditional CSS frameworks
-							that rely on predefined components, Tailwind provides low-level utility classes that allow developers to style elements directly in their HTML or component files, reducing the need
-							for writing custom CSS. This skill involves understanding Tailwind’s utility classes, responsive design system, and customization options to create scalable and maintainable UI designs.
-							Tailwind CSS enhances development speed by eliminating the need for writing extensive custom styles while ensuring consistency across an application. Mastery of Tailwind includes using its
-							configuration file for custom themes, optimizing styles for performance, and leveraging features like dark mode, flexbox, grid, and animations. Proficiency in Tailwind CSS means being able
-							to efficiently style applications with minimal custom CSS while maintaining flexibility and scalability in UI development.
+							Tailwind CSS is a utility-first CSS framework that enables developers to rapidly build modern, responsive, and highly customizable user interfaces.
+							I used pure css for most of my development career, but once I started using Tailwind CSS I never looked back! It makes customization incredibly easy
+							and quick, and it allows me to spin up applications much quicker than I could've before!
 						</template>
 						<template v-slot:skillUses>
 							< 1 Year
@@ -106,7 +119,11 @@
 			</Card>
 			
 			
-			<Card id='typescript' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id='typescript'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/icons8-typescript-144.png'
@@ -117,20 +134,21 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'40%'">
+					<Skill
+						:skillWidth="'40%'"
+						:skillHighlights="['Portfolio Website', 'Asteroids Reimagined', 'Brennan Schmidt Portfolio', 'Work Order Management Module', 'Field Service Scheduling Calendar', 'Nearby Property Locator', 'Dynamic Reporting Module']"
+					>
 						<template v-slot:title>
-							Typescript
+							TypeScript
 						</template>
 						<template v-slot:tooltip>
 							40%
 						</template>
 						<template v-slot:skillDescription>
 							A powerful, statically-typed superset of JavaScript that compiles to plain JavaScript, adding a layer of reliability and robustness
-							to web development. By introducing optional static types, TypeScript enables developers to catch errors early in the development process,
-							making code more predictable and easier to debug. With strong support for object-oriented programming, interfaces, and advanced tooling,
-							TypeScript provides a structured approach to JavaScript that enhances code readability, reusability, and scalability, especially in larger
-							projects. Ideal for both front-end and back-end development, TypeScript integrates seamlessly with frameworks like Vue and React, offering
-							a solid foundation for building high-quality, maintainable applications.
+							to web development. Typescript has helped to improve my efficiency when developing due to it's type safe features. I used pure
+							JavaScript for years, but once I started using TypeScript, I realized what I've been missing and every project since has been using
+							this incredibly powerful superset of JavaScript!
 						</template>
 						<template v-slot:skillUses>
 							1 Year
@@ -139,7 +157,11 @@
 				</template>
 			</Card>
 			
-			<Card id='javascript' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id='javascript'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/icons8-javascript.svg'
@@ -150,7 +172,10 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'60%'">
+					<Skill
+						:skillWidth="'60%'"
+						:skillHighlights="['Portfolio Website', 'Asteroids Reimagined', 'Brennan Schmidt Portfolio', 'Bug Zapper', 'Work Order Management Module', 'Field Service Scheduling Calendar', 'Nearby Property Locator', 'Dynamic Reporting Module']"
+					>
 						<template v-slot:title>
 							JavaScript
 						</template>
@@ -158,12 +183,9 @@
 							60%
 						</template>
 						<template v-slot:skillDescription>
-							JavaScript is a versatile, high-level programming language that powers dynamic, interactive features on websites and applications. As the
-							backbone of web development, JavaScript allows developers to create responsive interfaces, handle events, and interact with APIs, making
-							it essential for building modern, user-friendly experiences. With its wide adoption and extensive ecosystem, JavaScript can be used across
-							the full stack—from front-end frameworks like Vue, React, and Angular to back-end environments like Node.js. Its flexibility and asynchronous
-							capabilities make JavaScript a powerful tool for handling complex functionality, enhancing performance, and delivering rich, engaging applications
-							across browsers and platforms.
+							JavaScript is a versatile, high-level programming language that powers dynamic, interactive features on websites and applications.
+							This has been the backbone of everything I built while learning web-development, and after years of developing with JavaScript, it has
+							become my go to language!
 						</template>
 						<template v-slot:skillUses>
 							4 Years
@@ -172,7 +194,11 @@
 				</template>
 			</Card>
 			
-			<Card id="html" class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id="html"
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/icons8-html-5.svg'
@@ -183,7 +209,10 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'60%'">
+					<Skill
+						:skillWidth="'60%'"
+						:skillHighlights="['Portfolio Website', 'Asteroids Reimagined', 'Brennan Schmidt Portfolio', 'Bug Zapper', 'Work Order Management Module', 'Field Service Scheduling Calendar', 'Nearby Property Locator', 'Dynamic Reporting Module']"
+					>
 						<template v-slot:title>
 							HTML
 						</template>
@@ -191,9 +220,9 @@
 							60%
 						</template>
 						<template v-slot:skillDescription>
-							The fundamental language for structuring content on the web. It provides the foundation for web pages by organizing text, images, links, and other
-							elements into a cohesive layout. HTML tags define content semantics, making it essential for accessibility, SEO, and overall usability. It serves
-							as the building block for any web application, forming a base upon which CSS and JavaScript bring style and interactivity.
+							The fundamental language for structuring content on the web. Learning HTML and how to structure web pages has been instrumental in
+							fueling my passion for development. Being able to visualize my changes onscreen as I make them forged the path for me in becoming a
+							software developer.
 						</template>
 						<template v-slot:skillUses>
 							4 Years
@@ -213,7 +242,10 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'70%'">
+					<Skill
+						:skillWidth="'70%'"
+						:skillHighlights="['Portfolio Website', 'Asteroids Reimagined', 'Brennan Schmidt Portfolio', 'Bug Zapper', 'Work Order Management Module', 'Field Service Scheduling Calendar', 'Nearby Property Locator', 'Dynamic Reporting Module']"
+					>
 						<template v-slot:title>
 							CSS
 						</template>
@@ -221,9 +253,9 @@
 							70%
 						</template>
 						<template v-slot:skillDescription>
-							The language used to style HTML content, allowing developers to control layout, colors, fonts, and responsive design. CSS enables the separation of content
-							and presentation, making it easier to adapt designs across different devices and screen sizes. With advancements like Flexbox, Grid, and CSS animations, it’s
-							possible to create visually compelling, responsive layouts that enhance user experience while maintaining performance.
+							The language used to style HTML content, allowing developers to control layout, colors, fonts, and responsive design.
+							Like HTML, learning CSS has been an incredibly exciting journey for me. Having fine control over the style of a webpage
+							and how it is displayed allows my creative side to really flourish!
 						</template>
 						<template v-slot:skillUses>
 							4 Years
@@ -232,7 +264,11 @@
 				</template>
 			</Card>
 			
-			<Card id='react' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id='react'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/icons8-react-160.png'
@@ -243,7 +279,10 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'20%'">
+					<Skill
+						:skillWidth="'20%'"
+						:skillHighlights="['Bug Zapper']"
+					>
 						<template v-slot:title>
 							React
 						</template>
@@ -251,9 +290,8 @@
 							20%
 						</template>
 						<template v-slot:skillDescription>
-							A powerful JavaScript library developed by Facebook for creating dynamic, component-based user interfaces. Its declarative approach and virtual DOM allow for
-							highly efficient rendering, making React ideal for building fast, responsive web applications. With React, developers can create reusable UI components, manage
-							application state with hooks, and leverage the ecosystem of tools like Redux and React Router. It’s widely used for creating interactive, scalable web applications.
+							A powerful JavaScript library developed by Meta for creating dynamic, component-based user interfaces. I learned React after
+							college so I could expand and diversify my skill set. While I prefer Vue JS, React is an important skill I have in my tool bag.
 						</template>
 						<template v-slot:skillUses>
 							1 Year
@@ -262,7 +300,11 @@
 				</template>
 			</Card>
 			
-			<Card id='python' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id='python'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/icons8-python.svg'
@@ -273,7 +315,10 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'50%'">
+					<Skill
+						:skillWidth="'50%'"
+						:skillHighlights="['Game Engine', 'Various Data Science Projects', 'Programming Learning Tool']"
+					>
 						<template v-slot:title>
 							Python
 						</template>
@@ -281,9 +326,9 @@
 							50%
 						</template>
 						<template v-slot:skillDescription>
-							A high-level, interpreted programming language known for its readability and versatility. It’s widely used across various domains—from web development and data science
-							to automation and artificial intelligence. With a vast standard library and supportive community, Python makes it easy to write efficient, maintainable code. Its extensive
-							libraries, like Django and Flask for web development, and Pandas and NumPy for data analysis, make Python a popular choice for both beginners and seasoned developers.
+							A high-level, interpreted programming language known for its readability and versatility. This was the first "real" programming language
+							I learned during my first computer science class in high school. It is simple to learn, very powerful, and incredibly versatile. When I'm
+							not using TypeScript or JavaScript, Python is the first language I'll turn to!
 						</template>
 						<template v-slot:skillUses>
 							4 Years
@@ -292,7 +337,11 @@
 				</template>
 			</Card>
 			
-			<Card id='git' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id='git'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/icons8-git.svg'
@@ -303,7 +352,10 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'50%'">
+					<Skill
+						:skillWidth="'50%'"
+						:skillHighlights="['Portfolio Website', 'Asteroids Reimagined', 'Brennan Schmidt Portfolio', 'Bug Zapper', 'Work Order Management Module', 'Field Service Scheduling Calendar', 'Nearby Property Locator', 'Dynamic Reporting Module', 'Various University Projects']"
+					>
 						<template v-slot:title>
 							Git
 						</template>
@@ -311,9 +363,9 @@
 							50%
 						</template>
 						<template v-slot:skillDescription>
-							A distributed version control system that allows developers to track changes, collaborate on code, and maintain a history of project development. It enables branching, merging,
-							and conflict resolution, making it essential for managing code in teams. Git’s powerful commit and history tracking features help prevent data loss and simplify the collaboration
-							process, while platforms like GitHub and GitLab add further functionality for code reviews and project management.
+							A distributed version control system that allows developers to track changes, collaborate on code, and maintain a history of project development.
+							Git is one of the most important skills I have learned when it comes to software development. I use it for every project I work on, allowing me to
+							track my project history and merge changes whenever necessary.
 						</template>
 						<template v-slot:skillUses>
 							5 Years
@@ -322,7 +374,11 @@
 				</template>
 			</Card>
 			
-			<Card id='backend' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
+			<Card
+				id='backend'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
 				<template v-slot:image>
 					<img
 						src='/assets/icons/icons8-backend-development-96.png'
@@ -333,52 +389,20 @@
 					/>
 				</template>
 				<template v-slot:content>
-					<Skill :skillWidth="'80%'">
+					<Skill
+						:skillWidth="'80%'"
+						:skillHighlights="['FileMaker Application Development', 'Asteroids Reimagined', 'Bug Zapper', 'Work Order Management Module', 'Field Service Scheduling Calendar', 'Nearby Property Locator', 'Dynamic Reporting Module']"
+					>
 						<template v-slot:title>
 							Backend Development
 						</template>
 						<template v-slot:tooltip>
-							80%
+							60%
 						</template>
 						<template v-slot:skillDescription>
-							Backend development is the skill of building and maintaining the server-side infrastructure that powers web applications. It involves writing server-side code in languages such as Python, Java,
-							Node.js, or Ruby to handle business logic, database operations, and communication between systems. Backend developers work with databases (SQL or NoSQL), manage user authentication, and ensure
-							that the application’s architecture can scale to handle increasing traffic. This skill also involves building and managing APIs to connect the frontend with backend services. Backend developers
-							ensure that applications run efficiently, securely, and reliably. They optimize performance, handle data processing, and implement error handling and security protocols, such as encryption and
-							secure data storage. Mastery of backend development requires both technical expertise and the ability to architect systems that are scalable, secure, and capable of delivering seamless user experiences.
-						</template>
-						<template v-slot:skillUses>
-							5 Years
-						</template>
-					</Skill>
-				</template>
-			</Card>
-			
-			<Card id='api' class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center" @click="animateSkill($event.target.id, 'programming')">
-				<template v-slot:image>
-					<img
-						src='/assets/icons/PostmanIcon.png'
-						alt='API Integration'
-						loading='lazy'
-						class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
-						id='api'
-					/>
-				</template>
-				<template v-slot:content>
-					<Skill :skillWidth="'70%'">
-						<template v-slot:title>
-							API Integrations
-						</template>
-						<template v-slot:tooltip>
-							70%
-						</template>
-						<template v-slot:skillDescription>
-							API integration is the skill of connecting different software systems through APIs (Application Programming Interfaces) to allow them to share data and functionality. In modern application development,
-							APIs are a fundamental skill as they enable interaction with third-party services, such as payment gateways, social media platforms, messaging services, and cloud storage solutions. API integration
-							involves understanding how to send and receive data between systems, handle errors, and ensure the integration is secure and efficient. This skill is essential for adding external functionalities to an
-							application without having to reinvent the wheel, allowing developers to leverage existing services to enhance the application’s capabilities. API integration also requires knowledge of protocols such as
-							REST and GraphQL, as well as authentication methods like OAuth. Being proficient in API integration means being able to seamlessly connect systems and services, extending the functionality of an application
-							while ensuring smooth and secure interactions with external systems.
+							Backend development is the skill of building and maintaining the server-side infrastructure that powers web applications. This is a skill I learned about
+							all throughout college, but didn't really start working with until I began my career. It is a skill that I have continued to refine over my career, and is
+							one that I will forever enjoy practicing.
 						</template>
 						<template v-slot:skillUses>
 							2 Years
@@ -386,8 +410,44 @@
 					</Skill>
 				</template>
 			</Card>
+			
+			<Card
+				id='frontend'
+				class="icon-card hover:cursor-pointer border-[2px] border-transparent transition duration-[calc(var(--transition-speed)/3)] p-[20px] col-span-1 row-span-1 justify-self-center items-center"
+				@click="animateSkill($event.target.id, 'programming')"
+			>
+				<template v-slot:image>
+					<img
+						src='/assets/icons/icons8-laptop-coding-96.png'
+						alt='Frontend Development'
+						loading='lazy'
+						class='icon w-47.5 h-45 transition duration-[calc(var(--transition-speed)/3)] object-contain'
+						id='frontend'
+					/>
+				</template>
+				<template v-slot:content>
+					<Skill
+						:skillWidth="'70%'"
+						:skillHighlights="['FileMaker Application Development', 'Portfolio Website', 'Asteroids Reimagined', 'Brennan Schmidt Portfolio', 'Bug Zapper', 'Work Order Management Module', 'Field Service Scheduling Calendar', 'Nearby Property Locator', 'Dynamic Reporting Module']"
+					>
+						<template v-slot:title>
+							Frontend Development
+						</template>
+						<template v-slot:tooltip>
+							70%
+						</template>
+						<template v-slot:skillDescription>
+							Frontend development focuses on creating the visual and interactive aspects of a web application that users interact with directly. This is one my my favorite
+							aspects of development. I am truly passionate about creating visual representations of my work and am constantly learning new ways to improve what I have built.
+							This skill allows me to show off my creativity and allows me to create projects that others can enjoy.
+						</template>
+						<template v-slot:skillUses>
+							4 Years
+						</template>
+					</Skill>
+				</template>
+			</Card>
 		</div>
-		
 	</div>
 </template>
 

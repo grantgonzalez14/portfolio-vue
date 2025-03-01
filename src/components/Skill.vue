@@ -21,9 +21,18 @@
 		</div>
 
 		<div class="skill-uses-container">
-			<div class="flex gap-2">
-				<h2 class="font-semibold">Experience Time:</h2>
-				<slot name="skillUses"></slot>
+			<div class="flex flex-col gap-4">
+				<div class="flex gap-2">
+					<h2 class="font-semibold">Experience Time:</h2>
+					<slot name="skillUses"></slot>
+				</div>
+				
+				<div class="flex flex-col">
+					<h2 class="font-semibold">Skill Highlights</h2>
+					<ul class="list-disc ml-4">
+						<li v-for="highlight in props.skillHighlights">{{ highlight }}</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -35,6 +44,7 @@
 
     const props = defineProps<{
         skillWidth: string;
+		skillHighlights: string[];
     }>();
 
     const skillBarWidth = ref(props.skillWidth);
