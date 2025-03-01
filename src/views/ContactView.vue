@@ -32,7 +32,7 @@
     import { useWindowSize } from '@vueuse/core';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import gsap from 'gsap';
-    import "../../public/assets/main.css";
+    import "../main.css";
 
     gsap.registerPlugin(ScrollTrigger);
 
