@@ -114,7 +114,6 @@
 	import { useWindowSize, useCssVar } from '@vueuse/core';
 	import { Galleria } from "primevue";
 	import { baseballList, familyFriendsList, exploringList } from "@/utility/images";
-	console.log( { baseballList, familyFriendsList, exploringList })
 	
 	gsap.registerPlugin(ScrollTrigger);
 

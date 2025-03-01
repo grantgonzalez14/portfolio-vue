@@ -23,7 +23,6 @@
 	import Navbar from './components/Navbar.vue';
 	import ExperienceView from "@/views/ExperienceView.vue";
 	import Loader from "./components/Loader.vue";
-	import "/public/assets/main.css";
 	
 	const isLoading = ref<boolean>(true);
 	onMounted(() => {
