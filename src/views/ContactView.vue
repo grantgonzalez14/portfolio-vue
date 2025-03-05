@@ -21,7 +21,7 @@
 
         <!-- Background Images -->
         <div class="absolute bottom-0 overflow-hidden h-[90dvh] w-full z-1 pl-20">
-            <img src="/assets/images/Globe3.png" alt="Earth" class="absolute top-[60dvh] lg:top-[40dvh] z-2 w-full" :style="{left: width > 600 ? 3 + 'rem' : 0}">
+            <img src="/assets/images/Globe3.png" alt="Earth" class="earth absolute top-[60dvh] lg:top-[40dvh] z-2 w-full" :style="{left: width > 600 ? 3 + 'rem' : 0}">
             <img src="/assets/images/CloudTwo.png" alt="Cloud" v-for="i in 20" class="cloud">
         </div>
     </div>

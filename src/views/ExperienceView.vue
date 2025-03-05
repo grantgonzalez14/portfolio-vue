@@ -156,12 +156,9 @@
 	import gsap from 'gsap';
 	import { onMounted, onUnmounted, ref } from 'vue';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	import { scrollToSection } from '@/utility/utilityFunctions';
-	import { useWindowSize } from "@vueuse/core";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	const { width } = useWindowSize();
 	const experienceContainer = ref<HTMLElement>();
 	let experienceCtx: any;
 	
@@ -169,6 +166,13 @@
 		experienceCtx = gsap.context((self: any): void => {
 			const experienceCards: HTMLElement[] = self.selector(".xp-card");
 			const experienceLines: HTMLElement[] = self.selector(".xp-line");
+			const animateLines = (showLines: boolean, index: number) => {
+				gsap.to(experienceLines[index - 1],{
+					transformOrigin: "top",
+					scaleY: showLines ? 1 : 0,
+					opacity: showLines ? 1 : 0
+				});
+			}
 			let xpTl = gsap.timeline();
 			
 			experienceCards.forEach((xpCard: HTMLElement, index: number): void => {
@@ -178,46 +182,10 @@
 						start: "top 150%",
 						end: "top 120%",
 						scrub: true,
-						onEnter: (self) => {
-							if ( index > 0 ) {
-								gsap.to(experienceLines[index - 1], {
-										transformOrigin: "top",
-										scaleY: 0,
-										opacity: 0
-									}
-								);
-							}
-						},
-						onLeave: (self) => {
-							if ( index > 0 ) {
-								gsap.to(experienceLines[index - 1],{
-										transformOrigin: "top",
-										scaleY: 1,
-										opacity: 1
-									}
-								);
-							}
-						},
-						onEnterBack: (self) => {
-							if ( index > 0 ) {
-								gsap.to(experienceLines[index - 1],{
-										transformOrigin: "top",
-										scaleY: 0,
-										opacity: 0
-									}
-								);
-							}
-						},
-						onLeaveBack: (self) => {
-							if ( index > 0 ) {
-								gsap.to(experienceLines[index - 1],{
-										transformOrigin: "top",
-										scaleY: 0,
-										opacity: 0
-									}
-								);
-							}
-						},
+						onEnter: () => index > 0 ? animateLines(false, index) : null,
+						onLeave: () => index > 0 ? animateLines(true, index) : null,
+						onEnterBack: () => index > 0 ? animateLines(false, index) : null,
+						onLeaveBack: () => index > 0 ? animateLines(false, index) : null,
 					},
 					y: 500
 				});
