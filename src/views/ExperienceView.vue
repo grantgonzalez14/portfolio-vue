@@ -173,7 +173,6 @@
 					opacity: showLines ? 1 : 0
 				});
 			}
-			let xpTl = gsap.timeline();
 			
 			experienceCards.forEach((xpCard: HTMLElement, index: number): void => {
 				gsap.from(xpCard, {
